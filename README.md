@@ -1,6 +1,8 @@
 # SIT383-T12022-Metaverse
+
 The metaverse projects for SIT383 in 2022
 
 Team members:
 
-CEO: Shaun
+CEO: Shaun,
+Developer: Ben
