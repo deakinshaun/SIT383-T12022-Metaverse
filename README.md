@@ -6,3 +6,4 @@ Team members:
 
 CEO: Shaun,
 Developer: Ben
+Developer: Joseph
