@@ -6,7 +6,7 @@ Cute Satellite
 ---------------------
 Members:
 Haiyang Li
-Jinkun Zhang
+Jinkun Zhang1218
 Chen Feng1212
 Huiqing Chen
 
