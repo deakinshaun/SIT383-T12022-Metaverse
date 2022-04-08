@@ -41,7 +41,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
 
-    GameObject getRoomObject(string name)
+   /*GameObject getRoomObject(string name)
     {
         foreach (GameObject g in displayRooms)
         {
@@ -57,7 +57,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         room.GetComponent<LocalRoomBehaviour>().setManager(this);
         displayRooms.Add(room);
         return room;
-    }
+    }*/
 
     void removeRoomObejct(GameObject room)
     {
@@ -95,7 +95,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinLobby();
     }
 
-    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    /*public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         foreach (RoomInfo ri in roomList)
         {
@@ -112,7 +112,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
             }
         }
         updateRooms();
-    }
+    }*/
 
     public override void OnJoinedLobby()
     {
