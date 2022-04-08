@@ -125,7 +125,7 @@ Shader "OvrAvatar/AvatarSurfaceShader" {
 			#pragma multi_compile VERTALPHA_OFF VERTALPHA_ON
 			#pragma multi_compile LAYERS_1 LAYERS_2 LAYERS_3 LAYERS_4 LAYERS_5 LAYERS_6 LAYERS_7 LAYERS_8
 
-			#include "Assets/Oculus/Avatar/Resources/Materials/AvatarMaterialStateShader.cginc"
+			#include "Assets/Oculus/(Depreciated)Avatar/Resources/Materials/AvatarMaterialStateShader.cginc"
 
 			float4 frag(VertexOutput IN) : COLOR
 			{
