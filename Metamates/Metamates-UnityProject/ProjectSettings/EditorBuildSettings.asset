@@ -8,33 +8,36 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Oculus/Interaction/Samples/Scenes/BasicGrab.unity
     guid: 13bd76582a631124699f410c1e007f8c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Oculus/Avatar2/Example/Scenes/VenuesLobbyLightingExample/VenuesLobbyLightingExample.unity
     guid: a1ee37388aca1fb488b0f431e45eafec
-  - enabled: 1
+  - enabled: 0
     path: Assets/Oculus/Avatar2/Example/Scenes/SimpleExample.unity
     guid: 9d651860700ec4f64899b27f1cd59359
-  - enabled: 1
+  - enabled: 0
     path: Assets/Oculus/Avatar2/Example/Scenes/CornellBoxLightingExample/CornellBoxLightingExample.unity
     guid: 9498d24606a8d4e4eab962e19ff08cfb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Oculus/Avatar2/Example/Scenes/CustomHandPoseExample/CustomHandPoseExample.unity
     guid: d5126d6597a900c4ba11ed75b3938e33
-  - enabled: 1
+  - enabled: 0
     path: Assets/Oculus/Avatar2/Example/Scenes/FBConnectLightingExample/FBConnectLightingExample.unity
     guid: eff2058b5a617274c9cc8cbc0cd0cc28
-  - enabled: 1
+  - enabled: 0
     path: Assets/Oculus/Avatar2/Example/Scenes/GazeTrackingExample/GazeTrackingExample.unity
     guid: 71c0a112e957503448f41007b965a1fd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Oculus/Avatar2/Example/Scenes/MirrorScene/MirrorScene.unity
     guid: 9f2e1693a4f24bc498477b3dfeb166aa
-  - enabled: 1
+  - enabled: 0
     path: Assets/Oculus/Avatar2/Example/Scenes/NetworkLoopbackExample/NetworkLoopbackExample.unity
     guid: 0b80808d555493f42937ca45e5970ce7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Oculus/Avatar2/Example/Scenes/SkinningTypesExample/SkinningTypesExample.unity
     guid: e8a4b1a65c6d41469d33220eb06f66a1
+  - enabled: 1
+    path: Assets/Scenes/FancyRoom.unity
+    guid: 32003ea513cf6db4b8168cfe8751b43c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2bf6a4958d49f8449841e99ac3b9c444, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 16f44c71821582b46b49cd30df8ed804, type: 2}
