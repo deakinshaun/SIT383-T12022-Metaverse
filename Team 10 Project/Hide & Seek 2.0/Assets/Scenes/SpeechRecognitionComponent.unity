@@ -471,8 +471,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RecognizedText: {fileID: 400695205}
   ErrorText: {fileID: 351618957}
-  SpeechServiceAPIKey: 
-  SpeechServiceRegion: 
+  SpeechServiceAPIKey: 17012d1cdfc6426d84ac9153dd2c94e1
+  SpeechServiceRegion: australiaeast
 --- !u!1 &765219906
 GameObject:
   m_ObjectHideFlags: 0
