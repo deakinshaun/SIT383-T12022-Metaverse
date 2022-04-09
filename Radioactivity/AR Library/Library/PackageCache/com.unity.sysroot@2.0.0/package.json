@@ -1,0 +1,23 @@
+{
+  "name": "com.unity.sysroot",
+  "displayName": "Sysroot Base",
+  "version": "2.0.0",
+  "unity": "2019.4",
+  "keywords": [
+    "unity",
+    "linux",
+    "sysroot"
+  ],
+  "description": "This is the base sysroot package required by all sysroot and toolchain packages",
+  "upm": {
+    "changelog": "- Fix 1336012 - Build from windows fails if username contains space\n- Add support for new IL2CPP arguments APIs"
+  },
+  "upmCi": {
+    "footprint": "39c44f9ee914e9170d0d33ef024b98ff5fd50f68"
+  },
+  "repository": {
+    "url": "https://github.com/Unity-Technologies/com.unity.sysroot.git",
+    "type": "git",
+    "revision": "e6c53e52ad77e8d1a6cfc2707e348f9e4799c595"
+  }
+}

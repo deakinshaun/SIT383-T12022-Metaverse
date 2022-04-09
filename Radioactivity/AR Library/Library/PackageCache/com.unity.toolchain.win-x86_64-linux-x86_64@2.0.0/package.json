@@ -1,0 +1,28 @@
+{
+  "name": "com.unity.toolchain.win-x86_64-linux-x86_64",
+  "displayName": "Toolchain Win Linux x64",
+  "description": "Cross-compilation toolchain to build player target Linux x86_64 on host Windows x86_64",
+  "version": "2.0.0",
+  "unity": "2019.4",
+  "keywords": [
+    "toolchain",
+    "windows",
+    "linux",
+    "cross-compilation"
+  ],
+  "dependencies": {
+    "com.unity.sysroot": "2.0.0",
+    "com.unity.sysroot.linux-x86_64": "2.0.0"
+  },
+  "upm": {
+    "changelog": "- Fix 1336012 - Build from windows fails if username contains space\r\n- Add support for new IL2CPP arguments APIs"
+  },
+  "upmCi": {
+    "footprint": "a544e6b1225ea258dabb6b6be43a88eeb880a95d"
+  },
+  "repository": {
+    "url": "https://github.com/Unity-Technologies/com.unity.sysroot.git",
+    "type": "git",
+    "revision": "e6c53e52ad77e8d1a6cfc2707e348f9e4799c595"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "com.unity.sysroot.linux-x86_64",
+  "displayName": "Sysroot Linux x64",
+  "description": "Sysroot used to build unity player for linux x86_64",
+  "version": "2.0.0",
+  "unity": "2019.4",
+  "keywords": [
+    "unity",
+    "linux",
+    "sysroot"
+  ],
+  "dependencies": {
+    "com.unity.sysroot": "2.0.0"
+  },
+  "upm": {
+    "changelog": "- Fix 1336012 - Build from windows fails if username contains space\n- Add support for new IL2CPP arguments APIs"
+  },
+  "upmCi": {
+    "footprint": "cc6958c2b9bf0b79136dc1f9a5958c589c21b504"
+  },
+  "repository": {
+    "url": "https://github.com/Unity-Technologies/com.unity.sysroot.git",
+    "type": "git",
+    "revision": "e6c53e52ad77e8d1a6cfc2707e348f9e4799c595"
+  }
+}
