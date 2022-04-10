@@ -15,7 +15,11 @@ EditorUserSettings:
       value: 22424703114646680e0b0227036c72111f192b2929262323633c133af6f9
       flags: 0
     RecentlyUsedScenePath-3:
+<<<<<<< refs/remotes/origin/main
       value: 22424703114646680e0b0227036c782025590d24253c3f
+=======
+      value: 22424703114646680e0b0227036c7e225607142b222d6614283d1830f6e93b36acf238e0f323
+>>>>>>> AR  Plane Detection
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
