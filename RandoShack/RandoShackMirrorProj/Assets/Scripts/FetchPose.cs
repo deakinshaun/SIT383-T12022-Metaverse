@@ -78,7 +78,7 @@ public class FetchPose : MonoBehaviour
 
     IEnumerator prepareModel()
     {
-        string modelfile = "posenet_mobilenet_v1_100_257x257_m culti_kpt_stripped.tflite";
+        string modelfile = "posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite";
         yield return StartCoroutine(extractFile("", modelfile));
 
         initPose(Application.persistentDataPath + "/" + modelfile);

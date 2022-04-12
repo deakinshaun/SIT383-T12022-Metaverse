@@ -46,22 +46,26 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2020}
+      Script: {instanceID: 2006}
     - Class: 114
-      Script: {instanceID: 2322}
+      Script: {instanceID: 2296}
     - Class: 114
-      Script: {instanceID: 2438}
+      Script: {instanceID: 2408}
     - Class: 114
-      Script: {instanceID: 2614}
+      Script: {instanceID: 2574}
     - Class: 114
-      Script: {instanceID: 2808}
+      Script: {instanceID: 2658}
     - Class: 114
-      Script: {instanceID: 16068}
+      Script: {instanceID: 2762}
     - Class: 114
-      Script: {instanceID: 18624}
+      Script: {instanceID: 3076}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -250,6 +254,12 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
+      Hash: 4e2bf6ed4cf1a928e25b93dcb2f4f359
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FetchPose
+  - hash:
+      serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -308,6 +318,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
+  - hash:
+      serializedVersion: 2
+      Hash: 8ced3505b03b9ed04a898d22ad03e1a9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PoseSkeleton
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -494,18 +510,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 4e2bf6ed4cf1a928e25b93dcb2f4f359
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FetchPose
-  - hash:
-      serializedVersion: 2
-      Hash: 8ced3505b03b9ed04a898d22ad03e1a9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PoseSkeleton
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMirrorScene.unity

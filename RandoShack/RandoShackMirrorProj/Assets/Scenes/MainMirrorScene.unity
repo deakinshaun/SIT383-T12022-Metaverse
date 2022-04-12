@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camTexMaterial: {fileID: 2100000, guid: 64c63980a2e7dce419a06914be2ee8b7, type: 2}
-  poseVisualizer: {fileID: 0}
+  poseVisualizer: {fileID: 1683263267}
   outputText: {fileID: 452205986}
 --- !u!4 &289268480
 Transform:
@@ -552,8 +552,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85483f478a0b4d43b466e5261adfd0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointMarkerTemplate: {fileID: 0}
-  boneTemplate: {fileID: 0}
+  pointMarkerTemplate: {fileID: 2652547927246247304, guid: 4c7b0bb5aeda82041802816e904ce71e, type: 3}
+  boneTemplate: {fileID: 6675667585449891646, guid: c0ff501f2bab1ee4db85ff82cb969710, type: 3}
 --- !u!1 &1807536536
 GameObject:
   m_ObjectHideFlags: 0

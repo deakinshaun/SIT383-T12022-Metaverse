@@ -12,6 +12,7 @@
 
 
 
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnityEngine_TilemapModule;
 extern const CustomAttributesCacheGenerator g_UnityEngine_TilemapModule_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_TilemapModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_TilemapModule_CodeGenModule = 
@@ -28,7 +29,7 @@ const Il2CppCodeGenModule g_UnityEngine_TilemapModule_CodeGenModule =
 	NULL,
 	0,
 	NULL,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnityEngine_TilemapModule,
 	g_UnityEngine_TilemapModule_AttributeGenerators,
 	NULL, // module initializer,
 	NULL,

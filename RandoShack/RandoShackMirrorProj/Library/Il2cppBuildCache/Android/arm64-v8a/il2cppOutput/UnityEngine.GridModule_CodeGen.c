@@ -12,6 +12,7 @@
 
 
 
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnityEngine_GridModule;
 extern const CustomAttributesCacheGenerator g_UnityEngine_GridModule_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_GridModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_GridModule_CodeGenModule = 
@@ -28,7 +29,7 @@ const Il2CppCodeGenModule g_UnityEngine_GridModule_CodeGenModule =
 	NULL,
 	0,
 	NULL,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnityEngine_GridModule,
 	g_UnityEngine_GridModule_AttributeGenerators,
 	NULL, // module initializer,
 	NULL,

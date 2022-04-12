@@ -36,12 +36,13 @@ static Il2CppMethodPointer s_methodPointers[6] =
 static const int32_t s_InvokerIndices[6] = 
 {
 	994,
-	1131,
-	1131,
-	1151,
-	1163,
-	1151,
+	1134,
+	1134,
+	1154,
+	1166,
+	1154,
 };
+extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnityEngine_UnityWebRequestWWWModule;
 extern const CustomAttributesCacheGenerator g_UnityEngine_UnityWebRequestWWWModule_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_UnityWebRequestWWWModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_UnityWebRequestWWWModule_CodeGenModule = 
@@ -58,7 +59,7 @@ const Il2CppCodeGenModule g_UnityEngine_UnityWebRequestWWWModule_CodeGenModule =
 	NULL,
 	0,
 	NULL,
-	NULL,
+	&g_DebuggerMetadataRegistrationUnityEngine_UnityWebRequestWWWModule,
 	g_UnityEngine_UnityWebRequestWWWModule_AttributeGenerators,
 	NULL, // module initializer,
 	NULL,
