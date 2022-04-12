@@ -5,107 +5,21 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637853234346524870
-    m_Hash: 2908914089
+      ticks: 637853309559026730
+    m_Hash: 1249089713
   m_LockFileStatus:
     m_FilePath: E:/Documents/Uni/ArVRGitRepo/RandoShack/RandoShackMirrorProj/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637853234347170558
-    m_Hash: 1216509826
+      ticks: 637853309559345923
+    m_Hash: 1587512919
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
   m_Packages:
     m_ResolvedPackages:
-    - packageId: api.natsuite.natml@1.0.9
-      testable: 0
-      isDirectDependency: 1
-      version: 1.0.9
-      source: 1
-      resolvedPath: E:\Documents\Uni\ArVRGitRepo\RandoShack\RandoShackMirrorProj\Library\PackageCache\api.natsuite.natml@1.0.9
-      assetPath: Packages/api.natsuite.natml
-      name: api.natsuite.natml
-      displayName: NatML
-      author:
-        name: NatML
-        email: hi@natml.ai
-        url: https://github.com/natmlx
-      category: 
-      type: 
-      description: High performance, cross platform machine learning runtime for
-        Unity Engine.
-      status: 4
-      errors: []
-      versions:
-        all:
-        - 1.0.0
-        - 1.0.1
-        - 1.0.2
-        - 1.0.3
-        - 1.0.4
-        - 1.0.5
-        - 1.0.6
-        - 1.0.7
-        - 1.0.8
-        - 1.0.9
-        compatible:
-        - 1.0.0
-        - 1.0.1
-        - 1.0.2
-        - 1.0.3
-        - 1.0.4
-        - 1.0.5
-        - 1.0.6
-        - 1.0.7
-        - 1.0.8
-        - 1.0.9
-        verified: 
-      dependencies: []
-      resolvedDependencies: []
-      keywords:
-      - natml
-      - machine learning
-      - ml
-      - aritificial intelligence
-      - ai
-      - computer vision
-      - opencv
-      - android
-      - ios
-      - macos
-      - windows
-      - coreml
-      - nnapi
-      - directml
-      - tensorflow
-      - pytorch
-      - torch
-      - natdevice
-      - natcorder
-      registry:
-        id: scoped:NatSuite Framework
-        name: NatSuite Framework
-        url: https://registry.npmjs.com
-        scopes:
-        - api.natsuite
-        isDefault: 0
-        capabilities: 0
-      hasRegistry: 1
-      hideInEditor: 1
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 637825456671310000
-      documentationUrl: 
-      hasRepository: 1
-      repository:
-        type: git
-        url: git+https://github.com/natmlx/NatML.git
-        revision: 
-        path: 
     - packageId: com.unity.collab-proxy@1.15.12
       testable: 0
       isDirectDependency: 1
