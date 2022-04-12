@@ -1643,7 +1643,6 @@ static const Il2CppRGCTXDefinition s_rgctxValues[41] =
 	{ (Il2CppRGCTXDataType)1, 154 },
 	{ (Il2CppRGCTXDataType)1, 156 },
 };
-extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnityEngine_AndroidJNIModule;
 extern const CustomAttributesCacheGenerator g_UnityEngine_AndroidJNIModule_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_AndroidJNIModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_AndroidJNIModule_CodeGenModule = 
@@ -1660,7 +1659,7 @@ const Il2CppCodeGenModule g_UnityEngine_AndroidJNIModule_CodeGenModule =
 	s_rgctxIndices,
 	41,
 	s_rgctxValues,
-	&g_DebuggerMetadataRegistrationUnityEngine_AndroidJNIModule,
+	NULL,
 	g_UnityEngine_AndroidJNIModule_AttributeGenerators,
 	NULL, // module initializer,
 	NULL,

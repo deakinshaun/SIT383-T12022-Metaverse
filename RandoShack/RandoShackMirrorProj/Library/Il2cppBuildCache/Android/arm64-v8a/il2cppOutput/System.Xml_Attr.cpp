@@ -61,8 +61,6 @@ struct SatelliteContractVersionAttribute_tA77BDC45FEEFE11823E95476FC8AE60B007906
 // System.String
 struct String_t;
 
-IL2CPP_EXTERN_C const RuntimeMethod* InternalsVisibleToAttribute_set_AllInternalsVisible_m8A2E202556185ADBB01D1AF437D1DF23BED94B2B_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* RuntimeCompatibilityAttribute_set_WrapNonExceptionThrows_m8562196F90F3EBCEC23B5708EE0332842883C490_RuntimeMethod_var;
 
 
 IL2CPP_EXTERN_C_BEGIN
@@ -941,14 +939,6 @@ const CustomAttributesCacheGenerator g_System_Xml_AttributeGenerators[6] =
 };
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void InternalsVisibleToAttribute_set_AllInternalsVisible_m8A2E202556185ADBB01D1AF437D1DF23BED94B2B_inline (InternalsVisibleToAttribute_t1D9772A02892BAC440952F880A43C257E6C3E68C * __this, bool ___value0, const RuntimeMethod* method)
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&InternalsVisibleToAttribute_set_AllInternalsVisible_m8A2E202556185ADBB01D1AF437D1DF23BED94B2B_RuntimeMethod_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	DECLARE_METHOD_EXEC_CTX(methodExecutionContext, InternalsVisibleToAttribute_set_AllInternalsVisible_m8A2E202556185ADBB01D1AF437D1DF23BED94B2B_RuntimeMethod_var, NULL, NULL, NULL);
-	CHECK_PAUSE_POINT;
 	{
 		bool L_0 = ___value0;
 		__this->set__allInternalsVisible_1(L_0);
@@ -957,14 +947,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void InternalsVisibleToAttribute_
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void RuntimeCompatibilityAttribute_set_WrapNonExceptionThrows_m8562196F90F3EBCEC23B5708EE0332842883C490_inline (RuntimeCompatibilityAttribute_tFF99AB2963098F9CBCD47A20D9FD3D51C17C1C80 * __this, bool ___value0, const RuntimeMethod* method)
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&RuntimeCompatibilityAttribute_set_WrapNonExceptionThrows_m8562196F90F3EBCEC23B5708EE0332842883C490_RuntimeMethod_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	DECLARE_METHOD_EXEC_CTX(methodExecutionContext, RuntimeCompatibilityAttribute_set_WrapNonExceptionThrows_m8562196F90F3EBCEC23B5708EE0332842883C490_RuntimeMethod_var, NULL, NULL, NULL);
-	CHECK_PAUSE_POINT;
 	{
 		bool L_0 = ___value0;
 		__this->set_m_wrapNonExceptionThrows_0(L_0);

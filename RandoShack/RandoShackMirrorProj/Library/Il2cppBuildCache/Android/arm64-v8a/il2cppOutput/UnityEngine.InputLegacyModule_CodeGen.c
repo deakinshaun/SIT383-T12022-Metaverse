@@ -179,7 +179,6 @@ static const int32_t s_InvokerIndices[37] =
 	1951,
 	1781,
 };
-extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationUnityEngine_InputLegacyModule;
 extern const CustomAttributesCacheGenerator g_UnityEngine_InputLegacyModule_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_InputLegacyModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_InputLegacyModule_CodeGenModule = 
@@ -196,7 +195,7 @@ const Il2CppCodeGenModule g_UnityEngine_InputLegacyModule_CodeGenModule =
 	NULL,
 	0,
 	NULL,
-	&g_DebuggerMetadataRegistrationUnityEngine_InputLegacyModule,
+	NULL,
 	g_UnityEngine_InputLegacyModule_AttributeGenerators,
 	NULL, // module initializer,
 	NULL,

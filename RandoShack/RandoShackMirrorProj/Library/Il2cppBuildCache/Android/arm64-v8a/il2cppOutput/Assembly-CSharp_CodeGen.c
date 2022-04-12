@@ -142,7 +142,6 @@ static const int32_t s_InvokerIndices[31] =
 	994,
 	602,
 };
-extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationAssemblyU2DCSharp;
 extern const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
@@ -159,7 +158,7 @@ const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule =
 	NULL,
 	0,
 	NULL,
-	&g_DebuggerMetadataRegistrationAssemblyU2DCSharp,
+	NULL,
 	g_AssemblyU2DCSharp_AttributeGenerators,
 	NULL, // module initializer,
 	NULL,

@@ -94,7 +94,6 @@ static const int32_t s_InvokerIndices[19] =
 	1922,
 	1925,
 };
-extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationMono_Security;
 extern const CustomAttributesCacheGenerator g_Mono_Security_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Mono_Security_CodeGenModule;
 const Il2CppCodeGenModule g_Mono_Security_CodeGenModule = 
@@ -111,7 +110,7 @@ const Il2CppCodeGenModule g_Mono_Security_CodeGenModule =
 	NULL,
 	0,
 	NULL,
-	&g_DebuggerMetadataRegistrationMono_Security,
+	NULL,
 	g_Mono_Security_AttributeGenerators,
 	NULL, // module initializer,
 	NULL,
