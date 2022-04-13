@@ -74,6 +74,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     {
         RoomConnect = true;
         Debug.Log(PhotonNetwork.CurrentRoom.Name);
+        Handheld.Vibrate();
 
         /*if (PhotonNetwork.CurrentRoom != null)
         {
@@ -87,6 +88,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     public override void OnCreatedRoom()
     {
         Debug.Log("Room Create " + PhotonNetwork.CurrentRoom.Name);
+        Handheld.Vibrate();
     }
     public override void OnLeftRoom()
     {
