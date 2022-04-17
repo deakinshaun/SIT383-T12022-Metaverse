@@ -26,8 +26,8 @@ public class FetchPose : MonoBehaviour
 
     private int numPointsInPose = 17;
 
-    public PoseSkeleton poseVisualizer;
-   //public NetworkedPose poseTransmitter;
+   // public PoseSkeleton poseVisualizer;
+   public NetworkedPose poseTransmitter;
 
     private bool dataReady;
 
@@ -35,6 +35,8 @@ public class FetchPose : MonoBehaviour
     public Text outputText;
 
     private bool overrideCapture = false;
+
+
 
     public void toggleCapture()
     {
@@ -135,8 +137,8 @@ public class FetchPose : MonoBehaviour
             float endTime = Time.realtimeSinceStartup;
             Debug.Log("Pose tracked in " + (endTime - startTime).ToString("F6") + " seconds");
 
-            poseVisualizer.updatePose(pose);
-         //   poseTransmitter.updatePose(pose);
+            //poseVisualizer.updatePose(pose);
+            poseTransmitter.updatePose(pose);
         }
     }
 
