@@ -41,12 +41,14 @@ public class PoseSkeleton : MonoBehaviour
         public GameObject boneObject;
         public BodyPart from;
         public BodyPart to;
+        public string name;
 
-        public SkeletonBone(BodyPart f, BodyPart t)
+        public SkeletonBone(BodyPart f, BodyPart t,string n)
         {
             boneObject = null;
             from = f;
             to = t;
+            name = n;
         }
     };
 
@@ -60,31 +62,31 @@ public class PoseSkeleton : MonoBehaviour
         bones = new List<SkeletonBone>();
 
         // head
-        bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Right_eye));
-        bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Left_shoulder));
-        bones.Add(new SkeletonBone(BodyPart.Right_eye, BodyPart.Right_shoulder));
-        bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Left_ear));
-        bones.Add(new SkeletonBone(BodyPart.Right_eye, BodyPart.Right_ear));
-        bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Nose));
-        bones.Add(new SkeletonBone(BodyPart.Right_eye, BodyPart.Nose));
+        bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Right_eye,"Eyes"));
+        bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Left_shoulder, "NeckL"));
+        bones.Add(new SkeletonBone(BodyPart.Right_eye, BodyPart.Right_shoulder, "NeckR"));
+        bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Left_ear, "EarL"));
+        bones.Add(new SkeletonBone(BodyPart.Right_eye, BodyPart.Right_ear, "EarR"));
+        bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Nose, "NoseL"));
+        bones.Add(new SkeletonBone(BodyPart.Right_eye, BodyPart.Nose, "NoseR"));
 
         // body
-        bones.Add(new SkeletonBone(BodyPart.Left_hip, BodyPart.Left_shoulder));
-        bones.Add(new SkeletonBone(BodyPart.Right_hip, BodyPart.Right_shoulder));
-        bones.Add(new SkeletonBone(BodyPart.Left_hip, BodyPart.Right_hip));
-        bones.Add(new SkeletonBone(BodyPart.Left_shoulder, BodyPart.Right_shoulder));
+        bones.Add(new SkeletonBone(BodyPart.Left_hip, BodyPart.Left_shoulder, "LeftTorso"));
+        bones.Add(new SkeletonBone(BodyPart.Right_hip, BodyPart.Right_shoulder, "RightTorso"));
+        bones.Add(new SkeletonBone(BodyPart.Left_hip, BodyPart.Right_hip, "Hips"));
+        bones.Add(new SkeletonBone(BodyPart.Left_shoulder, BodyPart.Right_shoulder, "Shoulders"));
 
         // arms
-        bones.Add(new SkeletonBone(BodyPart.Left_shoulder, BodyPart.Left_elbow));
-        bones.Add(new SkeletonBone(BodyPart.Left_elbow, BodyPart.Left_wrist));
-        bones.Add(new SkeletonBone(BodyPart.Right_shoulder, BodyPart.Right_elbow));
-        bones.Add(new SkeletonBone(BodyPart.Right_elbow, BodyPart.Right_wrist));
+        bones.Add(new SkeletonBone(BodyPart.Left_shoulder, BodyPart.Left_elbow, "LeftUpArm"));
+        bones.Add(new SkeletonBone(BodyPart.Left_elbow, BodyPart.Left_wrist, "LeftForArm"));
+        bones.Add(new SkeletonBone(BodyPart.Right_shoulder, BodyPart.Right_elbow, "RightUpArm"));
+        bones.Add(new SkeletonBone(BodyPart.Right_elbow, BodyPart.Right_wrist, "RightForArm"));
 
         // legs
-        bones.Add(new SkeletonBone(BodyPart.Left_hip, BodyPart.Left_knee));
-        bones.Add(new SkeletonBone(BodyPart.Left_knee, BodyPart.Left_ankle));
-        bones.Add(new SkeletonBone(BodyPart.Right_hip, BodyPart.Right_knee));
-        bones.Add(new SkeletonBone(BodyPart.Right_knee, BodyPart.Right_ankle));
+        bones.Add(new SkeletonBone(BodyPart.Left_hip, BodyPart.Left_knee, "LeftThigh"));
+        bones.Add(new SkeletonBone(BodyPart.Left_knee, BodyPart.Left_ankle, "LeftCalf"));
+        bones.Add(new SkeletonBone(BodyPart.Right_hip, BodyPart.Right_knee, "RightThigh"));
+        bones.Add(new SkeletonBone(BodyPart.Right_knee, BodyPart.Right_ankle, "RightCalf"));
     }
 
     private Vector3 poseToVector(float[] rawPoseData, int i)
@@ -128,6 +130,7 @@ public class PoseSkeleton : MonoBehaviour
                 {
                     b.boneObject = Instantiate(boneTemplate);
                     b.boneObject.transform.SetParent(this.transform, false);
+                    b.boneObject.name = b.name;
                 }
 
                 b.boneObject.transform.up = transform.worldToLocalMatrix.MultiplyVector(to - from);

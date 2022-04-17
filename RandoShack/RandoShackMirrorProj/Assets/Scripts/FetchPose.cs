@@ -54,8 +54,7 @@ public class FetchPose : MonoBehaviour
 
     public void nextCamera()
     {
-        currentCamera = (currentCamera + 1) %
-        WebCamTexture.devices.Length;
+        currentCamera = (currentCamera + 1) % WebCamTexture.devices.Length;
 
         // Change camera only works if the camera is stopped.
         webcamTexture.Stop();
