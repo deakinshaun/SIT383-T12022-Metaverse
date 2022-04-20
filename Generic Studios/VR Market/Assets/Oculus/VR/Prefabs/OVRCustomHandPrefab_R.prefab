@@ -204,6 +204,8 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -215,6 +217,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1737,30 +1740,30 @@ MonoBehaviour:
   _enablePhysicsCapsules: 0
   _applyBoneTranslations: 0
   _customBones_V2:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4779998117587278}
+  - {fileID: 4867210645376640}
+  - {fileID: 4764752792678808}
+  - {fileID: 4846004260786940}
+  - {fileID: 4360771558957118}
+  - {fileID: 4636070314650120}
+  - {fileID: 4492482335422584}
+  - {fileID: 4095757401416052}
+  - {fileID: 4975455595100048}
+  - {fileID: 4969639723282940}
+  - {fileID: 4430907584103858}
+  - {fileID: 4747889433240038}
+  - {fileID: 4150668574442040}
+  - {fileID: 4658771346061256}
+  - {fileID: 4711711751280016}
+  - {fileID: 4154509707602826}
+  - {fileID: 4113251682903106}
+  - {fileID: 4147382078780322}
+  - {fileID: 4288470492801480}
+  - {fileID: 4777317802294454}
+  - {fileID: 4001605307124674}
+  - {fileID: 4993161326556916}
+  - {fileID: 4399338005550382}
+  - {fileID: 4806080251670844}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
