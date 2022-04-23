@@ -39,7 +39,7 @@ public class PhysicalCameraTexture : MonoBehaviour
         camTexMaterial.mainTexture = webcamTexture;
         webcamTexture.Play();
 
-        transform.position = new Vector3(0, 2, 0);
+        //transform.position = new Vector3(0, 2, 0);
     }
 
     // Update is called once per frame
