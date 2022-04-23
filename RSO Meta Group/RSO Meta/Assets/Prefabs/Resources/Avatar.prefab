@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3123524261992926138}
   - component: {fileID: -6892916572015508657}
   - component: {fileID: 6915923368018644781}
+  - component: {fileID: 2696043956178524796}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -51,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   turnSpeed: 30
+  playerJumpHeight: 2
 --- !u!114 &6915923368018644781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +75,22 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!54 &2696043956178524796
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272788746118302721}
+  serializedVersion: 2
+  m_Mass: 0.5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3025198795119906940
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +404,7 @@ GameObject:
   - component: {fileID: 6989142450519319270}
   - component: {fileID: 7509780565033449061}
   - component: {fileID: 3818675111373169955}
+  - component: {fileID: 6730438663925675858}
   m_Layer: 0
   m_Name: eye
   m_TagString: Untagged
@@ -401,8 +420,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7911980667027463483}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.17, y: 0.55, z: 4.59}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0.17, y: 0.55, z: 4.62}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 3123524261992926138}
   m_RootOrder: 2
@@ -434,7 +453,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d709c74ee5b687c4a8bd5c8d66dbd8c8, type: 2}
+  - {fileID: 2100000, guid: d244e70e29ef4e14fa3e6a744755bbdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -469,6 +488,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6730438663925675858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7911980667027463483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60102eb0eb9b26746800ddfe815b2a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTextMaterial: {fileID: 2100000, guid: d244e70e29ef4e14fa3e6a744755bbdd, type: 2}
 --- !u!1 &7946460103978745554
 GameObject:
   m_ObjectHideFlags: 0

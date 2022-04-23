@@ -7,6 +7,7 @@ public class MoveAvatar : MonoBehaviour
 {
     public float moveSpeed = 2.0f;
     public float turnSpeed = 30.0f;
+    public float playerJumpHeight = 2.0f;
     void Start()
     {
         transform.position = new Vector3(0, 2.6f, 0);
