@@ -58,6 +58,8 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
+    <Compile Include="Assets\First person controller\Components\Jump.cs" />
+    <Compile Include="Assets\First person controller\FirstPersonLook.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
@@ -65,14 +67,26 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatAppIdCheckerUI.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
+    <Compile Include="Assets\First person controller\Components\Zoom.cs" />
     <Compile Include="Assets\Photon\PhotonLibs\WebSocket\SocketWebTcp.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
-    <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
-    <Compile Include="Assets\Photon\PhotonLibs\WebSocket\WebSocket.cs" />
     <Compile Include="Assets\Scripts\ConnectToServer.cs" />
+    <Compile Include="Assets\First person controller\FirstPersonMovement.cs" />
     <Compile Include="Assets\Scripts\CreateAndJoinRooms.cs" />
-    <Compile Include="Assets\Scripts\Inputfield.cs" />
+    <Compile Include="Assets\First person controller\Components\GroundCheck.cs" />
+    <Compile Include="Assets\First person controller\Components\Crouch.cs" />
     <Compile Include="Assets\Scripts\SpawnPlayers.cs" />
+    <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
+    <Compile Include="Assets\Scripts\Inputfield.cs" />
+    <Compile Include="Assets\Scripts\Move.cs" />
+    <Compile Include="Assets\Photon\PhotonLibs\WebSocket\WebSocket.cs" />
+    <Compile Include="Assets\Honeti\I18N\Scripts\I18N.cs" />
+    <Compile Include="Assets\Honeti\I18N\Scripts\I18NImage.cs" />
+    <Compile Include="Assets\Honeti\I18N\Scripts\I18NTextMesh.cs" />
+    <Compile Include="Assets\Honeti\I18N\Scripts\I18NText.cs" />
+    <Compile Include="Assets\Honeti\I18N\Scripts\I18NAudioSource.cs" />
+    <Compile Include="Assets\Honeti\I18N\Scripts\I18NSprite.cs" />
+    <Compile Include="Assets\Scripts\CustomChatGUI.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
