@@ -88,7 +88,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         allowingJoining = true;
         PhotonNetwork.JoinRoom(roomName);
-        PhotonNetwork.LoadLevel("Campfire");
+        PhotonNetwork.LoadLevel("MeetingRoom");
     }
 
     public override void OnConnectedToMaster()
