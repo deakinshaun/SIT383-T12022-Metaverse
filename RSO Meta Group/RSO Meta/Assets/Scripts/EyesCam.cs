@@ -6,6 +6,7 @@ public class EyesCam : MonoBehaviour
 {
     public Material camTextMaterial;
     private WebCamTexture webcamTexture;
+    
     // Start is called before the first frame update
     void Start()
     {
