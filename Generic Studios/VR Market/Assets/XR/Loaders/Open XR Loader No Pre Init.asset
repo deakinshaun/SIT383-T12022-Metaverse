@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3863570e7e6387a40ae4f323d83291e5, type: 3}
-  m_Name: OculusRuntimeSettings
+  m_Script: {fileID: 11500000, guid: ee62ffd6c7e6f3545899783b1fbdd9d4, type: 3}
+  m_Name: Open XR Loader No Pre Init
   m_EditorClassIdentifier: 
-  colorSpace: 6
