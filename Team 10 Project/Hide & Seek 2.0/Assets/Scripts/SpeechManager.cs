@@ -308,7 +308,7 @@ public class SpeechManager : MonoBehaviour
             StartCoroutine(RestartScene());
         }
     }
-
+    
     public IEnumerator RestartScene()
     {
         float delay = 5f;
