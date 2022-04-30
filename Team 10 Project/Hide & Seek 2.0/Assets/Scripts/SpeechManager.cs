@@ -1,6 +1,6 @@
 // The code used here was obtained from https://github.com/Azure-Samples/cognitive-services-speech-sdk
 // under the sample/unity/speechrecognizer path. The code has been adapted for our project's needs.
-//
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Globalization;
 using System;
 using System.Diagnostics;
+using UnityEngine.SceneManagement;
 #if PLATFORM_ANDROID
 using UnityEngine.Android;
 #endif
@@ -70,10 +71,6 @@ public class SpeechManager : MonoBehaviour
         {
             recognizedString = "Permission has been granted";
             Permission.RequestUserPermission(Permission.Microphone);
-        }
-        else if(Permission.HasUserAuthorizedPermission(Permission.Microphone))
-        {
-            recognizedString = "Permission has been granted";
         }
 #else
         micPermissionGranted = true;
@@ -304,6 +301,20 @@ public class SpeechManager : MonoBehaviour
             RecognizedText.text = recognizedString;
             ErrorText.text = errorString;
         }
+
+        if (recognizedString.Contains("I give up as seeker"))
+        {
+            Debug.Log("Restarting Scene");
+            StartCoroutine(RestartScene());
+        }
+    }
+
+    public IEnumerator RestartScene()
+    {
+        float delay = 5f;
+        RecognizedText.text = "Resetting game in " + delay + " seconds";
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void OnDisable()
