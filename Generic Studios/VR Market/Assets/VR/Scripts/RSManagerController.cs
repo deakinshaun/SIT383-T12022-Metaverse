@@ -12,12 +12,16 @@ public class RSManagerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        GetComponent<SpawnNegative>().OnSpawnAPrefab();
+        GetComponent<SpawnNegative>().OnSpawnAPrefab();
+        GetComponent<SpawnNegative>().OnSpawnAPrefab();
+        GetComponent<SpawnNegative>().OnSpawnAPrefab();
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<SpawnPrefab>().ra
+        
     }
 }
