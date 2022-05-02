@@ -736,6 +736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6491721903254035940, guid: 246799676526b1c40a14b1ba45ffcf41, type: 3}
+      propertyPath: TextToShow
+      value: poop
+      objectReference: {fileID: 0}
     - target: {fileID: 3144464792855108821, guid: 246799676526b1c40a14b1ba45ffcf41, type: 3}
       propertyPath: m_Name
       value: PositiveVote
