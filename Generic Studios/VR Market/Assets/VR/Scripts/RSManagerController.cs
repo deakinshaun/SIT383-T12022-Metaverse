@@ -9,14 +9,21 @@ public class RSManagerController : MonoBehaviour
     public int NegativeCount = 10;
     public GameObject bin;
     public List<GameObject> reviewList;
+    private SpawnNegative SpawnNegative;
+    private SpawnPositive SpawnPositive;
     // Start is called before the first frame update
     void Start()
     {
-
-        GetComponent<SpawnNegative>().OnSpawnAPrefab();
-        GetComponent<SpawnNegative>().OnSpawnAPrefab();
-        GetComponent<SpawnNegative>().OnSpawnAPrefab();
-        GetComponent<SpawnNegative>().OnSpawnAPrefab();
+        SpawnNegative = GetComponent<SpawnNegative>();
+        SpawnPositive = GetComponent<SpawnPositive>();
+        for(int i = 0; i < PositiveCount; i++)
+        {
+            SpawnPositive.OnSpawnAPrefab();
+        }
+        for(int i = 0; i < NegativeCount; i++)
+        {
+            SpawnNegative.OnSpawnAPrefab();
+        }
     }
 
     // Update is called once per frame
