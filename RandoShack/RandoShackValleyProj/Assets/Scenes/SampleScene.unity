@@ -848,8 +848,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1009191787}
-  - component: {fileID: 1009191786}
   - component: {fileID: 1009191788}
+  - component: {fileID: 1009191786}
   m_Layer: 0
   m_Name: SpeechManager
   m_TagString: Untagged
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1009191785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfeed9d558fd000498713e123b9f661c, type: 3}
+  m_Script: {fileID: 11500000, guid: f6a8fb9b4ac13114082385c6278e4435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outputText: {fileID: 120164176}
@@ -1065,7 +1065,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1009191786}
-        m_TargetAssemblyTypeName: SpeechRecognitionREST, Assembly-CSharp
+        m_TargetAssemblyTypeName: SpeechRecognitionAssembly, Assembly-CSharp
         m_MethodName: Trigger
         m_Mode: 1
         m_Arguments:
