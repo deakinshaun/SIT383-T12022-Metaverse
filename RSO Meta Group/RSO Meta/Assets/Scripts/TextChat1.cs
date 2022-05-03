@@ -21,6 +21,10 @@ public class TextChat1 : MonoBehaviour
     {
         Debug.Log("Message received: " + message);
         chatBox.text += message + "\n";
+        while (chatBox.text.Length > 40)
+        {
+            chatBox.text = chatBox.text.Substring(2);
+        }
     }
 
     void Update()

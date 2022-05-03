@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -6892916572015508657}
   - component: {fileID: 6915923368018644781}
   - component: {fileID: 2696043956178524796}
+  - component: {fileID: 6570632618004359688}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -53,7 +54,7 @@ MonoBehaviour:
   moveSpeed: 2
   turnSpeed: 30
   playerJumpHeight: 2
-  joystick: {fileID: 0}
+  joystick: {fileID: 2393424855334917676, guid: 6803aca80cc620e4b9a5c94ade889e20, type: 3}
 --- !u!114 &6915923368018644781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +93,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6570632618004359688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272788746118302721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80177cffaf2bc924297fc62c0b6a8a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chatBox: {fileID: 6369737780693481489, guid: 0415548f6352a0d49a44f30b041c21bb, type: 3}
+  inputBox: {fileID: 5605234847279556145, guid: a6c9c008969cbc0409f29198ca5fb14b, type: 3}
 --- !u!1 &3025198795119906940
 GameObject:
   m_ObjectHideFlags: 0
