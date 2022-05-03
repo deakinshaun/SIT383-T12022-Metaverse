@@ -67,7 +67,7 @@ public class SpeechRecognitionAssembly : MonoBehaviour
 
         var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
         Debug.Log("Response from service: " + responseString);
-        if (outputText != null && debugMode) {
+        if (outputText != null && debugMode == true) {
             outputText.text = responseString;
         }
 
@@ -94,7 +94,7 @@ public class SpeechRecognitionAssembly : MonoBehaviour
         var response = (HttpWebResponse)request.GetResponse();
         var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
         Debug.Log("Response from service: " + responseString);
-        if (outputText != null && debugMode) {
+        if (outputText != null && debugMode == true) {
             outputText.text = responseString;
         }
 
@@ -119,7 +119,7 @@ public class SpeechRecognitionAssembly : MonoBehaviour
 
             var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
             Debug.Log("Response from service: " + responseString);
-            if (outputText != null) {
+            if (outputText != null && debugMode == true) {
                 outputText.text = responseString;
             }
             r = JsonUtility.FromJson<AssemblyResponse>(responseString);
@@ -134,8 +134,36 @@ public class SpeechRecognitionAssembly : MonoBehaviour
     private IEnumerator recordAudio() {
         // Set the microphone recording. Service requires 16 kHz sampling.
         AudioClip audio = Microphone.Start(null, false, recordDuration, 16000);
-        yield return new WaitForSeconds(recordDuration);
+
+        // Notify user of recording
+        outputText.text = "Recording... ";
+
+        while (Microphone.IsRecording(null)) {
+            outputText.text = "Recording.";
+            yield return new WaitForSeconds(1);
+            if (Microphone.IsRecording(null) == false) { break; }
+            outputText.text = "Recording..";
+            yield return new WaitForSeconds(1);
+            if (Microphone.IsRecording(null) == false) { break; }
+            outputText.text = "Recording...";
+            yield return new WaitForSeconds(1);
+            if (Microphone.IsRecording(null) == false) { break; }
+        }
+
+        /*for (int i = recordDuration; i > 0; i--) {
+            if (i == 1) {
+                outputText.text = "Recording... " + i + " second remaining...";
+            } else { 
+                outputText.text = "Recording... " + i + " seconds remaining..."; 
+            }
+        }*/
+        yield return null;
+
+        //yield return new WaitForSeconds(recordDuration);
         Microphone.End(null);
+
+        // Notify user of finished recording.
+        outputText.text = "Finished recording.";
         
         // Play the recording back, to validate it was recorded correctly.
         AudioSource audioSource = GetComponent<AudioSource>();
