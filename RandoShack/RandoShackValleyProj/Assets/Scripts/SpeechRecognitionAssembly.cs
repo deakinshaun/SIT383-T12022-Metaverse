@@ -12,6 +12,17 @@ public class SpeechRecognitionAssembly : MonoBehaviour
 {
 
     public Text outputText;
+    public Boolean debugMode = false;
+
+    public void debugModeToggle() {
+        if (debugMode == false) {
+            debugMode = true;
+            outputText.text = "debugMode is True";
+        } else {
+            debugMode = false;
+            outputText.text = "debugMode is False";
+        }
+    }
 
     // This will need to be replaced with your own key.
 
@@ -56,7 +67,7 @@ public class SpeechRecognitionAssembly : MonoBehaviour
 
         var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
         Debug.Log("Response from service: " + responseString);
-        if (outputText != null) {
+        if (outputText != null && debugMode) {
             outputText.text = responseString;
         }
 
@@ -83,7 +94,7 @@ public class SpeechRecognitionAssembly : MonoBehaviour
         var response = (HttpWebResponse)request.GetResponse();
         var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
         Debug.Log("Response from service: " + responseString);
-        if (outputText != null) {
+        if (outputText != null && debugMode) {
             outputText.text = responseString;
         }
 
