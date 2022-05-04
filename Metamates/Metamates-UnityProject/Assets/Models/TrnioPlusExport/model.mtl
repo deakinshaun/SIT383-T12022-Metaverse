@@ -1,0 +1,22 @@
+# Apple ModelI/O MTL File: model.mtl
+
+newmtl material_1
+	map_Kd texture0.jpg
+	Ka 0 0 0
+	ao 0
+
+newmtl material_2
+	map_Kd texture1.jpg
+	Ka 0 0 0
+	ao 0
+
+newmtl material_3
+	map_Kd texture2.jpg
+	Ka 0 0 0
+	ao 0
+
+newmtl material_4
+	map_Kd texture3.jpg
+	Ka 0 0 0
+	ao 0
+

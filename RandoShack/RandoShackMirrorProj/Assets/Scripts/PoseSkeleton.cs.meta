@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: a85483f478a0b4d43b466e5261adfd0b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pointMarkerTemplate: {fileID: 2652547927246247304, guid: 4c7b0bb5aeda82041802816e904ce71e, type: 3}
+  - boneTemplate: {fileID: 6675667585449891646, guid: c0ff501f2bab1ee4db85ff82cb969710, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

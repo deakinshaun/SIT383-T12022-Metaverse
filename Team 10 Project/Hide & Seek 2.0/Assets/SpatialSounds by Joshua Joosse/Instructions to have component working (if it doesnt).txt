@@ -1,0 +1,5 @@
+To have this component working (if it doesn't already) you will need these plugins: 
+ARCore
+ARCore XR Plugin
+XR Plugin Management
+AR Foundation
