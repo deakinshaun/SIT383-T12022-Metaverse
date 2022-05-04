@@ -24,6 +24,9 @@ public class SpeechManager : MonoBehaviour
     public Text RecognizedText;
     public Text ErrorText;
 
+    // If scene is resetting, bool gets changed to true
+    public bool resettingScene = false;
+
     // Used to show live messages on screen, must be locked to avoid threading deadlocks since
     // the recognition events are raised in a separate thread
     private string recognizedString = "";
@@ -304,7 +307,14 @@ public class SpeechManager : MonoBehaviour
 
         if (recognizedString.Contains("I give up as seeker"))
         {
+            resettingScene = true;
+            recognizedString = "";
+        }
+
+        if (resettingScene)
+        {
             Debug.Log("Restarting Scene");
+            resettingScene = false;
             StartCoroutine(RestartScene());
         }
     }
