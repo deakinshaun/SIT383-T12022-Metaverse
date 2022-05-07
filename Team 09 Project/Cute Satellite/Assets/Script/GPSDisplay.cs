@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,8 @@ public class GPSDisplay : MonoBehaviour
 }
 
 =======
+=======
+>>>>>>> kunkun
 
 using System.Collections;
 using System.Collections.Generic;
@@ -64,4 +67,7 @@ public class GPSDisplay : MonoBehaviour
 }
 
 
+<<<<<<< HEAD
+>>>>>>> kunkun
+=======
 >>>>>>> kunkun

@@ -92,5 +92,8 @@ public class GPSTracking : MonoBehaviour
         }
     }
 }
+<<<<<<< HEAD
+>>>>>>> kunkun
+=======
 >>>>>>> kunkun
 
