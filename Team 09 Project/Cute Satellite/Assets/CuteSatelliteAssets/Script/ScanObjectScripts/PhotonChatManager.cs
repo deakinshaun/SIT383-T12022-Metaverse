@@ -20,6 +20,8 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
     private TextMeshProUGUI LoadingMessageMes;
     private CanvasGroup UsersSetting;
 
+    
+
     //------Customer Events------
     private string FindUsersName()
     {
@@ -97,12 +99,12 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
     //-------------------------------
 
     //-----Vuforia OTF/OTL Event-------
-    public void onFindTarget()
+    public void onFindTarget(GameObject Room)
     {
         showCommentButton.GetComponent<CanvasGroup>().alpha = 1;
         RoomOptions roomopt = new RoomOptions();
         TypedLobby lobby1 = new TypedLobby("ScanLobby", LobbyType.Default);
-        PhotonNetwork.JoinOrCreateRoom("Room1", roomopt, lobby1);
+        PhotonNetwork.JoinOrCreateRoom(Room.name, roomopt, lobby1);
     }
     public void onLostTarget()
     {
