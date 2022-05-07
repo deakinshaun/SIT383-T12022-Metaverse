@@ -38,7 +38,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     }
     private bool MasterConnect = false;
     private bool RoomConnect = false;
-    //Algorithm 94
+
     void Start()
     {
         status.text = " ";
@@ -75,15 +75,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         RoomConnect = true;
         Debug.Log(PhotonNetwork.CurrentRoom.Name);
         Handheld.Vibrate();
-
-        /*if (PhotonNetwork.CurrentRoom != null)
-        {
-            setStatusText("Joined room with " + PhotonNetwork.CurrentRoom.PlayerCount + " participants");
-        }
-        else
-        {
-            setStatusText("Joined but no Room");
-        }*/
+       
     }
     public override void OnCreatedRoom()
     {
