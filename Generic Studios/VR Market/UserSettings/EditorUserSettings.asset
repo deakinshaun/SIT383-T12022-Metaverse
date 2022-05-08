@@ -9,7 +9,8 @@ EditorUserSettings:
       value: 
       flags: 0
     RecentlyUsedScenePath-0:
-      value: 22424703114646680e0b0227036c7b11181e1d266c65661322240d3cece53a2cf1a923e7ee2e26
+    vcSharedLogLevel:
+      value: 0d5e400f0650
       flags: 0
   m_VCAutomaticAdd: 1
   m_VCDebugCom: 0
