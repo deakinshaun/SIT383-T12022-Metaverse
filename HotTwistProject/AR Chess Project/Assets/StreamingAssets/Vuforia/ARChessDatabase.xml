@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="WhiteRook" size="1.000000 0.968121" />
+    <ImageTarget name="WhiteQueen" size="1.000000 0.949255" />
+    <ImageTarget name="WhitePawn" size="1.000000 0.954520" />
+    <ImageTarget name="WhiteKnight" size="1.000000 0.957175" />
+    <ImageTarget name="WhiteKing" size="1.000000 0.963045" />
+    <ImageTarget name="WhiteBishop" size="1.000000 0.954520" />
+    <ImageTarget name="BlackRook" size="1.000000 0.955435" />
+    <ImageTarget name="BlackQueen" size="1.000000 0.944565" />
+    <ImageTarget name="BlackPawn" size="1.000000 0.966304" />
+    <ImageTarget name="BlackKnight" size="1.000000 0.949451" />
+    <ImageTarget name="BlackKing" size="1.000000 0.966120" />
+    <ImageTarget name="BlackBishop" size="1.000000 0.960870" />
+    <ImageTarget name="2Spade" size="1.000000 1.398305" />
+  </Tracking>
+</QCARConfig>
