@@ -39,8 +39,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
         GameObject avatar = PhotonNetwork.Instantiate(avatarPrefab.name, new Vector3(),
             Quaternion.identity, 0);
-        //avatar.GetComponent<TextChat1>().chatBox = chatBox;
-        //avatar.GetComponent<TextChat1>().inputBox = inputBox;
+        avatar.GetComponent<TextChat1>().chatBox = chatBox;
+        avatar.GetComponent<TextChat1>().inputBox = inputBox;
     }
 
     void Update()

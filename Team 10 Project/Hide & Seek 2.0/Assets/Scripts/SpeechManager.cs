@@ -1,6 +1,6 @@
 // The code used here was obtained from https://github.com/Azure-Samples/cognitive-services-speech-sdk
 // under the sample/unity/speechrecognizer path. The code has been adapted for our project's needs.
-//
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Globalization;
 using System;
 using System.Diagnostics;
+using UnityEngine.SceneManagement;
 #if PLATFORM_ANDROID
 using UnityEngine.Android;
 #endif
@@ -22,6 +23,9 @@ public class SpeechManager : MonoBehaviour
     // Public fields in the Unity inspector
     public Text RecognizedText;
     public Text ErrorText;
+
+    // If scene is resetting, bool gets changed to true
+    public bool resettingScene = false;
 
     // Used to show live messages on screen, must be locked to avoid threading deadlocks since
     // the recognition events are raised in a separate thread
@@ -70,10 +74,6 @@ public class SpeechManager : MonoBehaviour
         {
             recognizedString = "Permission has been granted";
             Permission.RequestUserPermission(Permission.Microphone);
-        }
-        else if(Permission.HasUserAuthorizedPermission(Permission.Microphone))
-        {
-            recognizedString = "Permission has been granted";
         }
 #else
         micPermissionGranted = true;
@@ -304,6 +304,27 @@ public class SpeechManager : MonoBehaviour
             RecognizedText.text = recognizedString;
             ErrorText.text = errorString;
         }
+
+        if (recognizedString.Contains("I give up as seeker"))
+        {
+            resettingScene = true;
+            recognizedString = "";
+        }
+
+        if (resettingScene)
+        {
+            Debug.Log("Restarting Scene");
+            resettingScene = false;
+            StartCoroutine(RestartScene());
+        }
+    }
+    
+    public IEnumerator RestartScene()
+    {
+        float delay = 5f;
+        RecognizedText.text = "Resetting game in " + delay + " seconds";
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void OnDisable()

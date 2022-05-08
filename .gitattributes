@@ -1,0 +1,5 @@
+com.ptc.vuforia.engine-10.6.3.tgz filter=lfs diff=lfs merge=lfs -text
+<<<<<<< HEAD
+*.tgz filter=lfs diff=lfs merge=lfs -text
+=======
+>>>>>>> kunkun
