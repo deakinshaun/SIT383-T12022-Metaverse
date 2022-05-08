@@ -12,7 +12,6 @@ public class TextScripts : MonoBehaviour
 
 
     public GameObject[] Maps;
-    public Material[] MapMaterials;
     private void retrieveMap(int x, int y, int zoom, Material MapMaterial)
     {
         string url = "https://tile.openstreetmap.org/" + zoom + "/" + x + "/" + y + ".png";
@@ -47,7 +46,6 @@ public class TextScripts : MonoBehaviour
                 k++;
             }
         }
-
     }
     private void test01()
     {
