@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AR plane Detection.unity
+    path: Assets/CuteSatelliteAssets/Scenes/AR plane Detection.unity
     guid: 514c08333eb2e144db1e1ff98dcc1103
   m_configObjects: {}

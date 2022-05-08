@@ -1,12 +1,18 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 8973c8cc4d080174ba92afe1f0fb5bf9
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> kunkun
 guid: d2fc5648611aaa74b82cc200207b5746
 =======
 guid: 8973c8cc4d080174ba92afe1f0fb5bf9
 >>>>>>> main
+<<<<<<< HEAD
+>>>>>>> kunkun
+=======
 >>>>>>> kunkun
 TextureImporter:
   internalIDToNameTable: []
@@ -16,13 +22,19 @@ TextureImporter:
     mipMapMode: 0
     enableMipMap: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     sRGBTexture: 0
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> kunkun
     sRGBTexture: 1
 =======
     sRGBTexture: 0
 >>>>>>> main
+<<<<<<< HEAD
+>>>>>>> kunkun
+=======
 >>>>>>> kunkun
     linearTexture: 0
     fadeOut: 0
@@ -69,13 +81,19 @@ TextureImporter:
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
 <<<<<<< HEAD
+<<<<<<< HEAD
   textureType: 1
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> kunkun
   textureType: 0
 =======
   textureType: 1
 >>>>>>> main
+<<<<<<< HEAD
+>>>>>>> kunkun
+=======
 >>>>>>> kunkun
   textureShape: 1
   singleChannelComponent: 0
