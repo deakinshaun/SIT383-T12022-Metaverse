@@ -17,12 +17,16 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     [Tooltip("Maximum length of status messgae in characters")]
     public int statusMaxLength = 100;
 
+    public TMP_InputField NameInput;
+    public GameObject UsersObject;
     public Button MuteButton; //but_mute in canva
-    public InputField RoomName; 
+    public InputField RoomName;
     public CanvasGroup Page_Room;
 
     private VoiceConnection vc;
     private string previousMessage = " ";
+    private bool MasterConnect = false;
+    private bool RoomConnect = false;
     private void setStatusText(string message)
     {
         if (message != previousMessage)
@@ -36,8 +40,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
             previousMessage = message;
         }
     }
-    private bool MasterConnect = false;
-    private bool RoomConnect = false;
+
 
     void Start()
     {
@@ -75,7 +78,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         RoomConnect = true;
         Debug.Log(PhotonNetwork.CurrentRoom.Name);
         Handheld.Vibrate();
-       
+
     }
     public override void OnCreatedRoom()
     {
@@ -86,6 +89,39 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     {
         RoomConnect = false;
         Page_Room.GetComponentInChildren<InputField>().text = null;
+    }
+
+    public bool retrieveLocation(out float latitude, out float longitude)
+    {
+        latitude = 0.0f;
+        longitude = 0.0f;
+
+
+        if (!Input.location.isEnabledByUser)
+        {
+            Debug.Log("Location service needs to be enabled"
+           );
+            return false;
+        }
+        if (Input.location.status != LocationServiceStatus.
+       Running)
+        {
+            Debug.Log("Starting location service");
+            if (Input.location.status ==
+           LocationServiceStatus.Stopped)
+            {
+                Input.location.Start();
+            }
+            return false;
+        }
+        else
+        {
+            // Valid data is available.
+            latitude = Input.location.lastData.latitude;
+            longitude = Input.location.lastData.longitude;
+            //altitude = Input.location.lastData.altitude;
+            return true;
+        }
     }
 
     //--------------------------------------
@@ -155,5 +191,33 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     {
         ChangeMuteButtonText();
         RoomPageChange();
+
+        GetComponent<PhotonView>().RPC("shareLocation", RpcTarget.All, NameInput.text);
     }
+
+    [PunRPC]
+
+    public void shareLocation(string usersName)
+    {
+        float latitude;//(-37.84236- -37.84089)
+        float longitude;//(145.10751-145.12105)
+        float x;//(-20 -- 20)
+        float y;//(-10 -- 20)
+        if (retrieveLocation(out latitude, out longitude))
+        {
+            x = (float)(latitude * (37.84089 - 37.84236)) / (20 + 20);
+            y = (float)(longitude * (145.12105 - 145.10751)) / (20 + 10);
+
+
+            UsersObject.transform.position = new Vector3(x, 0.2f, y);//需要把世界坐标转化为unity坐标
+            
+        }
+        else
+        {
+            UsersObject.transform.position = new Vector3(0, 200, 0);
+        }
+    }
+
 }
+
+

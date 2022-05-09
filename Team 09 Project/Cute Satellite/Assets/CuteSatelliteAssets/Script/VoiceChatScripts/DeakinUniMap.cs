@@ -9,7 +9,7 @@ public class DeakinUniMap : MonoBehaviour
 {
     private int z = 17;
 
-    private GameObject[] Maps = new GameObject[15];
+    private GameObject[] Maps = new GameObject[20];
 
     private void retrieveMap(int x, int y, int zoom, Material MapMaterial)
     {
@@ -31,7 +31,7 @@ public class DeakinUniMap : MonoBehaviour
     private void FindPlanes()
     {
         int k = 0;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             for (int j = 0; j < 5; j++)
             {
@@ -49,10 +49,10 @@ public class DeakinUniMap : MonoBehaviour
     private void test01()
     {
         int k = 0;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             int x = 118368;
-            int y = 80442;
+            int y = 80441;
             for (int j = 0; j < 5; j++)
             {
                 Maps[k].transform.position = new Vector3(20 - 10 * j, 0, -10 + i * 10);
