@@ -12,7 +12,7 @@ using TMPro;
 /// <summary>
 /// 位置共享脚本
 /// </summary>
-public class LocationShare : MonoBehaviour
+public class LocationShare : MonoBehaviourPunCallbacks
 {
 
     //GPS的信息
@@ -23,7 +23,7 @@ public class LocationShare : MonoBehaviour
     private bool RoomConnect = false;
 
     //当前的用户名
-    public username="kunkunkun";
+    public string username="kunkunkun";
 
     public InputField RoomName;
 
