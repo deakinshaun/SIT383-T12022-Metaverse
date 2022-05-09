@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using Photon.Pun;
 
 public class RSManagerController : MonoBehaviour
 {
@@ -12,8 +13,15 @@ public class RSManagerController : MonoBehaviour
     private SpawnNegative SpawnNegative;
     private SpawnPositive SpawnPositive;
     // Start is called before the first frame update
+    [PunRPC]
+    void updateChat(string message)
+    {
+        Debug.Log("message recieved: " + message);
+    }
+
     void Start()
     {
+        GetComponent<PhotonView>().RPC("updateChat", RpcTarget.All, "RPC success");
         SpawnNegative = GetComponent<SpawnNegative>();
         SpawnPositive = GetComponent<SpawnPositive>();
         for(int i = 0; i < PositiveCount; i++)
@@ -28,6 +36,7 @@ public class RSManagerController : MonoBehaviour
     public void addANewNegative()
     {
         SpawnNegative.OnSpawnAPrefab("YEE YEE ASS");
+        GetComponent<PhotonView>().RPC("updateChat", RpcTarget.All, "RPC success");
     }
     // Update is called once per frame
     void Update()
