@@ -7,14 +7,15 @@ public class SpawnNegative : MonoBehaviour
     [SerializeField] private GameObject prefab;
     [SerializeField] private Vector3 spawnPosition;
     [SerializeField] private bool random;
-    public void OnSpawnAPrefab()
+    public void OnSpawnAPrefab(string textToShow)
     {
         if (random)
         {
             float x = Random.Range(-0.2f, 0.2f);
             float y = Random.Range(0, 4);
             float z = Random.Range(-0.2f, 0.2f);
-            Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity);
+            GameObject gameObject = Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity) as GameObject;
+            gameObject.GetComponent<voteBehaviorScript>().TextToShow = textToShow;
         }
         else
         {

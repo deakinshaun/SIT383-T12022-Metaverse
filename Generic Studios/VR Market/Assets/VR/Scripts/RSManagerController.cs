@@ -18,17 +18,24 @@ public class RSManagerController : MonoBehaviour
         SpawnPositive = GetComponent<SpawnPositive>();
         for(int i = 0; i < PositiveCount; i++)
         {
-            SpawnPositive.OnSpawnAPrefab();
+            SpawnPositive.OnSpawnAPrefab(null);
         }
         for(int i = 0; i < NegativeCount; i++)
         {
-            SpawnNegative.OnSpawnAPrefab();
+            SpawnNegative.OnSpawnAPrefab(null);
         }
     }
-
+    public void addANewNegative()
+    {
+        SpawnNegative.OnSpawnAPrefab("YEE YEE ASS");
+    }
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown("space"))
+        {
+            Debug.Log("here");
+            addANewNegative();
+        }
     }
 }

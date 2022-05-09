@@ -5,7 +5,7 @@ using UnityEngine;
 public class voteBehaviorScript : MonoBehaviour
 {
     public bool ShowText = false;
-    [SerializeField] string TextToShow;
+    [SerializeField] public string TextToShow = null;
     [SerializeField] float speed = 10f; 
     private TextMesh _textMesh;
 
@@ -27,9 +27,17 @@ public class voteBehaviorScript : MonoBehaviour
         
         if(ShowText)
         {
-            
+
             //transform.position = new Vector3(0, 0.01f, 0);
-            _textMesh.text = TextToShow;
+            if (string.IsNullOrEmpty(TextToShow))
+            {
+                _textMesh.text = "No review was left";
+            }
+            else
+            {
+                _textMesh.text = TextToShow;
+            }
+             
             onDisplayVote();
         }
         else
