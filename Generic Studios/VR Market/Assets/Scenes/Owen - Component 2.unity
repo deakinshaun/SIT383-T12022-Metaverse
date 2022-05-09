@@ -253,7 +253,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -278,13 +278,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231747923}
-  m_LocalRotation: {x: -0.068711855, y: 0, z: 0, w: 0.9976366}
-  m_LocalPosition: {x: -0.17, y: 2.69, z: -4.83}
+  m_LocalRotation: {x: -0.09054565, y: 0, z: 0, w: 0.9958923}
+  m_LocalPosition: {x: -0.17, y: -2.09, z: -6.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -7.88, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -10.39, y: 0, z: 0}
 --- !u!1 &279349703
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,6 +736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6491721903254035940, guid: 246799676526b1c40a14b1ba45ffcf41, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -6491721903254035940, guid: 246799676526b1c40a14b1ba45ffcf41, type: 3}
       propertyPath: TextToShow
       value: poop
