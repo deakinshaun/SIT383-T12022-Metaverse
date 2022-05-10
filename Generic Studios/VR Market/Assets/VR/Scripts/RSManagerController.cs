@@ -14,14 +14,23 @@ public class RSManagerController : MonoBehaviour
     private SpawnPositive SpawnPositive;
     // Start is called before the first frame update
     [PunRPC]
-    void updateChat(string message)
+    void sendReview(bool bad, string message)
     {
-        Debug.Log("message recieved: " + message);
+        Debug.Log("message recieved: " + message + " and review was " + bad.ToString());
+        if (bad)
+        {
+            SpawnNegative.OnSpawnAPrefab(message);
+        }
+        else
+        {
+            SpawnPositive.OnSpawnAPrefab(message);
+            Debug.Log("positive: " + message);
+        }
     }
 
     void Start()
     {
-        GetComponent<PhotonView>().RPC("updateChat", RpcTarget.All, "RPC success");
+        //GetComponent<PhotonView>().RPC("updateChat", RpcTarget.All, "RPC success");
         SpawnNegative = GetComponent<SpawnNegative>();
         SpawnPositive = GetComponent<SpawnPositive>();
         for(int i = 0; i < PositiveCount; i++)
