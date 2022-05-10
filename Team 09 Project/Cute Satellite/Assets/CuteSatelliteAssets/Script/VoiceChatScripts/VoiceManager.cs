@@ -13,20 +13,25 @@ public class VoiceManager : MonoBehaviourPunCallbacks
 
     [Tooltip("TexMeshPro object for displaying call status")]
     public TextMeshPro status;
+    public int X;
+    public int Y;
+
 
     [Tooltip("Maximum length of status messgae in characters")]
     public int statusMaxLength = 100;
 
-    public TMP_InputField NameInput;
+    private InputField NameInput;
     public GameObject UsersObject;
-    public Button MuteButton; //but_mute in canva
-    public InputField RoomName;
-    public CanvasGroup Page_Room;
+    private Button MuteButton; //but_mute in canva
+    private InputField RoomName;
+    private CanvasGroup Page_Room;
 
     private VoiceConnection vc;
     private string previousMessage = " ";
     private bool MasterConnect = false;
     private bool RoomConnect = false;
+
+    private GameObject UsersControl;
     private void setStatusText(string message)
     {
         if (message != previousMessage)
@@ -39,11 +44,21 @@ public class VoiceManager : MonoBehaviourPunCallbacks
             }
             previousMessage = message;
         }
-    }
+    } //手机端测试用debug output
 
+    private void FindAssets()
+    {
+        Page_Room = GameObject.Find("/Canvas/Page_Room").GetComponent<CanvasGroup>();
+        NameInput = GameObject.Find("/Canvas/Page_Room/IF_UsersName").GetComponent<InputField>();
+        RoomName = GameObject.Find("/Canvas/Page_Room/IF_RoomName").GetComponent<InputField>();
+        MuteButton = GameObject.Find("/Canvas/But_Mute").GetComponent<Button>();
+
+    }
 
     void Start()
     {
+        FindAssets();
+
         status.text = " ";
         setStatusText("Application Sarted");
         PhotonNetwork.ConnectUsingSettings();
@@ -78,6 +93,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         RoomConnect = true;
         Debug.Log(PhotonNetwork.CurrentRoom.Name);
         Handheld.Vibrate();
+        UsersControl = PhotonNetwork.Instantiate(UsersObject.name, new Vector3(0, -2, 0), new Quaternion(), 0);
 
     }
     public override void OnCreatedRoom()
@@ -99,8 +115,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
 
         if (!Input.location.isEnabledByUser)
         {
-            Debug.Log("Location service needs to be enabled"
-           );
+            Debug.Log("Location service needs to be enabled");
             return false;
         }
         if (Input.location.status != LocationServiceStatus.
@@ -189,32 +204,34 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     //--------------------------------------
     private void Update()
     {
+        FindAssets();
         ChangeMuteButtonText();
         RoomPageChange();
+        if (RoomConnect)
+        {
+            if (NameInput.text == null) NameInput.text = " ";
+            GetComponent<PhotonView>().RPC("ShareUsersLocation", RpcTarget.All, NameInput.text);
+        }
 
-        GetComponent<PhotonView>().RPC("shareLocation", RpcTarget.All, NameInput.text);
     }
 
     [PunRPC]
 
-    public void shareLocation(string usersName)
+    public void ShareUsersLocation(string usersName)
     {
         float latitude;//(-37.84236- -37.84089)
         float longitude;//(145.10751-145.12105)
         float x;//(-20 -- 20)
         float y;//(-10 -- 20)
-        if (retrieveLocation(out latitude, out longitude))
+        //if (retrieveLocation(out latitude, out longitude))
         {
-            x = (float)(latitude * (37.84089 - 37.84236)) / (20 + 20);
-            y = (float)(longitude * (145.12105 - 145.10751)) / (20 + 10);
+            //x = (float)(latitude * (37.84089 - 37.84236)) / (20 + 20);
+            //y = (float)(longitude * (145.12105 - 145.10751)) / (20 + 10);
+            x = X;
+            y = Y;
 
+            UsersControl.transform.position = new Vector3(x, 0.2f, y);//需要把世界坐标转化为unity坐标
 
-            UsersObject.transform.position = new Vector3(x, 0.2f, y);//需要把世界坐标转化为unity坐标
-            
-        }
-        else
-        {
-            UsersObject.transform.position = new Vector3(0, 200, 0);
         }
     }
 
