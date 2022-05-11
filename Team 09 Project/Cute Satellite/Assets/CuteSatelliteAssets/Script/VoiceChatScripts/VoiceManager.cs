@@ -212,7 +212,6 @@ public class VoiceManager : MonoBehaviourPunCallbacks
             if (NameInput.text == null) NameInput.text = " ";
             GetComponent<PhotonView>().RPC("ShareUsersLocation", RpcTarget.All, NameInput.text);
         }
-
     }
 
     [PunRPC]
@@ -223,16 +222,16 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         float longitude;//(145.10751-145.12105)
         float x;//(-20 -- 20)
         float y;//(-10 -- 20)
-        //if (retrieveLocation(out latitude, out longitude))
+        if (usersName == NameInput.text)
         {
-            //x = (float)(latitude * (37.84089 - 37.84236)) / (20 + 20);
-            //y = (float)(longitude * (145.12105 - 145.10751)) / (20 + 10);
-            x = X;
-            y = Y;
+            if (retrieveLocation(out latitude, out longitude))
+            {
+                x = (float)(latitude * (37.84089 - 37.84236)) / (20 + 20);
+                y = (float)(longitude * (145.12105 - 145.10751)) / (20 + 10);
 
-            UsersControl.transform.position = new Vector3(x, 0.2f, y);//需要把世界坐标转化为unity坐标
-
-        }
+                UsersControl.transform.position = new Vector3(x, 0.2f, y);//需要把世界坐标转化为unity坐标
+            }
+        }       
     }
 
 }
