@@ -4,34 +4,31 @@ using UnityEngine;
 
 public class TouchTap : MonoBehaviour
 {
-    public float RotateSpeed = 5f;
+    public float speed = 5f;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitInfo;
+        TouchMovement();
+    }
 
-            if (Physics.Raycast(ray, out hitInfo))
+
+
+    public void TouchMovement()
+    {
+        if (Input.touchCount == 1)
+        {           
+            Debug.Log("2");
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Moved)
             {
-                if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
-                {
-
-                }
+               
+                Debug.Log("3");
+                float moveX = Input.GetAxis("Mouse X");
+                float moveY = Input.GetAxis("Mouse Y");
+                transform.position -= moveX * speed * Time.deltaTime * Vector3.right;
+                transform.position -= moveY * speed * Time.deltaTime * Vector3.forward;
             }
         }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (Input.touchCount == 1)
-            {
-                if (Input.GetTouch(0).phase == TouchPhase.Moved)
-                {
-                    transform.Rotate(Vector3.up * Input.GetAxis("MouseX") * -RotateSpeed * Time.deltaTime, Space.World);
-                }
-            }
-        }
-
     }
 }
