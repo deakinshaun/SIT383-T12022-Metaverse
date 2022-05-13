@@ -55,7 +55,7 @@ public class DeakinUniMap : MonoBehaviour
             int y = 80441;
             for (int j = 0; j < 5; j++)
             {
-                Maps[k].transform.position = new Vector3(20 - 10 * j, 0, -10 + i * 10);
+                Maps[k].transform.position = new Vector3(20 - 10 * j, 10 - i * 10,0);
                 Material mapMaterial = Maps[k].GetComponent<Renderer>().material;
                 retrieveMap(x + j, y + i, z, mapMaterial);
                 k++;

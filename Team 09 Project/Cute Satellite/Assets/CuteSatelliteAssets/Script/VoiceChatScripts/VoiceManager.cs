@@ -63,6 +63,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         setStatusText("Application Sarted");
         PhotonNetwork.ConnectUsingSettings();
         vc = GetComponent<VoiceConnection>();
+        Input.compass.enabled = true;
     }
 
     //-------------------------------------
@@ -215,12 +216,14 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-
+    public int beforeAngle = 0;
+    public int afterAngle = 0;
     public void ShareUsersLocation(string usersName)
     {
         float latitude;//(-37.84236- -37.84089)
         float longitude;//(145.10751-145.12105)
         float x;//(-20 -- 20)
+
         float y;//(-10 -- 20)
         if (usersName == NameInput.text)
         {
@@ -230,8 +233,15 @@ public class VoiceManager : MonoBehaviourPunCallbacks
                 y = (float)(longitude * (145.12105 - 145.10751)) / (20 + 10);
 
                 UsersControl.transform.position = new Vector3(x, 0.2f, y);//需要把世界坐标转化为unity坐标
+
+                if (Mathf.Abs(afterAngle - beforeAngle) >= 10)
+                {
+                    afterAngle = beforeAngle;
+                    UsersControl.transform.eulerAngles = new Vector3(0, -afterAngle + 90, 0);
+                    beforeAngle = (int)Input.compass.trueHeading;
+                }//make users control can toward user's toward
             }
-        }       
+        }
     }
 
 }
