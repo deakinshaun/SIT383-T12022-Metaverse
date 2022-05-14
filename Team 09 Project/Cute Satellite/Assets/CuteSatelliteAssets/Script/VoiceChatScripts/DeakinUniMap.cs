@@ -13,8 +13,8 @@ public class DeakinUniMap : MonoBehaviour
 
     private void retrieveMap(int x, int y, int zoom, Material MapMaterial)
     {
-        string url = "https://tile.openstreetmap.org/" + zoom + "/" + x + "/" + y + ".png";
-
+        //string url = "https://tile.openstreetmap.org/" + zoom + "/" + x + "/" + y + ".png";//This is using for Deakin Uni Map
+        string url = "https://wprd03.is.autonavi.com/appmaptile?x=" + x + "&y=" + y + "&z=" + z + "&lang=zh_cn&size=1&scl=1&style=8"; //This is using for Chinese Map
         Debug.Log("Retrieving: " + url);
         WebRequest www = WebRequest.Create(url);
         ((HttpWebRequest)www).UserAgent = "Terrain Retrieval Agent v0.01";
@@ -52,9 +52,9 @@ public class DeakinUniMap : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             //DeakinUni x: 118368, y: 80441, z: 17;
-            //Jinkun¼Ò x: 106179, y: 49254, z:17;
-            int x = 106179;
-            int y = 49254;
+            //Jinkun¼Ò x: 106182, y: 49253, z:17;
+            int x = 106182;
+            int y = 49253;
             for (int j = 0; j < 5; j++)
             {
                 Maps[k].transform.position = new Vector3(20 - 10 * j, 10 - i * 10, 0);
