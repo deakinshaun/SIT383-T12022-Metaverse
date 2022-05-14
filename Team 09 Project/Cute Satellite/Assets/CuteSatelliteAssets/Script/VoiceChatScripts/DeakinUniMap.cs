@@ -51,11 +51,13 @@ public class DeakinUniMap : MonoBehaviour
         int k = 0;
         for (int i = 0; i < 4; i++)
         {
-            int x = 118368;
-            int y = 80441;
+            //DeakinUni x: 118368, y: 80441, z: 17;
+            //Jinkun¼Ò x: 106179, y: 49254, z:17;
+            int x = 106179;
+            int y = 49254;
             for (int j = 0; j < 5; j++)
             {
-                Maps[k].transform.position = new Vector3(20 - 10 * j, 10 - i * 10,0);
+                Maps[k].transform.position = new Vector3(20 - 10 * j, 10 - i * 10, 0);
                 Material mapMaterial = Maps[k].GetComponent<Renderer>().material;
                 retrieveMap(x + j, y + i, z, mapMaterial);
                 k++;

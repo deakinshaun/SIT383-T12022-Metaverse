@@ -34,8 +34,8 @@ public class VoiceManager : MonoBehaviourPunCallbacks
 
     private GameObject UsersControl;
 
-    public Vector2 RangeOfLat = new Vector2(-37.84236f, -37.84089f);
-    public Vector2 RangeOfLon = new Vector2(145.10751f, 145.12105f);
+    public Vector2 RangeOfLat = new Vector2(40.77146f, 40.76367f);//[Deakin] new Vector2(-37.84236f, -37.84089f);
+    public Vector2 RangeOfLon = new Vector2(111.63634f, 111.65014f);//[Deakin] new Vector2(145.10751f, 145.12105f);
 
     public Vector2 TopRightLocation;
     public Vector2 ButLeftLocation;
@@ -267,8 +267,8 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void ShareUsersLocation(string usersName)
     {
-        float latitude;//(-37.84236- -37.84089)
-        float longitude;//(145.10751-145.12105)
+        float latitude; //  [Deakin](-37.84236, -37.84089)     [Jinkun](40.76439, 40.76763)
+        float longitude;//  [Deakin](145.10751, 145.12105)     [Jinkun](111.64810, 111.63963)
         float x;//(-20 -- 20)
 
         float y;//(-10 -- 20)
