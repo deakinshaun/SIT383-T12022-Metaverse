@@ -13,9 +13,6 @@ public class VoiceManager : MonoBehaviourPunCallbacks
 
     [Tooltip("TexMeshPro object for displaying call status")]
     public TextMeshPro status;
-    public int X;
-    public int Y;
-
 
     [Tooltip("Maximum length of status messgae in characters")]
     public int statusMaxLength = 100;
@@ -30,6 +27,9 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     private string previousMessage = " ";
     private bool MasterConnect = false;
     private bool RoomConnect = false;
+
+    public Vector3 myLocation;
+    public Vector3 hisLocation;
 
     private GameObject UsersControl;
     private void setStatusText(string message)
@@ -53,6 +53,18 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         RoomName = GameObject.Find("/Canvas/Page_Room/IF_RoomName").GetComponent<InputField>();
         MuteButton = GameObject.Find("/Canvas/But_Mute").GetComponent<Button>();
 
+    }
+
+    public void FindLocation()
+    {
+        if (!GetComponent<PhotonView>().IsMine)
+        {
+            transform.position = hisLocation;
+        }
+        else
+        {
+            transform.position = myLocation;
+        }
     }
 
     void Start()
@@ -94,7 +106,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         RoomConnect = true;
         Debug.Log(PhotonNetwork.CurrentRoom.Name);
         Handheld.Vibrate();
-        UsersControl = PhotonNetwork.Instantiate(UsersObject.name, new Vector3(0, -2, 0), new Quaternion(), 0);
+        UsersControl = PhotonNetwork.Instantiate(UsersObject.name, new Vector3(0, 0, -2), new Quaternion(), 0);
 
     }
     public override void OnCreatedRoom()
@@ -210,14 +222,15 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         RoomPageChange();
         if (RoomConnect)
         {
-            if (NameInput.text == null) NameInput.text = " ";
+            if (NameInput.text == null) NameInput.text = "DraftName";
             GetComponent<PhotonView>().RPC("ShareUsersLocation", RpcTarget.All, NameInput.text);
         }
     }
 
-    [PunRPC]
+
     public int beforeAngle = 0;
     public int afterAngle = 0;
+    [PunRPC]
     public void ShareUsersLocation(string usersName)
     {
         float latitude;//(-37.84236- -37.84089)
@@ -232,7 +245,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
                 x = (float)(latitude * (37.84089 - 37.84236)) / (20 + 20);
                 y = (float)(longitude * (145.12105 - 145.10751)) / (20 + 10);
 
-                UsersControl.transform.position = new Vector3(x, 0.2f, y);//需要把世界坐标转化为unity坐标
+                UsersControl.transform.position = new Vector3(x, y, 0.2f);//需要把世界坐标转化为unity坐标
 
                 if (Mathf.Abs(afterAngle - beforeAngle) >= 10)
                 {

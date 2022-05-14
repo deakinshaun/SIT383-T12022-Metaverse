@@ -1474,7 +1474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747387007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1704415144}
@@ -4643,10 +4643,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: {fileID: 1699176606}
-  X: 0
-  Y: 0
   statusMaxLength: 100
   UsersObject: {fileID: 5823319035213868237, guid: c4e6fe9b72a3c354ead4f623a47c63a9, type: 3}
+  myLocation: {x: 0, y: 0, z: 0}
+  hisLocation: {x: 0, y: 0, z: 0}
   beforeAngle: 0
   afterAngle: 0
 --- !u!4 &2131626360
