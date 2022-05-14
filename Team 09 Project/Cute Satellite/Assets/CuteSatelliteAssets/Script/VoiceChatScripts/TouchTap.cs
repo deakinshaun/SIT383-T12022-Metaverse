@@ -27,7 +27,7 @@ public class TouchTap : MonoBehaviour
                 float moveX = Input.GetAxis("Mouse X");
                 float moveY = Input.GetAxis("Mouse Y");
                 transform.position -= moveX * speed * Time.deltaTime * Vector3.right;
-                transform.position -= moveY * speed * Time.deltaTime * Vector3.forward;
+                transform.position -= moveY * speed * Time.deltaTime * Vector3.up;
             }
         }
     }

@@ -22,6 +22,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     private Button MuteButton; //but_mute in canva
     private InputField RoomName;
     private CanvasGroup Page_Room;
+    private Button HideButton;
 
     private VoiceConnection vc;
     private string previousMessage = " ";
@@ -32,6 +33,12 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     public Vector3 hisLocation;
 
     private GameObject UsersControl;
+
+    public Vector2 RangeOfLat = new Vector2(-37.84236f, -37.84089f);
+    public Vector2 RangeOfLon = new Vector2(145.10751f, 145.12105f);
+
+    public Vector2 TopRightLocation;
+    public Vector2 ButLeftLocation;
     private void setStatusText(string message)
     {
         if (message != previousMessage)
@@ -52,19 +59,18 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         NameInput = GameObject.Find("/Canvas/Page_Room/IF_UsersName").GetComponent<InputField>();
         RoomName = GameObject.Find("/Canvas/Page_Room/IF_RoomName").GetComponent<InputField>();
         MuteButton = GameObject.Find("/Canvas/But_Mute").GetComponent<Button>();
+        HideButton = GameObject.Find("/Canvas/But_Hide").GetComponent<Button>();
 
     }
 
-    public void FindLocation()
+    public void SetMapLocation()
     {
-        if (!GetComponent<PhotonView>().IsMine)
-        {
-            transform.position = hisLocation;
-        }
-        else
-        {
-            transform.position = myLocation;
-        }
+        Transform TopRight = GameObject.Find("/Maps/00").GetComponent<Transform>();
+        Transform ButLeft = GameObject.Find("/Maps/34").GetComponent<Transform>();
+
+        TopRightLocation = new Vector2(TopRight.position.x, TopRight.position.y);
+        ButLeftLocation = new Vector2(ButLeft.position.x, ButLeft.position.y);
+
     }
 
     void Start()
@@ -190,15 +196,42 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         MuteButton.GetComponentInChildren<Text>().text = muteText;
     }
 
+    private void ChangeHideButtonText()
+    {
+        string HideText;
+
+        if (GameObject.Find("/Maps").transform.position == new Vector3(0, 0, 0))
+        {
+            HideText = "Hide";
+        }
+        else
+        {
+            HideText = "Reset";
+        }
+        HideButton.GetComponentInChildren<Text>().text = HideText;
+    }
+
     //--------------------------------------
     //Button Event
-    public void ClickMuteButton() //OnClickEvent using in MuteButton
+    public void OnClickResetMapLocation()
+    {
+        if (GameObject.Find("/Maps").transform.position == new Vector3(0, 0, 0))
+        {
+            GameObject.Find("/Maps").transform.position = new Vector3(0, 0, 50);
+        }
+        else
+        {
+            GameObject.Find("/Maps").transform.position = new Vector3(0, 0, 0);
+        }
+
+    }
+    public void OnClickMuteButton() //OnClickEvent using in MuteButton
     {
         vc.PrimaryRecorder.TransmitEnabled = !vc.PrimaryRecorder.TransmitEnabled;
         Debug.Log(vc.PrimaryRecorder.TransmitEnabled);
     }
 
-    public void ClickJoinOrCreateRoomButton()
+    public void OnClickJoinOrCreateRoomButton()
     {
         if (RoomConnect)
         {
@@ -219,6 +252,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     {
         FindAssets();
         ChangeMuteButtonText();
+        ChangeHideButtonText();
         RoomPageChange();
         if (RoomConnect)
         {
@@ -242,8 +276,8 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         {
             if (retrieveLocation(out latitude, out longitude))
             {
-                x = (float)(latitude * (37.84089 - 37.84236)) / (20 + 20);
-                y = (float)(longitude * (145.12105 - 145.10751)) / (20 + 10);
+                x = (float)(latitude * (RangeOfLat.x - RangeOfLat.y)) / Mathf.Abs(ButLeftLocation.x - TopRightLocation.x);//(20+20)
+                y = (float)(longitude * (RangeOfLon.x - RangeOfLon.y)) / Mathf.Abs(ButLeftLocation.y - TopRightLocation.y);//(20+10)
 
                 UsersControl.transform.position = new Vector3(x, y, 0.2f);//需要把世界坐标转化为unity坐标
 
