@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class InteractionController : MonoBehaviour
 {
     public TextMeshProUGUI messages;
+    public int objectsFound = 0;
+    public int numberOfObjectsToFind;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +19,7 @@ public class InteractionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             PerformRayCast();
         }
@@ -28,7 +31,7 @@ public class InteractionController : MonoBehaviour
     {
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red, 1.0f);
             Debug.Log("Did Hit");
@@ -41,7 +44,7 @@ public class InteractionController : MonoBehaviour
 
             if (hit.transform.gameObject.tag == "ObjectToFind")
             {
-                FoundObject();
+                FoundObject(hit.transform.gameObject);
             }
         }
         else
@@ -56,6 +59,12 @@ public class InteractionController : MonoBehaviour
         Debug.Log("Trigger is activating");
         button.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
 
+        GameObject objectToFind = GameObject.FindWithTag("ObjectToFind");
+        messages.text = "The object you're looking for is blue!";
+        //messages.text = "The object you're looking for is "
+        //    + objectToFind.GetComponent<Renderer>().material.color + "!";
+
+        StartCoroutine(ClearText());
         StartCoroutine(DeactivateButton(button));
     }
 
@@ -65,10 +74,16 @@ public class InteractionController : MonoBehaviour
         button.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
     }
 
-    private void FoundObject()
+    private void FoundObject(GameObject foundObject)
     {
-        messages.text = "You have found the hiding object";
-
+        Destroy(foundObject);
+        messages.text = "You have found a hiding object!";
+        objectsFound++;
+        if(objectsFound == numberOfObjectsToFind)
+        {
+            messages.text = "Congratulations, You have won the game! Resetting Scene";
+            StartCoroutine(RestartScene());
+        }
         StartCoroutine(ClearText());
     }
 
@@ -76,5 +91,11 @@ public class InteractionController : MonoBehaviour
     {
         yield return new WaitForSeconds(3.0f);
         messages.text = "";
+    }
+
+    public IEnumerator RestartScene()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
