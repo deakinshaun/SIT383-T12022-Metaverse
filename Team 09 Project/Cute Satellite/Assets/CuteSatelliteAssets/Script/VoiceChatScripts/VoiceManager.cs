@@ -6,6 +6,7 @@ using Photon.Realtime;
 using Photon.Pun;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class VoiceManager : MonoBehaviourPunCallbacks
@@ -231,6 +232,20 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         Debug.Log(vc.PrimaryRecorder.TransmitEnabled);
     }
 
+    public void OnClikckScanButton()
+    {
+        if (RoomConnect)
+        {
+            PhotonNetwork.LeaveRoom();
+            PhotonNetwork.LeaveLobby();
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
+
+    }
     public void OnClickJoinOrCreateRoomButton()
     {
         if (RoomConnect)
