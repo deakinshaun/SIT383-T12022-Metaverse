@@ -1,0 +1,21 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.33f1 (915a7af8b0d5) revision 9525882'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'en' Physical Memory: 7633 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.33f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/User.LAPTOP-MM7Q1JI9/Desktop/Subjects/2022/SIT383 VR/CoreLocationTracker
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+57668
+Successfully changed project path to: C:/Users/User.LAPTOP-MM7Q1JI9/Desktop/Subjects/2022/SIT383 VR/CoreLocationTracker
+C:/Users/User.LAPTOP-MM7Q1JI9/Desktop/Subjects/2022/SIT383 VR/CoreLocationTracker
+Using Asset Import Pipeline V2.

@@ -12,6 +12,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public GameObject avatarPrefab;
     public TextMeshProUGUI chatBox;
     public TMP_InputField inputBox;
+    public GameObject joyStick;
 
    
 
@@ -20,6 +21,11 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         Debug.Log("Starting - connected status = " +
             PhotonNetwork.IsConnected);
         PhotonNetwork.ConnectUsingSettings();
+        GameObject joystick = Instantiate(joyStick, new Vector3(155,163,0),
+        Quaternion.identity) as GameObject;
+        joystick.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+        
+        joystick.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, false);
         
     }
 
@@ -41,6 +47,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
             Quaternion.identity, 0);
         avatar.GetComponent<TextChat1>().chatBox = chatBox;
         avatar.GetComponent<TextChat1>().inputBox = inputBox;
+        
     }
 
     void Update()
