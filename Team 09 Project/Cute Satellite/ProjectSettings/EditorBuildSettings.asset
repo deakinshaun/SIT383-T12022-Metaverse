@@ -11,4 +11,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CuteSatelliteAssets/Scenes/ScanObject.unity
     guid: d492875431969c2458d89a532392ba91
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 42bc949e5b69fae4f94ed66ad223ccbe, type: 2}
