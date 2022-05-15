@@ -35,8 +35,8 @@ public class VoiceManager : MonoBehaviourPunCallbacks
 
     private GameObject UsersControl;
 
-    public Vector2 RangeOfLat = new Vector2(40.77146f, 40.76367f);//[Deakin] new Vector2(-37.84236f, -37.84089f);
-    public Vector2 RangeOfLon = new Vector2(111.63634f, 111.65014f);//[Deakin] new Vector2(145.10751f, 145.12105f);
+    public Vector2 RangeOfLat = new Vector2(34.71195f,34.70387f);//[Jinkun Home]new Vector2(40.77146f, 40.76367f);//[Deakin] new Vector2(-37.84236f, -37.84089f);
+    public Vector2 RangeOfLon = new Vector2(113.70573f, 113.71925f);//[Jinkun Home]new Vector2(111.63634f, 111.65014f);//[Deakin] new Vector2(145.10751f, 145.12105f);
 
     public Vector2 TopRightLocation;
     public Vector2 ButLeftLocation;
