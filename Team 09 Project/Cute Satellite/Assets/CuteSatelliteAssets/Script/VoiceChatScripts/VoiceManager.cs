@@ -287,6 +287,9 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         float x;//(-20 -- 20)
 
         float y;//(-10 -- 20)
+
+        float X;
+        float Y;
         if (usersName == NameInput.text)
         {
             if (retrieveLocation(out latitude, out longitude))
@@ -294,7 +297,9 @@ public class VoiceManager : MonoBehaviourPunCallbacks
                 x = (float)(latitude * (RangeOfLat.x - RangeOfLat.y)) / Mathf.Abs(ButLeftLocation.x - TopRightLocation.x);//(20+20)
                 y = (float)(longitude * (RangeOfLon.x - RangeOfLon.y)) / Mathf.Abs(ButLeftLocation.y - TopRightLocation.y);//(20+10)
 
-                UsersControl.transform.position = new Vector3(x, y, 0.2f);//需要把世界坐标转化为unity坐标
+                X = TopRightLocation.x + x;
+                Y = TopRightLocation.y + y;
+                UsersControl.transform.position = new Vector3(X, Y, 0.2f);//需要把世界坐标转化为unity坐标
 
                 if (Mathf.Abs(afterAngle - beforeAngle) >= 10)
                 {
