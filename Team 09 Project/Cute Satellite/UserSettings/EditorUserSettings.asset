@@ -21,13 +21,26 @@ EditorUserSettings:
       value: 224247031146466c1f02086d23205a1e1304571f222132291a260f3fe6d32439e1e278fce9332b25
       flags: 0
     RecentlyUsedScenePath-5:
-      value: 2242470311464678181a091111375a1c1a1e0c2f0d3b3535393a5200e1e53a3df1a805eae634103e3307ec284a2b0f36e613
-      flags: 0
-    RecentlyUsedScenePath-6:
       value: 2242470311464678181a091111375a1c1a1e0c2f0d3b3535393a5200e1e53a3df1a802ecff2e0c3f3c0cea2f4a2b0f36e613
       flags: 0
-    RecentlyUsedScenePath-7:
+    RecentlyUsedScenePath-6:
       value: 2242470311464678181a091111375a1c1a1e0c2f0d3b3535393a5200e1e53a3df1a800e6ee393a1f3103fb721130082beb
+      flags: 0
+    RecentlyUsedScenePath-7:
+<<<<<<< refs/remotes/origin/main
+      value: 2242470311464678181a091111375a1c1a1e0c2f0d3b3535393a5200e1e53a3df1a802ecf42e0c3f3c0cea2f4a2b0f36e613
+      flags: 0
+    RecentlyUsedScenePath-8:
+      value: 2242470311464678181a091111375a1c1a1e0c2f0d3b3535393a5200e1e53a3df1a805eae634103e3307ec284a2b0f36e613
+      flags: 0
+    RecentlyUsedScenePath-9:
+      value: 22424703114646681d0b092118107b3b2516153a202d69032e2c1336f1af0728e7e235e1d53f3c333e0ce6280d310f71e704001fef
+=======
+      value: 22424703114646681d0b092118107b3b2516153a202d69032e2c1336f1af0728e7e235e1d53f3c333e0ce6280d310f71e704001fef
+      flags: 0
+    RecentlyUsedScenePath-8:
+      value: 2242470311464678181a091111375a1c1a1e0c2f0d3b3535393a5200e1e53a3df1a805eae634103e3307ec284a2b0f36e613
+>>>>>>> Fix location algorithm bug
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
