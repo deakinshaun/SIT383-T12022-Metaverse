@@ -16,9 +16,9 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
     public TMP_InputField inputBox;
     public GameObject showCommentButton; //打开评论按钮
     public CanvasGroup ChatPanel;
-    public GameObject LoadingMessage;
+    //public GameObject LoadingMessage;
     public GameObject ReadyForCom;
-    public TextMeshProUGUI LoadingMessageMes;
+    //public TextMeshProUGUI LoadingMessageMes;
     public CanvasGroup UsersSetting;
 
 
@@ -43,8 +43,8 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
     private void FindCanvas()
     {
         ChatPanel = GameObject.Find("/Canvas/ChatPanel").GetComponent<CanvasGroup>();
-        LoadingMessage = GameObject.Find("/Canvas/ChatPanel/LoadingMessage");
-        LoadingMessageMes = LoadingMessage.GetComponent<TextMeshProUGUI>();
+        //LoadingMessage = GameObject.Find("/Canvas/ChatPanel/LoadingMessage");
+        //LoadingMessageMes = LoadingMessage.GetComponent<TextMeshProUGUI>();
         ReadyForCom = GameObject.Find("/Canvas/ChatPanel/ReadyForCom");
         UsersSetting = GameObject.Find("/Canvas/UsersSetting").GetComponent<CanvasGroup>();
         chatBox = GameObject.Find("/Canvas/ChatPanel/ReadyForCom/ChatBox").GetComponent<TextMeshProUGUI>();
@@ -59,12 +59,12 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
             if (isJoinedRoom)
             {
                 ReadyForCom.GetComponent<CanvasGroup>().alpha = 1;
-                LoadingMessage.GetComponent<CanvasGroup>().alpha = 0;
+                //LoadingMessage.GetComponent<CanvasGroup>().alpha = 0;
             }
             else
             {
                 ReadyForCom.GetComponent<CanvasGroup>().alpha = 0;
-                LoadingMessage.GetComponent<CanvasGroup>().alpha = 1;
+                //LoadingMessage.GetComponent<CanvasGroup>().alpha = 1;
             }
         }
     }
@@ -83,7 +83,7 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to Master");
-        LoadingMessageMes.text += "Connected to Service\n";
+        //LoadingMessageMes.text += "Connected to Service\n";
 
 
         TypedLobby lobby1 = new TypedLobby("ScanLobby", LobbyType.Default);
@@ -92,7 +92,7 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedLobby()
     {
-        LoadingMessageMes.text += "On Joined Lobby/n";
+        //LoadingMessageMes.text += "On Joined Lobby/n";
         Debug.Log("On Joined Lobby");
     }
     public override void OnJoinedRoom()
@@ -100,9 +100,8 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
         Handheld.Vibrate();
         chatBox.text += "Hello\n";
         Debug.Log("Joined room with" + PhotonNetwork.CurrentRoom.PlayerCount + "particpants");
-        LoadingMessageMes.text += "Opening Comments\n";
+        //LoadingMessageMes.text += "Opening Comments\n";
         Thread.Sleep(1000);
-        PhotonNetwork.NickName = FindUsersName();
         isJoinedRoom = true;
     }
     public override void OnLeftRoom()
@@ -182,7 +181,7 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.ConnectUsingSettings();
         FindCanvas();
-        AlphaSet();
+        //AlphaSet();
     }
 
     void Update()
@@ -190,8 +189,18 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
         FindUsersName();
         ShowCanvas();
 
-        if (inputed && (inputBox != null))
+        if (inputed)
         {
+            if (FindUsersName()=="")
+            {
+                PhotonNetwork.NickName = "DefaultUser";
+            }
+            else
+            {
+                PhotonNetwork.NickName = FindUsersName();
+            }
+            
+
             inputed = false;
             GetComponent<PhotonView>().RPC("updateChat", RpcTarget.All, inputBox.text, PhotonNetwork.NickName);
         }
@@ -201,6 +210,7 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void updateChat(string messages, string UsersName)
     {
+
         chatBox.text += "(" + UsersName + "): " + messages + "\n";
         Debug.Log(chatBox.text.ToString());
     }
