@@ -53,6 +53,8 @@ public class DeakinUniMap : MonoBehaviour
         {
             //DeakinUni x: 118368, y: 80441, z: 17;
             //Jinkun家 x: 106182, y: 49253, z:17;
+            //guanxing家 x: 106901, y: 52034
+            //我家 x: 106935, y: 52045
             int x = 106182;
             int y = 49253;
             for (int j = 0; j < 5; j++)

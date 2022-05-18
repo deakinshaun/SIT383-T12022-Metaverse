@@ -2,24 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnNegative : MonoBehaviour
+namespace UnityEngine.XR.Interaction.Toolkit
 {
-    [SerializeField] private GameObject prefab;
-    [SerializeField] private Vector3 spawnPosition;
-    [SerializeField] private bool random;
-    public void OnSpawnAPrefab(string textToShow)
+    public class SpawnNegative : MonoBehaviour
     {
-        if (random)
+        [SerializeField] private GameObject prefab;
+        [SerializeField] private Vector3 spawnPosition;
+        [SerializeField] private bool random;
+        [SerializeField] XRInteractionManager m_InteractionManager;
+        public void OnSpawnAPrefab(string textToShow)
         {
-            float x = Random.Range(-0.2f, 0.2f);
-            float y = Random.Range(0, 4);
-            float z = Random.Range(-0.2f, 0.2f);
-            GameObject gameObject = Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity) as GameObject;
-            gameObject.GetComponent<voteBehaviorScript>().TextToShow = textToShow;
-        }
-        else
-        {
-            Instantiate(prefab, spawnPosition, Quaternion.identity);
+            if (random)
+            {
+                float x = Random.Range(-2.5f, -0.7f);
+                float y = 0.44f;
+                float z = Random.Range(-2.5f, -0.7f);
+                GameObject gameObject = Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity) as GameObject;
+                gameObject.GetComponent<voteBehaviorScript>().TextToShow = textToShow;
+            }
+            else
+            {
+                Instantiate(prefab, spawnPosition, Quaternion.identity);
+            }
         }
     }
 }

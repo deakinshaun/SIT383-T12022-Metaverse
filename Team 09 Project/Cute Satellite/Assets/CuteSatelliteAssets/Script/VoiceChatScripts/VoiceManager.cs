@@ -6,6 +6,7 @@ using Photon.Realtime;
 using Photon.Pun;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class VoiceManager : MonoBehaviourPunCallbacks
@@ -34,8 +35,8 @@ public class VoiceManager : MonoBehaviourPunCallbacks
 
     private GameObject UsersControl;
 
-    public Vector2 RangeOfLat = new Vector2(40.77146f, 40.76367f);//[Deakin] new Vector2(-37.84236f, -37.84089f);
-    public Vector2 RangeOfLon = new Vector2(111.63634f, 111.65014f);//[Deakin] new Vector2(145.10751f, 145.12105f);
+    public Vector2 RangeOfLat = new Vector2(40.77146f, 40.76367f);// [my home]new Vector2(34.71195f,34.70387f);//[Jinkun Home]new Vector2(40.77146f, 40.76367f);//[Deakin] new Vector2(-37.84236f, -37.84089f);
+    public Vector2 RangeOfLon = new Vector2(111.63634f, 111.65014f);//[my home]new Vector2(113.70573f, 113.71925f);//[Jinkun Home]new Vector2(111.63634f, 111.65014f);//[Deakin] new Vector2(145.10751f, 145.12105f);
 
     public Vector2 TopRightLocation;
     public Vector2 ButLeftLocation;
@@ -231,6 +232,20 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         Debug.Log(vc.PrimaryRecorder.TransmitEnabled);
     }
 
+    public void OnClikckScanButton()
+    {
+        if (RoomConnect)
+        {
+            PhotonNetwork.LeaveRoom();
+            PhotonNetwork.LeaveLobby();
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
+
+    }
     public void OnClickJoinOrCreateRoomButton()
     {
         if (RoomConnect)
@@ -272,6 +287,9 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         float x;//(-20 -- 20)
 
         float y;//(-10 -- 20)
+
+        float X;
+        float Y;
         if (usersName == NameInput.text)
         {
             if (retrieveLocation(out latitude, out longitude))
@@ -279,7 +297,9 @@ public class VoiceManager : MonoBehaviourPunCallbacks
                 x = (float)(latitude * (RangeOfLat.x - RangeOfLat.y)) / Mathf.Abs(ButLeftLocation.x - TopRightLocation.x);//(20+20)
                 y = (float)(longitude * (RangeOfLon.x - RangeOfLon.y)) / Mathf.Abs(ButLeftLocation.y - TopRightLocation.y);//(20+10)
 
-                UsersControl.transform.position = new Vector3(x, y, 0.2f);//需要把世界坐标转化为unity坐标
+                X = TopRightLocation.x + x;
+                Y = TopRightLocation.y + y;
+                UsersControl.transform.position = new Vector3(X, Y, 0.2f);//需要把世界坐标转化为unity坐标
 
                 if (Mathf.Abs(afterAngle - beforeAngle) >= 10)
                 {

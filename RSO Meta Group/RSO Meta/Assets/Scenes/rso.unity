@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &239193746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 239193747}
+  m_Layer: 0
+  m_Name: Speechmanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &239193747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239193746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16499996, y: 1.7977915, z: 4.788233}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &326195919
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2102736854
 RectTransform:
   m_ObjectHideFlags: 0
@@ -943,7 +973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5929940647035742191, guid: a6c9c008969cbc0409f29198ca5fb14b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -333
+      value: -210.6
       objectReference: {fileID: 0}
     - target: {fileID: 5929940647035742191, guid: a6c9c008969cbc0409f29198ca5fb14b, type: 3}
       propertyPath: m_AnchoredPosition.y

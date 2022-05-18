@@ -39,18 +39,22 @@ public class Compass : MonoBehaviour
     public void findAngle()
     {
         findUsersControl();
-        if (HisControl != null)
+        if (MyControl != null)
         {
-            float x = HisControl.transform.position.x - MyControl.transform.position.x;
-            float y = HisControl.transform.position.y - MyControl.transform.position.y;
+            if (HisControl != null)
+            {
+                float x = HisControl.transform.position.x - MyControl.transform.position.x;
+                float y = HisControl.transform.position.y - MyControl.transform.position.y;
 
-            Radius = Mathf.Atan2(x, y);
-            Angle = Radius * (180 / Mathf.PI);
+                Radius = Mathf.Atan2(x, y);
+                Angle = Radius * (180 / Mathf.PI);
+            }
+            else
+            {
+                Debug.Log("Only 1 users");
+            }
         }
-        else
-        {
-            Debug.Log("Only 1 users");
-        }
+
     }
 
     private void Refresh()
