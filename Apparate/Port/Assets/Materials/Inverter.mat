@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StencilFilter
-  m_Shader: {fileID: 4800000, guid: f3bcb58d86bc740e1b9ecd4065aab224, type: 3}
+  m_Name: Inverter
+  m_Shader: {fileID: 4800000, guid: 1c86ee8adad8944ae9116918c6af467b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -18,9 +18,13 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 02ce24ca470214e3982db1b6decea7a3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _StencilTest: 6
+    - _StencilTest: 3
     m_Colors:
-    - _Color: {r: 0.7264151, g: 0.25698647, b: 0.25698647, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
