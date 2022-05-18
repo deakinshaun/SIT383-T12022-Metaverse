@@ -56,8 +56,9 @@ public class DeakinUniMap : MonoBehaviour
             //Jinkun家 x: 106182, y: 49253, z:17;
             //guanxing家 x: 106901, y: 52034
             //我家 x: 106935, y: 52045
-            int x = 106182;
-            int y = 49253;
+            //Huiqing x:104431, y:49774
+            int x = 104431;
+            int y = 49774;
             for (int j = 0; j < 5; j++)
             {
                 Maps[k].transform.position = new Vector3(MapMana.transform.position.x + 20 - 10 * j, MapMana.transform.position.y + 15 - i * 10, MapMana.transform.position.z);

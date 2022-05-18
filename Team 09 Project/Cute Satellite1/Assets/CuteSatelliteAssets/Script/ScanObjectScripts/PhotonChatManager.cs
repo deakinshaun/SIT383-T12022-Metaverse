@@ -86,9 +86,9 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
         //LoadingMessageMes.text += "Connected to Service\n";
 
 
-        TypedLobby lobby1 = new TypedLobby("ScanLobby", LobbyType.Default);
+        /*TypedLobby lobby1 = new TypedLobby("ScanLobby", LobbyType.Default);
         RoomOptions roomopt = new RoomOptions();
-        PhotonNetwork.JoinOrCreateRoom("testRoom", roomopt, lobby1);
+        PhotonNetwork.JoinOrCreateRoom("testRoom", roomopt, lobby1);*/
     }
     public override void OnJoinedLobby()
     {
@@ -112,7 +112,7 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
     //-------------------------------
 
     //-----Vuforia OTF/OTL Event-------
-    /*public void onFindTarget(GameObject Room)
+    public void onFindTarget(GameObject Room)
     {
         showCommentButton.GetComponent<CanvasGroup>().alpha = 1;
         RoomOptions roomopt = new RoomOptions();
@@ -126,7 +126,7 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
         isJoinedRoom = false;
         PhotonNetwork.LeaveRoom();
         PhotonNetwork.LeaveLobby();
-    }*/
+    }
 
     //---------------------------------
 
