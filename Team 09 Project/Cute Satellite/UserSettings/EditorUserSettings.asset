@@ -7,6 +7,7 @@ EditorUserSettings:
   m_ConfigSettings:
 <<<<<<< Updated upstream
     RecentlyUsedScenePath-0:
+<<<<<<< refs/remotes/origin/main
       value: 2242470311464678181a091111375a1c1a1e0c2f0d3b3535393a5200e1e53a3df1a805eae634103e3307ec284a2b0f36e613
       flags: 0
     RecentlyUsedScenePath-1:
@@ -14,6 +15,13 @@ EditorUserSettings:
       flags: 0
 =======
 >>>>>>> Stashed changes
+=======
+      value: 2242470311464678181a091111375a1c1a1e0c2f0d3b3535393a5200e1e53a3df1a800e6ee393a1f3103fb721130082beb
+      flags: 0
+    RecentlyUsedScenePath-1:
+      value: 2242470311464678181a091111375a1c1a1e0c2f0d3b3535393a5200e1e53a3df1a805eae634103e3307ec284a2b0f36e613
+      flags: 0
+>>>>>>> add another project for UE
     vcSharedLogLevel:
       value: 0d5e400f0650
       flags: 0
