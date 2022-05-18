@@ -24,7 +24,16 @@ public class voteBehaviorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ShowText = false;
+        Debug.Log("rot x : " + transform.eulerAngles.x.ToString() + " rot z : " + transform.eulerAngles.z.ToString());
+        if(transform.eulerAngles.x < 15 || transform.eulerAngles.x > 345)
+        {
+            if (transform.eulerAngles.z < 15 || transform.eulerAngles.z > 345)
+            {
+                ShowText = true;
+            }
+
+        }
         if(ShowText)
         {
 
@@ -38,7 +47,7 @@ public class voteBehaviorScript : MonoBehaviour
                 _textMesh.text = TextToShow;
             }
              
-            onDisplayVote();
+            //onDisplayVote();
         }
         else
         {
