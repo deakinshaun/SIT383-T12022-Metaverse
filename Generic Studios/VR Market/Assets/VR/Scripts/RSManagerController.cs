@@ -31,21 +31,23 @@ namespace UnityEngine.XR.Interaction.Toolkit
 
         void Start()
         {
+            string[] goodReview = new string[4] {"LOVED IT!", "great product", "easy to use", null};
+            string[] badReview = new string[4] {"HATED IT!", "unusable", "had trouble using it", null};
             //GetComponent<PhotonView>().RPC("updateChat", RpcTarget.All, "RPC success");
             SpawnNegative = GetComponent<SpawnNegative>();
             SpawnPositive = GetComponent<SpawnPositive>();
             for (int i = 0; i < PositiveCount; i++)
             {
-                SpawnPositive.OnSpawnAPrefab(null);
+                SpawnPositive.OnSpawnAPrefab(goodReview[i % 4]);
             }
             for (int i = 0; i < NegativeCount; i++)
             {
-                SpawnNegative.OnSpawnAPrefab(null);
+                SpawnNegative.OnSpawnAPrefab(badReview[i % 4]);
             }
         }
         public void addANewNegative()
         {
-            SpawnNegative.OnSpawnAPrefab("YEE YEE ASS");
+            SpawnNegative.OnSpawnAPrefab("RPC test");
             GetComponent<PhotonView>().RPC("updateChat", RpcTarget.All, "RPC success");
         }
         // Update is called once per frame

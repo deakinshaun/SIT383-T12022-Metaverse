@@ -14,9 +14,9 @@ namespace UnityEngine.XR.Interaction.Toolkit
         {
             if (random)
             {
-                float x = Random.Range(-0.2f, 0.2f);
-                float y = Random.Range(0, 4);
-                float z = Random.Range(-0.2f, 0.2f);
+                float x = Random.Range(-2.5f, -0.7f);
+                float y = 0.44f;
+                float z = Random.Range(-2.5f, -0.7f);
                 GameObject gameObject = Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity) as GameObject;
                 gameObject.GetComponent<voteBehaviorScript>().TextToShow = textToShow;
             }
