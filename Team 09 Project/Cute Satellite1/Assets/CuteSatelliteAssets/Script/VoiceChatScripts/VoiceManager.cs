@@ -47,11 +47,13 @@ public class VoiceManager : MonoBehaviourPunCallbacks
     //[My Home]     new Vector2(34.71195f,34.70387f);
     //[Jinkun Home] new Vector2(40.77146f, 40.76367f);
     //[Deakin]      new Vector2(-37.84236f, -37.84089f);
+    //[Huiqing]     new Vector2(39.67745f, 39.66926f);
 
     public Vector2 RangeOfLon = new Vector2(111.63634f, 111.65014f);
     //[My Home]     new Vector2(113.70573f, 113.71925f);
     //[Jinkun Home] new Vector2(111.63634f, 111.65014f);
     //[Deakin]      new Vector2(145.10751f, 145.12105f);
+    //[Huiqing]     new Vector2(106.82834f, 106.84626f);
 
     public Vector2 TopRightLocation;
     public Vector2 ButLeftLocation;
@@ -137,7 +139,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         Handheld.Vibrate();
         UsersControl = PhotonNetwork.Instantiate(UsersObject.name,
             new Vector3(0, 0, 0), new Quaternion(), 0);
-        UsersControl.transform.parent = ARCamera.transform;
+        UsersControl.transform.parent = Map.transform;
 
     }
     public override void OnCreatedRoom()
@@ -363,7 +365,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
 
                 X = Anchor1.transform.position.x + x;
                 Y = Anchor1.transform.position.y - y;
-                UsersControl.transform.position = new Vector3(X, Y, Map.transform.position.z + 0.2f);//需要把世界坐标转化为unity坐标
+                UsersControl.transform.localPosition = new Vector3(X, 0, Y);//需要把世界坐标转化为unity坐标
                 afterAngle = (int)Input.compass.trueHeading;
                 if (Mathf.Abs(afterAngle - beforeAngle) >= 10)
                 {
