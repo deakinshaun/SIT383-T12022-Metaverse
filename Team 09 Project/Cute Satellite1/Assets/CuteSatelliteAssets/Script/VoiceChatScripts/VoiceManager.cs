@@ -43,13 +43,13 @@ public class VoiceManager : MonoBehaviourPunCallbacks
 
     private GameObject UsersControl;
 
-    public Vector2 RangeOfLat = new Vector2(40.77146f, 40.76367f);
+    public Vector2 RangeOfLat = new Vector2(34.71195f, 34.70387f);
     //[My Home]     new Vector2(34.71195f,34.70387f);
     //[Jinkun Home] new Vector2(40.77146f, 40.76367f);
     //[Deakin]      new Vector2(-37.84236f, -37.84089f);
     //[Huiqing]     new Vector2(39.67745f, 39.66926f);
 
-    public Vector2 RangeOfLon = new Vector2(111.63634f, 111.65014f);
+    public Vector2 RangeOfLon = new Vector2(113.70573f, 113.71925f);
     //[My Home]     new Vector2(113.70573f, 113.71925f);
     //[Jinkun Home] new Vector2(111.63634f, 111.65014f);
     //[Deakin]      new Vector2(145.10751f, 145.12105f);
@@ -358,19 +358,21 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         float Y;
         if (usersName == NameInput.text)
         {
-            if (latitude != 0)
+            if (latitude != 0 && longitude != 0)
             {
-                x = (float)(latitude * (RangeOfLat.x - RangeOfLat.y)) / Mathf.Abs(Anchor1.transform.position.x - Anchor2.transform.position.x);//(20+20)
-                y = (float)(longitude * (RangeOfLon.x - RangeOfLon.y)) / Mathf.Abs(Anchor1.transform.position.y - Anchor2.transform.position.y);//(20+10)
-
-                X = Anchor1.transform.position.x + x;
-                Y = Anchor1.transform.position.y - y;
+                x = (float)(latitude * (RangeOfLat.x - RangeOfLat.y)) / Mathf.Abs(Anchor1.transform.localPosition.x - Anchor2.transform.localPosition.x); ;//(20+20)
+                y = (float)(longitude * (RangeOfLon.x - RangeOfLon.y)) / Mathf.Abs(Anchor1.transform.localPosition.z - Anchor2.transform.localPosition.z);//(20+10)
+                latttt.text = x.ToString();
+                longgg.text = y.ToString();
+                X = Anchor1.transform.localPosition.x + x;
+                Y = Anchor1.transform.localPosition.y - y;
                 UsersControl.transform.localPosition = new Vector3(X, 0, Y);//需要把世界坐标转化为unity坐标
                 afterAngle = (int)Input.compass.trueHeading;
                 if (Mathf.Abs(afterAngle - beforeAngle) >= 10)
                 {
                     beforeAngle = afterAngle;
-                    UsersControl.transform.eulerAngles = new Vector3(0, -afterAngle, 0);
+                    //UsersControl.transform.eulerAngles = new Vector3(0, -afterAngle, 0);
+                    UsersControl.transform.Rotate(new Vector3(0, 0, -afterAngle));
                 }//make users control can toward user's toward
             }
         }

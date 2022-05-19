@@ -1477,7 +1477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &697107818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5509,6 +5509,8 @@ MonoBehaviour:
   latttt: {fileID: 698729196}
   longgg: {fileID: 1509103070}
   IsVisual: 1
+  latitute: 0
+  longitute: 0
   beforeAngle: 0
   afterAngle: 0
 --- !u!4 &2131626360
