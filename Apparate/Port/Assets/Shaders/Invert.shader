@@ -11,6 +11,11 @@ Shader "Custom/Invert"
 
         Cull Front
 
+        Stencil{
+            Ref 1
+            comp[_StencilTest]
+        }
+
         Pass
         {
             CGPROGRAM
@@ -48,6 +53,7 @@ Shader "Custom/Invert"
 
             fixed4 frag (v2f i) : SV_Target
             {
+                //float2 uv = float2(1. - i.uv.x, i.uv.y)
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
                 // apply fog

@@ -22,10 +22,13 @@ public class Portal : MonoBehaviour
     {
         var stencilTest = fullRender ? CompareFunction.NotEqual : CompareFunction.Equal;
         
-        foreach (var mat in materials)
+        Shader.SetGlobalInt("_StencilTest",(int)stencilTest);
+
+
+       /* foreach (var mat in materials)
         {
             mat.SetInt("_StencilTest", (int)stencilTest);
-        }
+        }*/
     }
 
     bool GetIsInFront()
