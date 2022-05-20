@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9de5d58fd937b7d4dad0b1529b5dcdac
+guid: 98cce8592a1e4a44fbb914fb0d3a7ef7
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,18 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Grass
-    second: {fileID: 2100000, guid: 48f3f4fe66b248740bc80c74a9dbee49, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gray Concrete
-    second: {fileID: 2100000, guid: 16bd0e26ab906d046856b7341c61321b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: White Concrete
-    second: {fileID: 2100000, guid: 60ee1c17b16eaad40967abc656988d07, type: 2}
+      name: WaterFall
+    second: {fileID: 2100000, guid: 900d5adfa9d041e48a88814dd213417f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

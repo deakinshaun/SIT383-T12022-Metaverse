@@ -110,9 +110,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
         {
             case "Green": PhotonNetwork.LoadLevel("GreenLevel"); break;
 
-            case "Blue": PhotonNetwork.LoadLevel("MeetingRoom"); break;
+            case "Blue": PhotonNetwork.LoadLevel("BlueLevel"); break;
 
-            case "Purple": PhotonNetwork.LoadLevel("MeetingRoom"); break;
+            case "Purple": PhotonNetwork.LoadLevel("PurpleLevel"); break;
         }
 
     }

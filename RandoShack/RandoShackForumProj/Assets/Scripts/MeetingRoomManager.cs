@@ -13,6 +13,8 @@ MonoBehaviourPunCallbacks
     public GameObject avatarPrefab;
     public TextMesh messageBoard;
 
+    [SerializeField]
+    private Vector3 SpawnLoc = new Vector3(-6f, 2f, -15f);
     public override void OnJoinedRoom()
     {
         if (roomLabel != null)
@@ -22,7 +24,7 @@ MonoBehaviourPunCallbacks
                 roomLabel.text = "Room:\n" + PhotonNetwork.CurrentRoom.Name;
             }
         }
-        PhotonNetwork.Instantiate(avatarPrefab.name, new Vector3(-6f, 2f, -15f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(avatarPrefab.name, SpawnLoc, Quaternion.identity, 0);
         OnRoomPropertiesUpdate(PhotonNetwork.CurrentRoom.CustomProperties);
     }
 

@@ -8,6 +8,14 @@ using Photon.Realtime;
 
 public class Movement : MonoBehaviourPun
 {
+    //raycast numbers
+    [SerializeField]
+    private float downRay = 100f;
+
+    [SerializeField]
+    private float downOffset = -0.5f;
+
+
     //control speeds
     [SerializeField]
     [Tooltip("Turn speed in degrees per second")]
@@ -94,19 +102,32 @@ public class Movement : MonoBehaviourPun
             float move = Input.GetAxis("Vertical");
             float turn = Input.GetAxis("Horizontal");
 
-
-
-            if (Input.GetKey(KeyCode.Backspace))
-            {
-                transform.position = new Vector3(0, 0, 0);
-                transform.rotation = new Quaternion(0, 0, 0, 0);
-            }
-
             //mutliply when dealing with rotation
             transform.rotation *= Quaternion.AngleAxis(turn * turnSpeed * Time.deltaTime, transform.up);
 
             // moving forward / back
             transform.position += move * moveSpeed * Time.deltaTime * transform.forward;
+
+            //placing PLayer on ground
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, downRay))
+            {
+                /*
+                 * Set the target location to the location of the hit.
+                 */
+                Vector3 targetLocation = hit.point;
+                /*
+                 * Modify the target location so that the object is being perfectly aligned with the ground (if it's flat).
+                 */
+                targetLocation += new Vector3(0, (transform.localScale.y / 2) + downOffset, 0);
+                /*
+                 * Move the object to the target location.
+                 */
+                transform.position = targetLocation;
+
+
+
+            }
         }
         else
         {
