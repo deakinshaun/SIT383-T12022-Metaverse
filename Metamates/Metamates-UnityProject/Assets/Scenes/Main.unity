@@ -3008,6 +3008,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4322915744752110957, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4991907938281525968, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5077567411004332278, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
       propertyPath: m_Name
       value: MorgaineAvatar
@@ -3016,6 +3024,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5366231646072037260, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5439185222311376718, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3023,6 +3035,14 @@ PrefabInstance:
     - target: {fileID: 5802624125242290006, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562862114166621839, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004558117898887720, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
@@ -3848,7 +3868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826111145364720643, guid: 8041f6506fe79124ba2b9f454404fbf9, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 4294967263
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 5826111145365308383, guid: 8041f6506fe79124ba2b9f454404fbf9, type: 3}
       propertyPath: m_LocalPosition.x
