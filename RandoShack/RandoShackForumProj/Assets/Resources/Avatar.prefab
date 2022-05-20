@@ -260,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   downRay: 20
   downOffset: -0.4
-  turnSpeed: 120
+  turnSpeed: 3
   moveSpeed: 10
 --- !u!1 &2068946499538379388
 GameObject:

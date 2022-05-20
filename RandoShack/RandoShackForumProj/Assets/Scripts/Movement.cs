@@ -19,12 +19,14 @@ public class Movement : MonoBehaviourPun
     //control speeds
     [SerializeField]
     [Tooltip("Turn speed in degrees per second")]
-    private float turnSpeed = 100.0f;
+    private float turnSpeed = 5.0f;
     [SerializeField]
     [Tooltip("Movement speed in meters per second (assumes 1 unit = 1 meter)")]
     private float moveSpeed = 10f;
 
     private bool lobbyAvatar = false;
+
+    private GameObject personalCamera;
 
     // binding events to buttons
     private void setButtonCallbacks()
@@ -88,7 +90,9 @@ public class Movement : MonoBehaviourPun
         {
             lobbyAvatar = !PhotonNetwork.InRoom;
             setButtonCallbacks();
-            transform.Find("HeadCam").gameObject.SetActive(true);
+            personalCamera = transform.Find("HeadCam").gameObject;
+            personalCamera.SetActive(true);
+
         }
         photonView.RPC("showNickname", RpcTarget.All, RoomManager.getName(this.gameObject));
     }
@@ -102,8 +106,17 @@ public class Movement : MonoBehaviourPun
             float move = Input.GetAxis("Vertical");
             float turn = Input.GetAxis("Horizontal");
 
+            // dragging around camera
+            if(Input.GetAxis("Fire1") > 0f)
+            {
+                // rotating the player (in x axis as it affects forward / back)
+                transform.eulerAngles += turnSpeed * new Vector3(0, Input.GetAxis("Mouse X"), 0);
+                // moving the camera (we don't want player moving forward upwards so only camera is rotated along x)
+                personalCamera.transform.eulerAngles += turnSpeed * new Vector3( -Input.GetAxis("Mouse Y"),0, 0);
+            }
+
             //mutliply when dealing with rotation
-            transform.rotation *= Quaternion.AngleAxis(turn * turnSpeed * Time.deltaTime, transform.up);
+           // transform.rotation *= Quaternion.AngleAxis(turn * turnSpeed * Time.deltaTime, transform.up);
 
             // moving forward / back
             transform.position += move * moveSpeed * Time.deltaTime * transform.forward;
