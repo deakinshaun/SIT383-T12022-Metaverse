@@ -134,9 +134,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4591924533667169439}
     m_Modifications:
+    - target: {fileID: 1333431505661655511, guid: f83330e35ab13ed4da1ca56313dfc579, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3023761279228800518, guid: f83330e35ab13ed4da1ca56313dfc579, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4252541288237366658, guid: f83330e35ab13ed4da1ca56313dfc579, type: 3}
       propertyPath: m_Name
       value: MattAvatar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6119126666972157162, guid: f83330e35ab13ed4da1ca56313dfc579, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206230873076754928, guid: f83330e35ab13ed4da1ca56313dfc579, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7809934424771541658, guid: f83330e35ab13ed4da1ca56313dfc579, type: 3}
       propertyPath: m_RootOrder
@@ -181,6 +197,10 @@ PrefabInstance:
     - target: {fileID: 7809934424771541658, guid: f83330e35ab13ed4da1ca56313dfc579, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424343611655537220, guid: f83330e35ab13ed4da1ca56313dfc579, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f83330e35ab13ed4da1ca56313dfc579, type: 3}

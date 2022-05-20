@@ -134,6 +134,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2520652103914503797}
     m_Modifications:
+    - target: {fileID: 915687536193937172, guid: 03f2ae765b42e7043a64722abc093a10, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071379726602656902, guid: 03f2ae765b42e7043a64722abc093a10, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4370642833611369197, guid: 03f2ae765b42e7043a64722abc093a10, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -181,6 +189,18 @@ PrefabInstance:
     - target: {fileID: 5835508247088462953, guid: 03f2ae765b42e7043a64722abc093a10, type: 3}
       propertyPath: m_Name
       value: BenAvatar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767978984789592750, guid: 03f2ae765b42e7043a64722abc093a10, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310489226655474909, guid: 03f2ae765b42e7043a64722abc093a10, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935881460137717524, guid: 03f2ae765b42e7043a64722abc093a10, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03f2ae765b42e7043a64722abc093a10, type: 3}

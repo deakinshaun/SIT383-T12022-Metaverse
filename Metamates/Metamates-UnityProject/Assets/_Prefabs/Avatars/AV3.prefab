@@ -134,6 +134,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4420748479225872235}
     m_Modifications:
+    - target: {fileID: 278376268672978832, guid: 7cc5d8244145e3c499ca4348d51300ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 582260477699756500, guid: 7cc5d8244145e3c499ca4348d51300ca, type: 3}
       propertyPath: m_Name
       value: JacobAvatar
@@ -181,6 +185,22 @@ PrefabInstance:
     - target: {fileID: 1695962800545526930, guid: 7cc5d8244145e3c499ca4348d51300ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837881977833617369, guid: 7cc5d8244145e3c499ca4348d51300ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2969632778658754409, guid: 7cc5d8244145e3c499ca4348d51300ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367451142303843803, guid: 7cc5d8244145e3c499ca4348d51300ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609485927680420230, guid: 7cc5d8244145e3c499ca4348d51300ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cc5d8244145e3c499ca4348d51300ca, type: 3}
