@@ -2202,6 +2202,26 @@ MonoBehaviour:
   - m_Rig: {fileID: 1600363693}
     m_Active: 1
   m_Effectors: []
+--- !u!114 &851518933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851518929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d94aff48f2bb94c8bfec9b6ff65131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1269197613}
+  leftFootPositionWeight: 0
+  rightFootPositionWeight: 0
+  leftFootRotationWeight: 0
+  rightFootRotationWeight: 0
+  footOffset: {x: 0, y: 0, z: 0}
+  raycastLeftOffset: {x: 0, y: 0, z: 0}
+  raycastRightOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &874185945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5988558718948763171, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
@@ -3051,6 +3071,11 @@ PrefabInstance:
 --- !u!4 &1269197612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1867294915101372523, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
+  m_PrefabInstance: {fileID: 1269197611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1269197613 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 445743764576777548, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
   m_PrefabInstance: {fileID: 1269197611}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1269978575
