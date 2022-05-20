@@ -10,9 +10,14 @@ public class UIplatformScript : MonoBehaviour
 
     void OnEnable()
     {
+        // windows player / editor use same ui
+        if (Application.platform == RuntimePlatform.WindowsEditor && runtimePlatform == RuntimePlatform.WindowsPlayer)
+            return;
+
         //disabling the canvas when ui for wrong platform is up
-        if (Application.platform != runtimePlatform && runtimePlatform == RuntimePlatform.Android)
+        if (Application.platform != runtimePlatform)
             gameObject.SetActive(false);
+
 
     }
 }
