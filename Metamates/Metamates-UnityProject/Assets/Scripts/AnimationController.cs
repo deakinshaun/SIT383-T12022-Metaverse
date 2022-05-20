@@ -9,20 +9,20 @@ public class AnimationController : MonoBehaviour
     private void OnEnable()
     {
         move.action.started += AnimateLegs;
-        move.action.cancelled += StopAnimateLegs;
+        move.action.canceled += StopAnimateLegs;
     }
 
     private void OnDisable()
     {
         move.action.started -= AnimateLegs;
-        move.action.cancelled -= StopAnimateLegs;
+        move.action.canceled -= StopAnimateLegs;
     }
 
     private void AnimateLegs(InputAction.CallbackContext obj)
     {
         bool isMovingForward = move.action.ReadValue<Vector2>().y > 0;
 
-        if(isMovingForward)
+        if (isMovingForward)
         {
             animator.SetBool("isWalking", true);
             animator.SetFloat("animSpeed", 1);
