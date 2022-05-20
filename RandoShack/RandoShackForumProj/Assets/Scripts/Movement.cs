@@ -108,6 +108,10 @@ public class Movement : MonoBehaviourPun
            // Debug.Log($"roomstat {PhotonNetwork.InRoom} | {RoomManager.getName(this.gameObject)}");
             personalCamera.SetActive(true);
         }
+        else
+        {
+            tag = null;
+        }
 
         photonView.RPC("showNickname", RpcTarget.All, RoomManager.getName(this.gameObject));
 

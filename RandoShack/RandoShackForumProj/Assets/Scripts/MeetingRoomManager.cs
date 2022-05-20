@@ -15,7 +15,6 @@ public class MeetingRoomManager : MonoBehaviourPunCallbacks
     [SerializeField]
     private Vector3 SpawnLoc = new Vector3(-6f, 2f, -15f);
 
-
     public override void OnJoinedRoom()
     {
         if (roomLabel != null)
