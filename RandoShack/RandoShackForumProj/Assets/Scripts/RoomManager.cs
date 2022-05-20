@@ -9,9 +9,7 @@ using UnityEngine.SceneManagement;
 public class RoomManager : MonoBehaviourPunCallbacks
 {
     public GameObject roomPrefab;
-    public GameObject roomPanel;
 
-    private bool allowingJoining = false;
 
     //List<GameObject> displayRooms = new List<GameObject>();
 

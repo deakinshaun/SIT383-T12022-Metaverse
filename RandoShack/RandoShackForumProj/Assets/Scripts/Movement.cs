@@ -15,6 +15,7 @@ public class Movement : MonoBehaviourPun
     [SerializeField]
     private float downOffset = -0.5f;
 
+    private string platform = "Pc";
 
     //control speeds
     [SerializeField]
@@ -24,23 +25,21 @@ public class Movement : MonoBehaviourPun
     [Tooltip("Movement speed in meters per second (assumes 1 unit = 1 meter)")]
     private float moveSpeed = 10f;
 
-    private bool lobbyAvatar = false;
+    private bool cameraMoving = false;
 
     private GameObject personalCamera;
 
     // binding events to buttons
     private void setButtonCallbacks()
     {
-
-        GameObject.Find("Canvas/ChatInterface/TalkButton").GetComponent<EventTrigger>().triggers[0].callback.AddListener((data) => { Talk(); });
-        GameObject.Find("Canvas/ChatInterface/LobbyButton").GetComponent<EventTrigger>().triggers[0].callback.AddListener((data) => { Lobby(); });
-
-        GameObject.Find("Canvas/ChatInterface/NickNameButton").GetComponent<EventTrigger>().triggers[0].callback.AddListener((data) => { Nickname(); });
+        GameObject.Find($"{platform}Canvas/ChatInterface/TalkButton").GetComponent<EventTrigger>().triggers[0].callback.AddListener((data) => { Talk(); });
+        GameObject.Find($"{platform}Canvas/ChatInterface/LobbyButton").GetComponent<EventTrigger>().triggers[0].callback.AddListener((data) => { Lobby(); });
+        GameObject.Find($"{platform}Canvas/ChatInterface/NickNameButton").GetComponent<EventTrigger>().triggers[0].callback.AddListener((data) => { Nickname(); });
     }
 
     public void Talk()
     {
-        GameObject t = GameObject.Find("Canvas/ChatInterface/TalkMessage/Text");
+        GameObject t = GameObject.Find($"{platform}Canvas/ChatInterface/TalkMessage/Text");
         if (t != null)
         {
             Room r = PhotonNetwork.CurrentRoom;
@@ -54,7 +53,7 @@ public class Movement : MonoBehaviourPun
     // which is shared with the lobby.
     public void Lobby()
     {
-        GameObject t = GameObject.Find("Canvas/ChatInterface/LobbyMessage/Text");
+        GameObject t = GameObject.Find($"{platform}Canvas/ChatInterface/LobbyMessage/Text");
         if (t != null)
         {
             Room r = PhotonNetwork.CurrentRoom;
@@ -72,7 +71,7 @@ public class Movement : MonoBehaviourPun
 
     public void Nickname()
     {
-        GameObject t = GameObject.Find("Canvas/ChatInterface/NickNameName/Text");
+        GameObject t = GameObject.Find($"{platform}Canvas/ChatInterface/NickNameName/Text");
         if (t != null)
         {
             GetComponent<PhotonView>().Owner.NickName = t.GetComponent<Text>().text;
@@ -86,9 +85,11 @@ public class Movement : MonoBehaviourPun
         Color randCol = Random.ColorHSV();
         // charMat.color = randCol;
 
+        if (Application.platform == RuntimePlatform.Android)
+            platform = "Android";
+
         if (photonView.IsMine || !PhotonNetwork.IsConnected)
         {
-            lobbyAvatar = !PhotonNetwork.InRoom;
             setButtonCallbacks();
             personalCamera = transform.Find("HeadCam").gameObject;
             personalCamera.SetActive(true);
@@ -106,14 +107,6 @@ public class Movement : MonoBehaviourPun
             float move = Input.GetAxis("Vertical");
             float turn = Input.GetAxis("Horizontal");
 
-            // dragging around camera
-            if(Input.GetAxis("Fire1") > 0f)
-            {
-                // rotating the player (in x axis as it affects forward / back)
-                transform.eulerAngles += turnSpeed * new Vector3(0, Input.GetAxis("Mouse X"), 0);
-                // moving the camera (we don't want player moving forward upwards so only camera is rotated along x)
-                personalCamera.transform.eulerAngles += turnSpeed * new Vector3( -Input.GetAxis("Mouse Y"),0, 0);
-            }
 
             //mutliply when dealing with rotation
            // transform.rotation *= Quaternion.AngleAxis(turn * turnSpeed * Time.deltaTime, transform.up);
@@ -137,10 +130,31 @@ public class Movement : MonoBehaviourPun
                  * Move the object to the target location.
                  */
                 transform.position = targetLocation;
-
-
-
             }
+
+            // dragging around camera
+            if (Input.GetAxis("Fire1") > 0f && !EventSystem.current.IsPointerOverGameObject())
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                cameraMoving = true;
+                // rotating the player (in x axis as it affects forward / back)
+                transform.eulerAngles += turnSpeed * new Vector3(0, Input.GetAxis("Mouse X"), 0);
+                // moving the camera (we don't want player moving forward upwards so only camera is rotated along x)
+                Debug.Log(Input.GetAxis("Mouse Y"));
+                personalCamera.transform.eulerAngles += turnSpeed * new Vector3(-1 * Input.GetAxis("Mouse Y"), 0, 0);
+            }
+            else
+            {
+                if(cameraMoving == true)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    cameraMoving = false;
+                }
+            }
+
+
+
+
         }
         else
         {
