@@ -30,6 +30,7 @@ public class LowerBodyAnimation : MonoBehaviour
         bool isRightFootDown = Physics.Raycast(rightFootPosition + raycastRightOffset, Vector3.down, out hitRightFoot);
 
         CalculateLeftFoot(isLeftFootDown, hitLeftFoot);
+        CalculateRightFoot(isRightFootDown, hitRightFoot);
     }
 
     void CalculateLeftFoot(bool isLeftFootDown, RaycastHit hitLeftFoot)
