@@ -9,11 +9,11 @@ using UnityEngine.SceneManagement;
 public class RoomManager : MonoBehaviourPunCallbacks
 {
     public GameObject roomPrefab;
-    public  GameObject roomPanel;
+    public GameObject roomPanel;
 
     private bool allowingJoining = false;
 
-    List<GameObject> displayRooms = new List<GameObject>();
+    //List<GameObject> displayRooms = new List<GameObject>();
 
     void Start()
     {
@@ -41,30 +41,34 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
     // Find the display version of the room, creating one
     // if none exists.
-    GameObject getRoomObject(string name)
-    {
-        foreach (GameObject g in displayRooms)
-        {
-            DisplayRoom dr = g.GetComponent<DisplayRoom>();
-            if (dr.getName().Equals(name))
-            {
-                return g;
-            }
-        }
-        GameObject room = Instantiate(roomPrefab);
-        room.transform.SetParent(roomPanel.transform,false);
-        room.GetComponent<DisplayRoom>().setName(name);
-      //  room.transform.localScale = Vector3.one;
-        room.GetComponent<LocalRoomBehaviour>().setManager(this);
-        displayRooms.Add(room);
-        return room;
-    }
 
-    void removeRoomObject(GameObject room)
-    {
-        displayRooms.Remove(room);
-        Destroy(room);
-    }
+    // not using this list so removing
+
+
+    //GameObject getRoomObject(string name)
+    //{
+    //    foreach (GameObject g in displayRooms)
+    //    {
+    //        DisplayRoom dr = g.GetComponent<DisplayRoom>();
+    //        if (dr.getName().Equals(name))
+    //        {
+    //            return g;
+    //        }
+    //    }
+    //    GameObject room = Instantiate(roomPrefab);
+    //    room.transform.SetParent(roomPanel.transform,false);
+    //    room.GetComponent<DisplayRoom>().setName(name);
+    //  //  room.transform.localScale = Vector3.one;
+    //    room.GetComponent<LocalRoomBehaviour>().setManager(this);
+    //    displayRooms.Add(room);
+    //    return room;
+    //}
+
+    //void removeRoomObject(GameObject room)
+    //{
+    //    displayRooms.Remove(room);
+    //    Destroy(room);
+    //}
 
     // Lay the room controls out in a grid. maybe be uneccisarry
     //void updateRooms()
@@ -86,38 +90,31 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //}
     public void JoinRoom(string roomName)
     {
-        allowingJoining = true;
-        PhotonNetwork.JoinRoom(roomName);
-        PhotonNetwork.LoadLevel("MeetingRoom");
-    }
+        // create and / or join the room
+        Debug.Log($"Adding new room: {roomName}");
+        RoomOptions ro = new RoomOptions();
+        ro.EmptyRoomTtl = 100000; // 100 * 1000 ms
 
-    public override void OnConnectedToMaster()
-    {
-        Debug.Log("Connected to master.");
-        PhotonNetwork.JoinLobby();
-    }
+        // Export the notices property to the lobby.
+        string[] roomPropsInLobby = { "notices" };
+        ro.CustomRoomPropertiesForLobby = roomPropsInLobby;
+        ExitGames.Client.Photon.Hashtable
+        customRoomProperties = new ExitGames.Client.Photon.Hashtable() { { "notices", "Room Start\n" } };
+        ro.CustomRoomProperties = customRoomProperties;
+        PhotonNetwork.JoinOrCreateRoom(roomName, ro, null);
 
-    public override void OnRoomListUpdate(List<RoomInfo> roomList)
-    {
-        foreach (RoomInfo ri in roomList)
+       // allowingJoining = true;
+       // PhotonNetwork.JoinRoom(roomName);
+
+        switch (roomName)
         {
-            GameObject room = getRoomObject(ri.Name);
+            case "Green": PhotonNetwork.LoadLevel("GreenLevel"); break;
 
-            if (ri.RemovedFromList)
-            {
-                removeRoomObject(room);
-            }
-            else
-            {
-                room.GetComponent<DisplayRoom>().display(ri.Name + "\n\nwith " + ri.PlayerCount + "players\n" + ri.CustomProperties["notices"]);
-            }
+            case "Blue": PhotonNetwork.LoadLevel("MeetingRoom"); break;
+
+            case "Purple": PhotonNetwork.LoadLevel("MeetingRoom"); break;
         }
-       // updateRooms();
-    }
 
-    public override void OnJoinedLobby()
-    {
-        Debug.Log("Joined lobby");
     }
 
     public override void OnJoinedRoom()
@@ -128,11 +125,45 @@ public class RoomManager : MonoBehaviourPunCallbacks
         p["notices"] = $"{RoomManager.getName(this.gameObject)} : {Time.time} :joined\n";
         r.SetCustomProperties(p);
         // Since this is part of the create room process,leave if just creating.
-        if (!allowingJoining)
-        {
-            PhotonNetwork.LeaveRoom();
-        }
+
+        //if (!allowingJoining)
+        //{
+        //    PhotonNetwork.LeaveRoom();
+        //}
     }
+
+    public override void OnConnectedToMaster()
+    {
+        Debug.Log("Connected to master.");
+        PhotonNetwork.JoinLobby();
+    }
+
+    //removing as not using list
+
+    //public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    //{
+    //    foreach (RoomInfo ri in roomList)
+    //    {
+    //        GameObject room = getRoomObject(ri.Name);
+
+    //        if (ri.RemovedFromList)
+    //        {
+    //            removeRoomObject(room);
+    //        }
+    //        else
+    //        {
+    //            room.GetComponent<DisplayRoom>().display(ri.Name + "\n\nwith " + ri.PlayerCount + "players\n" + ri.CustomProperties["notices"]);
+    //        }
+    //    }
+    //   // updateRooms();
+    //}
+
+    public override void OnJoinedLobby()
+    {
+        Debug.Log("Joined lobby");
+    }
+
+
 
     public override void OnCreatedRoom()
     { Debug.Log("Room created"); }
@@ -142,18 +173,18 @@ public class RoomManager : MonoBehaviourPunCallbacks
         Debug.Log($"Failed to create room {returnCode} { message}");
     }
 
-    public void addRoom(Text name)
-    {
-        Debug.Log($"Adding new room: {name.text}");
-        RoomOptions ro = new RoomOptions();
-        ro.EmptyRoomTtl = 100000; // 100 * 1000 ms
+    //public void addRoom(Text name)
+    //{
+    //    Debug.Log($"Adding new room: {name.text}");
+    //    RoomOptions ro = new RoomOptions();
+    //    ro.EmptyRoomTtl = 100000; // 100 * 1000 ms
 
-        // Export the notices property to the lobby.
-        string[] roomPropsInLobby = { "notices" };
-        ro.CustomRoomPropertiesForLobby = roomPropsInLobby;
-        ExitGames.Client.Photon.Hashtable
-        customRoomProperties = new ExitGames.Client.Photon.Hashtable() { { "notices", "Room Start\n" } };
-        ro.CustomRoomProperties = customRoomProperties;
-        PhotonNetwork.JoinOrCreateRoom(name.text, ro, null);
-    }
+    //    // Export the notices property to the lobby.
+    //    string[] roomPropsInLobby = { "notices" };
+    //    ro.CustomRoomPropertiesForLobby = roomPropsInLobby;
+    //    ExitGames.Client.Photon.Hashtable
+    //    customRoomProperties = new ExitGames.Client.Photon.Hashtable() { { "notices", "Room Start\n" } };
+    //    ro.CustomRoomProperties = customRoomProperties;
+    //    PhotonNetwork.JoinOrCreateRoom(name.text, ro, null);
+    //}
 }

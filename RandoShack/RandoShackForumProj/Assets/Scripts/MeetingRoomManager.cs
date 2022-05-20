@@ -22,7 +22,7 @@ MonoBehaviourPunCallbacks
                 roomLabel.text = "Room:\n" + PhotonNetwork.CurrentRoom.Name;
             }
         }
-        PhotonNetwork.Instantiate(avatarPrefab.name, new Vector3(), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(avatarPrefab.name, new Vector3(-6f, 2f, -15f), Quaternion.identity, 0);
         OnRoomPropertiesUpdate(PhotonNetwork.CurrentRoom.CustomProperties);
     }
 

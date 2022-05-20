@@ -16,6 +16,7 @@ public class Movement : MonoBehaviourPun
     [Tooltip("Movement speed in meters per second (assumes 1 unit = 1 meter)")]
     private float moveSpeed = 10f;
 
+    private bool lobbyAvatar = false;
 
     // binding events to buttons
     private void setButtonCallbacks()
@@ -77,7 +78,7 @@ public class Movement : MonoBehaviourPun
 
         if (photonView.IsMine || !PhotonNetwork.IsConnected)
         {
-            LobbyAvatar = !PhotonNetwork.InRoom;
+            lobbyAvatar = !PhotonNetwork.InRoom;
             setButtonCallbacks();
             transform.Find("HeadCam").gameObject.SetActive(true);
         }

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MeetingRoom.unity
     guid: 8a7081db70afc244e9ff92a1d503d722
+  - enabled: 1
+    path: Assets/Scenes/GreenLevel.unity
+    guid: 39f730eae324fef4b9e61f46fdbf891d
   m_configObjects: {}
