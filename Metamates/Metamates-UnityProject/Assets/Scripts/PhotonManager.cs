@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine;
 
 
 
@@ -20,7 +17,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
     }
 
-    public override void OnConnectedToMaster ()
+    public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to Master.");
         RoomOptions roomopt = new RoomOptions();
@@ -32,12 +29,13 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
         Debug.Log("Joined room with " + PhotonNetwork.CurrentRoom.PlayerCount + " participants.");
 
-        PhotonNetwork.Instantiate(VRJacobAvatar.name, new Vector3(), Quaternion.identity, 0);
+        // Commented out whilst causing errors
+        //PhotonNetwork.Instantiate(VRJacobAvatar.name, new Vector3(), Quaternion.identity, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
