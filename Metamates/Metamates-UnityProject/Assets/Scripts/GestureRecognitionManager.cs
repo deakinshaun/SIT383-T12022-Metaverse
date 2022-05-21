@@ -9,14 +9,13 @@ public class GestureRecognitionManager : MonoBehaviour
     public int index;
     public Vector3 centerAngle;
 
-    public GameObject No;
+
 
     // Start is called before the first frame update
     void Start()
     {
         centerAngle = userHead.eulerAngles;
-        //Yes.SetActive(false);
-        No.SetActive(false);
+
 
         index = 0;
         headTransformAngles = new Vector3[100];
@@ -31,11 +30,10 @@ public class GestureRecognitionManager : MonoBehaviour
         headTransformAngles[index] = userHead.eulerAngles;
         index++;
 
-        if (index == 100)
+        if (index >= 99)
         {
             CheckMovement();
-            ResetGestures();
-
+            index = 0;
         }
     }
 
@@ -47,13 +45,6 @@ public class GestureRecognitionManager : MonoBehaviour
 
     }
 
-    private void ResetGestures()
-    {
-        index = 0;
-
-        //Yes.SetActive(false);
-        //No.SetActive(false);
-    }
 
     void CheckMovement()
     {
@@ -89,27 +80,27 @@ public class GestureRecognitionManager : MonoBehaviour
         // If user has been left and right and not up and down then register as a shake of a head 
         if (left && right && !(up && down))
         {
-            // shake head so No
-            No.SetActive(true);
-            Debug.Log("shake head so No");
+            Debug.Log("Shaking Head Gesture Recognised");
+            ShakeHeadGestureActivate();
         }
 
         // If user has been up and down and not left and right then register as a nod 
         if (up && down && !(left && right))
         {
-            // node head so Yes
-            //Yes.SetActive(true);
-            Debug.Log("nod head so Yes");
+            Debug.Log("Nodding Gesture Recognised");
             NodGestureActivate();
         }
-
-
-
     }
+
+    private void ShakeHeadGestureActivate()
+    {
+        Debug.Log("Trying to instantiate the Shake head gesture now");
+        PhotonNetwork.Instantiate("ShakeGesture", new Vector3(0, 0.3f, 0) + userHead.position, Quaternion.EulerAngles(0, userHead.rotation.y, 0), 0);
+    }
+
     public void NodGestureActivate()
     {
-        //GetComponent<PhotonView>().RPC("ButtonPressedHappy", RpcTarget.Others);
         Debug.Log("Trying to instantiate the nod gesture now");
-        PhotonNetwork.Instantiate("YesGesture", new Vector3(0, 1, 0) + userHead.position, Quaternion.identity, 0);
+        GameObject nodInstance = PhotonNetwork.Instantiate("NodGesture", new Vector3(0, 0.3f, 0) + userHead.position, Quaternion.EulerAngles(0, userHead.rotation.y, 0), 0);
     }
 }
