@@ -41,11 +41,11 @@ public class SubRoomScript : MonoBehaviour
 
             switch (roomName.Substring(0, roomName.IndexOf('_')))
             {
-                case "GreenSub": PhotonNetwork.LoadLevel("MeetingRoom"); break;
+                case "GreenSub": PhotonNetwork.LoadLevel("BlueSubLevel"); break;
 
-                case "BlueSub": PhotonNetwork.LoadLevel("MeetingRoom"); break;
+                case "BlueSub": PhotonNetwork.LoadLevel("BlueSubLevel"); break;
 
-                case "PurpleSub": PhotonNetwork.LoadLevel("MeetingRoom"); break;
+                case "PurpleSub": PhotonNetwork.LoadLevel("BlueSubLevel"); break;
 
                 case "Green": PhotonNetwork.LoadLevel("GreenLevel"); break;
 

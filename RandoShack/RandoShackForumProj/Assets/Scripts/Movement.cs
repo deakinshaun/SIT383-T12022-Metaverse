@@ -142,8 +142,8 @@ public class Movement : MonoBehaviourPun
                 //Mobile
 
                 // moving
-                float move = rStick.Direction.y;
-                float strafe = rStick.Direction.x;
+                float move = lStick.Direction.y;
+                float strafe = lStick.Direction.x;
 
                 // moving forward / back
                 transform.position += move * moveSpeed * Time.deltaTime * transform.forward;
@@ -152,7 +152,7 @@ public class Movement : MonoBehaviourPun
 
 
                 // looking
-                dragCamera(lStick.Direction.x, -1 * lStick.Direction.y);
+                dragCamera(rStick.Direction.x, -1 * rStick.Direction.y);
 
             }
             else

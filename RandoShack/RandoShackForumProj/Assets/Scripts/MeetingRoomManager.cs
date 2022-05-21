@@ -34,6 +34,42 @@ public class MeetingRoomManager : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("MainForumScene");
     }
 
+    public void LeaveSubRoom(string parentRoom)
+    {
+        StartCoroutine(ReRouteRoom(parentRoom));
+
+        IEnumerator ReRouteRoom(string roomName)
+        {
+
+            PhotonNetwork.LeaveRoom();
+
+            Debug.Log($"Adding new room: {roomName}");
+
+            RoomOptions ro = new RoomOptions();
+            ro.EmptyRoomTtl = 100000; // 100 * 1000 ms
+
+            // Export the notices property to the lobby.
+            string[] roomPropsInLobby = { "notices" };
+            ro.CustomRoomPropertiesForLobby = roomPropsInLobby;
+            ExitGames.Client.Photon.Hashtable
+            customRoomProperties = new ExitGames.Client.Photon.Hashtable() { { "notices", "Room Start\n" } };
+            ro.CustomRoomProperties = customRoomProperties;
+
+            yield return new WaitForSeconds(2);
+
+            PhotonNetwork.JoinOrCreateRoom(roomName, ro, null);
+
+            switch (roomName)
+            {
+                case "Green": PhotonNetwork.LoadLevel("GreenLevel"); break;
+
+                case "Blue": PhotonNetwork.LoadLevel("BlueLevel"); break;
+
+                case "Purple": PhotonNetwork.LoadLevel("PurpleLevel"); break;
+            }
+        }
+    }
+
     public override void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
     {
         Debug.Log("Room property update");
