@@ -13,14 +13,26 @@ MonoBehaviour:
   m_Name: Shapes Demo - WitConfiguration
   m_EditorClassIdentifier: 
   application:
-    witConfiguration: {fileID: 0}
-    name: 
-    id: 
-    lang: 
+    witConfiguration: {fileID: 11400000}
+    name: the_working_metaverse
+    id: 316457883999794
+    lang: en
     isPrivate: 0
-    createdAt: 
+    createdAt: 2022-05-22T14:26:03-0700
   configId: 4e21a24e472ab684e84db753427d5687
-  clientAccessToken: 
+  clientAccessToken: OEPODJKBDDKD5II4QGPEDO6BS5TMD5H4
+  timeoutMS: 10000
+  endpointConfiguration:
+    uriScheme: 
+    authority: 
+    port: 0
+    witApiVersion: 
+    speech: 
+    message: 
   entities: []
-  intents: []
+  intents:
+  - witConfiguration: {fileID: 11400000}
+    id: 2869164576711063
+    name: custom
+    entities: []
   traits: []
