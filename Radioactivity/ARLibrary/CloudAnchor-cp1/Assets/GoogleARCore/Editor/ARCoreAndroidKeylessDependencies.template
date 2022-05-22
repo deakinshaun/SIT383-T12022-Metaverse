@@ -1,6 +1,0 @@
-<dependencies>
-  <androidPackages>
-    <androidPackage spec="com.google.android.gms:play-services-auth-base:16+" />
-  </androidPackages>
-</dependencies>
-
