@@ -1805,6 +1805,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &674168162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2520652103914503796, guid: c844f18ec41ced747a65c131a5b841a3, type: 3}
+  m_PrefabInstance: {fileID: 2520652103770243316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &674168163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674168162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!1 &694861061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4591924533667169424, guid: 28a61c26e168f3d4f94e8b25d0cafd1c, type: 3}
+  m_PrefabInstance: {fileID: 4591924533001301431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &694861062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694861061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 4
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!4 &740343496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5826111145365308377, guid: 8041f6506fe79124ba2b9f454404fbf9, type: 3}
@@ -2337,6 +2391,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1130824181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4420748479225872236, guid: d1f339ad93918de469d47c0aa39d0eba, type: 3}
+  m_PrefabInstance: {fileID: 4420748479691952503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1130824182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130824181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1147387411
 GameObject:
   m_ObjectHideFlags: 0
@@ -7446,6 +7527,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 15164030}
     m_Modifications:
+    - target: {fileID: 3204989407258225677, guid: 29e10d5912b17c24db780db28cbaea91, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9021904186497883934, guid: 29e10d5912b17c24db780db28cbaea91, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7494,10 +7579,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: AV1
       objectReference: {fileID: 0}
+    - target: {fileID: 9021904186497883935, guid: 29e10d5912b17c24db780db28cbaea91, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9021904187397923941, guid: 29e10d5912b17c24db780db28cbaea91, type: 3}
       propertyPath: head.vrTarget
       value: 
       objectReference: {fileID: 740343496}
+    - target: {fileID: 9021904187397923941, guid: 29e10d5912b17c24db780db28cbaea91, type: 3}
+      propertyPath: turnSmoothness
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 9021904187397923941, guid: 29e10d5912b17c24db780db28cbaea91, type: 3}
       propertyPath: leftHand.vrTarget
       value: 
