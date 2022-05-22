@@ -95,12 +95,12 @@ public class GestureRecognitionManager : MonoBehaviour
     private void ShakeHeadGestureActivate()
     {
         Debug.Log("Trying to instantiate the Shake head gesture now");
-        PhotonNetwork.Instantiate("ShakeGesture", new Vector3(0, 0.3f, 0) + userHead.position, Quaternion.EulerAngles(0, userHead.rotation.y, 0), 0);
+        PhotonNetwork.Instantiate("ShakeGesture", new Vector3(0, 0.3f, 0) + userHead.position, Quaternion.Euler(0, userHead.rotation.y, 0), 0);
     }
 
     public void NodGestureActivate()
     {
         Debug.Log("Trying to instantiate the nod gesture now");
-        GameObject nodInstance = PhotonNetwork.Instantiate("NodGesture", new Vector3(0, 0.3f, 0) + userHead.position, Quaternion.EulerAngles(0, userHead.rotation.y, 0), 0);
+        GameObject nodInstance = PhotonNetwork.Instantiate("NodGesture", new Vector3(0, 0.3f, 0) + userHead.position, Quaternion.Euler(0, userHead.rotation.y, 0), 0);
     }
 }
