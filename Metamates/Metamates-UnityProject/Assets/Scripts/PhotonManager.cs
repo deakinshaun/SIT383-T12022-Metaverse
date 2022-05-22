@@ -7,8 +7,10 @@ using UnityEngine;
 public class PhotonManager : MonoBehaviourPunCallbacks
 
 {
-    public GameObject VRJacobAvatar;
-    public GameObject VRMorgaineAvatar;
+    public GameObject MorgaineAvatar;
+    public GameObject JacobAvatar;
+    public GameObject BenAvatar;
+    public GameObject MattAvatar;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         Debug.Log("Joined room with " + PhotonNetwork.CurrentRoom.PlayerCount + " participants.");
 
         // Commented out whilst causing errors
-        //PhotonNetwork.Instantiate(VRJacobAvatar.name, new Vector3(), Quaternion.identity, 0);
+        //PhotonNetwork.Instantiate(JacobAvatar.name, new Vector3(), Quaternion.identity, 0);
     }
 
     // Update is called once per frame
