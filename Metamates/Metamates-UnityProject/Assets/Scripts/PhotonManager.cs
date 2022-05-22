@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
@@ -32,7 +34,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         Debug.Log("Joined room with " + PhotonNetwork.CurrentRoom.PlayerCount + " participants.");
 
         // Commented out whilst causing errors
-        //PhotonNetwork.Instantiate(JacobAvatar.name, new Vector3(), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(MorgaineAvatar.name, new Vector3(0.5f, -0.23f, -6.48f), Quaternion.identity, 0);
     }
 
     // Update is called once per frame

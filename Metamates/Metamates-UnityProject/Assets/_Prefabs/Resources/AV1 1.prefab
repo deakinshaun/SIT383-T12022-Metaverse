@@ -1001,7 +1001,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6786246573977334281, guid: 1d375f5e76c114243aaa0648bfa42f9a, type: 3}
   m_PrefabInstance: {fileID: 9021904185898117788}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9021904187397923941
+--- !u!114 &9021904187397923938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1010,27 +1010,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 4270286172314563178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 535e42c87d463aa459531a1b1d847610, type: 3}
+  m_Script: {fileID: 11500000, guid: 48d94aff48f2bb94c8bfec9b6ff65131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  head:
-    vrTarget: {fileID: 0}
-    ikTarget: {fileID: 9021904186269272104}
-    trackingPositionOffset: {x: 0, y: 0, z: 0}
-    trackingRotationOffset: {x: 0, y: 0, z: 0}
-  leftHand:
-    vrTarget: {fileID: 0}
-    ikTarget: {fileID: 9021904186845638252}
-    trackingPositionOffset: {x: 0, y: 0, z: 0}
-    trackingRotationOffset: {x: 75, y: 0, z: 0}
-  rightHand:
-    vrTarget: {fileID: 0}
-    ikTarget: {fileID: 9021904186462841862}
-    trackingPositionOffset: {x: 0, y: 0, z: 0}
-    trackingRotationOffset: {x: 75, y: 0, z: 0}
-  turnSmoothness: 0
-  ikHead: {fileID: 9021904186269272104}
-  headBodyOffset: {x: 0, y: -1.555, z: 0}
+  animator: {fileID: 8870868166782263248}
+  leftFootPositionWeight: 0
+  rightFootPositionWeight: 0
+  leftFootRotationWeight: 0
+  rightFootRotationWeight: 0
+  footOffset: {x: 0, y: 0, z: 0}
+  raycastLeftOffset: {x: 0, y: 0, z: 0}
+  raycastRightOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &9021904187397923939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4270286172314563178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RigLayers:
+  - m_Rig: {fileID: 9021904186652288099}
+    m_Active: 1
+  - m_Rig: {fileID: 9021904185575398682}
+    m_Active: 1
+  m_Effectors: []
 --- !u!114 &9021904187397923940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1117,7 +1125,7 @@ MonoBehaviour:
   - {fileID: 2529238772150720661}
   - {fileID: 153507236573797959}
   - {fileID: 5306633549540164847}
---- !u!114 &9021904187397923939
+--- !u!114 &9021904187397923941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1126,32 +1134,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 4270286172314563178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
+  m_Script: {fileID: 11500000, guid: 535e42c87d463aa459531a1b1d847610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RigLayers:
-  - m_Rig: {fileID: 9021904186652288099}
-    m_Active: 1
-  - m_Rig: {fileID: 9021904185575398682}
-    m_Active: 1
-  m_Effectors: []
---- !u!114 &9021904187397923938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4270286172314563178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48d94aff48f2bb94c8bfec9b6ff65131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 8870868166782263248}
-  leftFootPositionWeight: 0
-  rightFootPositionWeight: 0
-  leftFootRotationWeight: 0
-  rightFootRotationWeight: 0
-  footOffset: {x: 0, y: 0, z: 0}
-  raycastLeftOffset: {x: 0, y: 0, z: 0}
-  raycastRightOffset: {x: 0, y: 0, z: 0}
+  head:
+    vrTarget: {fileID: 0}
+    ikTarget: {fileID: 9021904186269272104}
+    trackingPositionOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffset: {x: 0, y: 0, z: 0}
+  leftHand:
+    vrTarget: {fileID: 0}
+    ikTarget: {fileID: 9021904186845638252}
+    trackingPositionOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffset: {x: 75, y: 0, z: 0}
+  rightHand:
+    vrTarget: {fileID: 0}
+    ikTarget: {fileID: 9021904186462841862}
+    trackingPositionOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffset: {x: 75, y: 0, z: 0}
+  turnSmoothness: 0
+  ikHead: {fileID: 9021904186269272104}
+  headBodyOffset: {x: 0, y: -1.555, z: 0}
