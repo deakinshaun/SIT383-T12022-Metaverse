@@ -7,17 +7,14 @@ using System.IO;
 
 public class DeakinUniMap : MonoBehaviour
 {
-    public int x;
-    public int y;
     private int z = 17;
-    private Material mapMaterial;
 
-    public GameObject[] Maps;
-    public Material[] MapMaterials;
-    private void retrieveMap(int x, int y, int zoom)
+    private GameObject[] Maps = new GameObject[20];
+
+    private void retrieveMap(int x, int y, int zoom, Material MapMaterial)
     {
-        string url = "https://tile.openstreetmap.org/" + zoom + "/" + x + "/" + y + ".png";
-
+        //string url = "https://tile.openstreetmap.org/" + zoom + "/" + x + "/" + y + ".png";//This is using for Deakin Uni Map
+        string url = "https://wprd03.is.autonavi.com/appmaptile?x=" + x + "&y=" + y + "&z=" + z + "&lang=zh_cn&size=1&scl=1&style=8"; //This is using for Chinese Map
         Debug.Log("Retrieving: " + url);
         WebRequest www = WebRequest.Create(url);
         ((HttpWebRequest)www).UserAgent = "Terrain Retrieval Agent v0.01";
@@ -28,26 +25,54 @@ public class DeakinUniMap : MonoBehaviour
 
         ImageConversion.LoadImage(tex, new BinaryReader(response.GetResponseStream()).ReadBytes(1000000));
 
-        GetComponent<Renderer>().material.mainTexture = tex;
+        MapMaterial.mainTexture = tex;
     }
 
-    /*private void test01()
+    private void FindPlanes()
     {
         int k = 0;
-        for (int i = 2; i >= -2; i--)
+        for (int i = 0; i < 4; i++)
         {
-            for (int j = -1; j < 1; j++)
+            for (int j = 0; j < 5; j++)
             {
-                Maps[k].transform.position = new Vector3(i * 10, 0, j * 10);
-                Maps[k].GetComponent<Renderer>().material = 
+                string address = "/Maps/" + i + j;
+                Debug.Log(address);
+                Debug.Log(k);
+                Maps[k] = GameObject.Find(address);
+
+                Debug.Log(Maps[k].name);
                 k++;
             }
         }
-    }*/
+    }
+
+    private void test01()
+    {
+        int k = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            //DeakinUni x: 118368, y: 80441, z: 17;
+            //Jinkun家 x: 106182, y: 49253, z:17;
+            //guanxing家 x: 106901, y: 52034
+            //我家 x: 106935, y: 52045
+            int x = 106182;
+            int y = 49253;
+            for (int j = 0; j < 5; j++)
+            {
+                Maps[k].transform.position = new Vector3(20 - 10 * j, 10 - i * 10, 0);
+                Material mapMaterial = Maps[k].GetComponent<Renderer>().material;
+                retrieveMap(x + j, y + i, z, mapMaterial);
+                k++;
+            }
+        }
+    }
 
     void Start()
     {
-        retrieveMap(x, y, z);
+        Debug.Log("Start");
+        FindPlanes();
+        test01();
+        Debug.Log("Loading Done");
     }
 
     // Update is called once per frame

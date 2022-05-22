@@ -544,6 +544,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fixed Joystick
       objectReference: {fileID: 0}
+    - target: {fileID: 2393424855334917664, guid: 6803aca80cc620e4b9a5c94ade889e20, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2393424855334917665, guid: 6803aca80cc620e4b9a5c94ade889e20, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

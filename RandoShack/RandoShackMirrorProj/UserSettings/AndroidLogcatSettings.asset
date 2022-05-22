@@ -1,0 +1,107 @@
+{
+    "m_SelectedDeviceId": "8ARX0Y79Z",
+    "m_SelectedPackage": {
+        "deviceId": "8ARX0Y79Z",
+        "name": "RandoShackMirrorProj.TestApp",
+        "processId": 15715,
+        "exited": false
+    },
+    "m_SelectedPriority": 0,
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "8ARX0Y79Z",
+            "name": "RandoShackMirrorProj.TestApp",
+            "processId": 20983,
+            "exited": true
+        },
+        {
+            "deviceId": "8ARX0Y79Z",
+            "name": "RandoShackMirrorProj.TestApp",
+            "processId": 27159,
+            "exited": true
+        },
+        {
+            "deviceId": "8ARX0Y79Z",
+            "name": "RandoShackMirrorProj.TestApp",
+            "processId": 28457,
+            "exited": true
+        },
+        {
+            "deviceId": "8ARX0Y79Z",
+            "name": "RandoShackMirrorProj.TestApp",
+            "processId": 1384,
+            "exited": true
+        },
+        {
+            "deviceId": "8ARX0Y79Z",
+            "name": "RandoShackMirrorProj.TestApp",
+            "processId": 7658,
+            "exited": true
+        },
+        {
+            "deviceId": "8ARX0Y79Z",
+            "name": "com.google.android.apps.nexuslauncher",
+            "processId": 2773,
+            "exited": false
+        },
+        {
+            "deviceId": "8ARX0Y79Z",
+            "name": "RandoShackMirrorProj.TestApp",
+            "processId": 15715,
+            "exited": false
+        }
+    ],
+    "m_Tags": {
+        "m_Entries": [
+            {
+                "m_Name": "Filter by all listed tags",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "No Filter",
+                "m_Selected": true
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Tag Control...",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Unity",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "CRASH",
+                "m_Selected": false
+            }
+        ]
+    },
+    "m_MemoryViewerState": {
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "MemoryGroup": 2,
+        "Behavior": 0
+    },
+    "m_Filter": "",
+    "m_FilterIsRegularExpression": false,
+    "m_SymbolPaths": []
+}

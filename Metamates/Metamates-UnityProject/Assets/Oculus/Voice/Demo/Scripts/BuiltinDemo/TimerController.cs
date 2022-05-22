@@ -122,6 +122,11 @@ namespace Oculus.Voice.Demo.BuiltInDemo
             Log("Timer paused.");
         }
 
+        public void HelloWorld()
+        {
+            Debug.Log("ahhhhhhhhhh");
+        }
+
         /// <summary>
         /// It corresponds to the wit intent "wit$resume_timer"
         /// </summary>

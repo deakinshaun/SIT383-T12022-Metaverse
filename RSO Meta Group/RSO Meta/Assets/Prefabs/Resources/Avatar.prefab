@@ -54,7 +54,7 @@ MonoBehaviour:
   moveSpeed: 2
   turnSpeed: 30
   playerJumpHeight: 2
-  joystick: {fileID: 2393424855334917676, guid: 6803aca80cc620e4b9a5c94ade889e20, type: 3}
+  joystick: {fileID: 8380958820826001741, guid: d5b72026860018e46b000391aac767ec, type: 3}
 --- !u!114 &6915923368018644781
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Chunyi_Component_1.unity
-    guid: 81d9070e54717e24eaefa85b22859701
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b57b2122e9ae3ff4bace69dedcf4daa9, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 2e4dd1850bce82446b7431343cf6d1dd, type: 2}
