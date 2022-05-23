@@ -13,8 +13,12 @@ public class MapTransforms
 
     public void VRMapping()
     {
-        ikTarget.position = vrTarget.TransformPoint(trackingPositionOffset);
-        ikTarget.rotation = vrTarget.rotation * Quaternion.Euler(trackingRotationOffset);
+        if (vrTarget)
+        {
+            ikTarget.position = vrTarget.TransformPoint(trackingPositionOffset);
+            ikTarget.rotation = vrTarget.rotation * Quaternion.Euler(trackingRotationOffset);
+        }
+
     }
 }
 

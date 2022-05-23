@@ -11,7 +11,7 @@ public class DescriptionManager : MonoBehaviour
     public float fadeTime = 3f;
     public bool displayInfo;
     [SerializeField]
-    private GameObject pedestal;
+    private GameObject button;
     // private Vector3 pos;
     // public string textObjName;
 
@@ -19,6 +19,7 @@ public class DescriptionManager : MonoBehaviour
     void Start()
     {
         myText.color = Color.clear;
+        button.gameObject.SetActive(false);
         // pos = pedestal.transform.position;
     }
 
@@ -58,12 +59,17 @@ public class DescriptionManager : MonoBehaviour
         if (other.tag == "Player")
         {
             displayInfo = true;
+            button.gameObject.SetActive(true);
         }
     }
 
     void OnTriggerExit(Collider other)
-    {
-        displayInfo = false;
+    {  
+        if (other.tag == "Player") 
+        { 
+            displayInfo = false;
+            button.gameObject.SetActive(false);
+        }
     }
 
 }

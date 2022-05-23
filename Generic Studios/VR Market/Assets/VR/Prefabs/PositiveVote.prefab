@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3144464792855108820}
   - component: {fileID: -6491721903254035940}
   - component: {fileID: -8815428441343201611}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PositiveVote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 7631569313882730833}
   - component: {fileID: 6793685767665969632}
   - component: {fileID: 4477319168309003875}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: textDisplay (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

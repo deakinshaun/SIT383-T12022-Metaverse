@@ -34,7 +34,9 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         Debug.Log("Joined room with " + PhotonNetwork.CurrentRoom.PlayerCount + " participants.");
 
         // Commented out whilst causing errors
-        PhotonNetwork.Instantiate(MorgaineAvatar.name, new Vector3(0.5f, -0.23f, -6.48f), Quaternion.identity, 0);
+        GameObject g = PhotonNetwork.Instantiate(MorgaineAvatar.name, new Vector3(0.5f, 0, -6.48f), Quaternion.identity, 0);
+        g.GetComponent<AvatarSelect>().SwitchAvatar(); //needs to go somewhere to activate the button g= avatar it applies to
+
     }
 
     // Update is called once per frame
