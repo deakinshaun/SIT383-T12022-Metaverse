@@ -7,6 +7,6 @@ public class Product : MonoBehaviour
     public DescriptionManager descriptionManager;
     public void Buy() {
         Destroy(this.gameObject);
-        descriptionManager.myText.text = "This item has been purchased";
+        descriptionManager.myString = "This item has been purchased";
     }
 }
