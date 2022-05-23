@@ -62,8 +62,8 @@ public class DescriptionManager : MonoBehaviour
     }
 
     void OnTriggerExit(Collider other)
-    {
-        displayInfo = false;
+    {  
+        if (other.tag == "Player") displayInfo = false;
     }
 
 }
