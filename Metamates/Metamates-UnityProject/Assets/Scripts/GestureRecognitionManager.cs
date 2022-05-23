@@ -55,23 +55,23 @@ public class GestureRecognitionManager : MonoBehaviour
         for (int i = 0; i < headTransformAngles.Length - 1; i++)
         {
             // Check to see if looking up
-            if (headTransformAngles[i].x < centerAngle.x - 20.0f && !up)
+            if (headTransformAngles[i].x < centerAngle.x - 35.0f && !up)
             {
                 up = true;
             }
             // else check to see if looking down as cant be looking up and down at same time
-            else if (headTransformAngles[i].x > centerAngle.x - 20.0f && !down)
+            else if (headTransformAngles[i].x > centerAngle.x - 35.0f && !down)
             {
                 down = true;
             }
 
             // Check to see if looking left
-            if (headTransformAngles[i].y < centerAngle.y - 20.0f && !left)
+            if (headTransformAngles[i].y < centerAngle.y - 35.0f && !left)
             {
                 left = true;
             }
             // else check to see if looking right as cant be looking left and right at same time
-            else if (headTransformAngles[i].y > centerAngle.y - 20.0f && !right)
+            else if (headTransformAngles[i].y > centerAngle.y - 35.0f && !right)
             {
                 right = true;
             }
@@ -95,12 +95,12 @@ public class GestureRecognitionManager : MonoBehaviour
     private void ShakeHeadGestureActivate()
     {
         Debug.Log("Trying to instantiate the Shake head gesture now");
-        PhotonNetwork.Instantiate("ShakeGesture", new Vector3(0, 0.3f, 0) + userHead.position, Quaternion.Euler(0, userHead.rotation.y, 0), 0);
+        PhotonNetwork.Instantiate("ShakeGesture", new Vector3(0, 0.4f, 0) + userHead.position, Quaternion.Euler(0, userHead.rotation.y, 0), 0);
     }
 
     public void NodGestureActivate()
     {
         Debug.Log("Trying to instantiate the nod gesture now");
-        GameObject nodInstance = PhotonNetwork.Instantiate("NodGesture", new Vector3(0, 0.3f, 0) + userHead.position, Quaternion.Euler(0, userHead.rotation.y, 0), 0);
+        GameObject nodInstance = PhotonNetwork.Instantiate("NodGesture", new Vector3(0, 0.4f, 0) + userHead.position, Quaternion.Euler(0, userHead.rotation.y, 0), 0);
     }
 }
