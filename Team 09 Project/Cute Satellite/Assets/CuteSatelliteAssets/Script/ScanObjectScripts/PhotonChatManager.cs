@@ -5,11 +5,12 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class PhotonChatManager : MonoBehaviourPunCallbacks
 {
     private bool isJoinedRoom = false;
-        
+
     private bool inputed = false; //输入按钮的布尔值，点击后为true
     private TextMeshProUGUI chatBox;
     private TMP_InputField inputBox;
@@ -20,7 +21,7 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
     private TextMeshProUGUI LoadingMessageMes;
     private CanvasGroup UsersSetting;
 
-    
+
 
     //------Customer Events------
     private string FindUsersName()
@@ -67,6 +68,13 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
                 LoadingMessage.GetComponent<CanvasGroup>().alpha = 1;
             }
         }
+    }
+
+    private void AlphaSet()
+    {
+        showCommentButton.GetComponent<CanvasGroup>().alpha = 0;
+        ChatPanel.GetComponent<CanvasGroup>().alpha = 0;
+        UsersSetting.GetComponent<CanvasGroup>().alpha = 0;
     }
 
     //---------------------------
@@ -147,6 +155,20 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
         }
     }
 
+    public void OnClickMapButton()
+    {
+        if (isJoinedRoom)
+        {
+            PhotonNetwork.LeaveRoom();
+            PhotonNetwork.LeaveLobby();
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
     //-----------------------------
 
 
@@ -154,6 +176,7 @@ public class PhotonChatManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.ConnectUsingSettings();
         FindCanvas();
+        AlphaSet();
     }
 
     void Update()

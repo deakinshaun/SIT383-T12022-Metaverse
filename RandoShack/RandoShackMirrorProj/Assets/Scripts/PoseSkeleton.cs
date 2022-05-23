@@ -63,16 +63,16 @@ public class PoseSkeleton : MonoBehaviour
 
         // head
         bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Right_eye,"Eyes"));
-        bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Left_shoulder, "NeckL"));
-        bones.Add(new SkeletonBone(BodyPart.Right_eye, BodyPart.Right_shoulder, "NeckR"));
-        bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Left_ear, "EarL"));
-        bones.Add(new SkeletonBone(BodyPart.Right_eye, BodyPart.Right_ear, "EarR"));
-        bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Nose, "NoseL"));
-        bones.Add(new SkeletonBone(BodyPart.Right_eye, BodyPart.Nose, "NoseR"));
+        //bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Left_shoulder, "NeckL"));
+       // bones.Add(new SkeletonBone(BodyPart.Right_eye, BodyPart.Right_shoulder, "NeckR"));
+      //  bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Left_ear, "EarL"));
+      //  bones.Add(new SkeletonBone(BodyPart.Right_eye, BodyPart.Right_ear, "EarR"));
+       // bones.Add(new SkeletonBone(BodyPart.Left_eye, BodyPart.Nose, "NoseL"));
+       // bones.Add(new SkeletonBone(BodyPart.Right_eye, BodyPart.Nose, "NoseR"));
 
         // body
-        bones.Add(new SkeletonBone(BodyPart.Left_hip, BodyPart.Left_shoulder, "LeftTorso"));
-        bones.Add(new SkeletonBone(BodyPart.Right_hip, BodyPart.Right_shoulder, "RightTorso"));
+     //   bones.Add(new SkeletonBone(BodyPart.Left_hip, BodyPart.Left_shoulder, "LeftTorso"));
+     //   bones.Add(new SkeletonBone(BodyPart.Right_hip, BodyPart.Right_shoulder, "RightTorso"));
         bones.Add(new SkeletonBone(BodyPart.Left_hip, BodyPart.Right_hip, "Hips"));
         bones.Add(new SkeletonBone(BodyPart.Left_shoulder, BodyPart.Right_shoulder, "Shoulders"));
 
@@ -146,6 +146,8 @@ public class PoseSkeleton : MonoBehaviour
                 else
                 {
                     b.boneObject.SetActive(true);
+                    // cal to the skeleton of the users model
+                    CustomEvents.instance.PoseBone(b.name,b.boneObject.transform);
                 }
             }
         }

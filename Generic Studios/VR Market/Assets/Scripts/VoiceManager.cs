@@ -24,7 +24,7 @@ public class VoiceManager : MonoBehaviourPunCallbacks
         status.text = "Connected to master";
         RoomOptions roomopt = new RoomOptions();
         TypedLobby lobby = new TypedLobby("ApplicationLobby", LobbyType.Default);
-        vc.Client.OpJoinOrCreateRoom(new EnterRoomParams { RoomName = "ApplicationRoom", RoomOptions = roomopt, Lobby = lobby});
+        //vc.Client.OpJoinOrCreateRoom(new EnterRoomParams { RoomName = "ApplicationRoom", RoomOptions = roomopt, Lobby = lobby });
 
     }
 
@@ -58,11 +58,6 @@ public class VoiceManager : MonoBehaviourPunCallbacks
             }
             status.text = "Room inhabitants: " + others;
         }
-
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    vc.PrimaryRecorder.TransmitEnabled = !vc.PrimaryRecorder.TransmitEnabled;
-        //}
 
     }
 }

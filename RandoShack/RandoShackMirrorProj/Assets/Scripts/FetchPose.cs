@@ -20,6 +20,9 @@ public class FetchPose : MonoBehaviour
     [DllImport("poseinterface")]
     unsafe private static extern int computePoseData(byte[] imageData, int w, int h, float* results);
 
+    [SerializeField]
+    private GameObject planeScreen;
+
     public Material camTexMaterial;
 
     private WebCamTexture webcamTexture;
@@ -59,6 +62,7 @@ public class FetchPose : MonoBehaviour
         // Change camera only works if the camera is stopped.
         webcamTexture.Stop();
         webcamTexture.deviceName = WebCamTexture.devices[currentCamera].name;
+        Debug.Log($"W: {webcamTexture.width} h:{webcamTexture.height}");
         webcamTexture.Play();
         showCameras();
     }
@@ -70,8 +74,8 @@ public class FetchPose : MonoBehaviour
         showCameras();
 
         camTexMaterial.mainTexture = webcamTexture;
-        webcamTexture.Play();
 
+        webcamTexture.Play();
         dataReady = false;
         StartCoroutine(prepareModel());
     }
