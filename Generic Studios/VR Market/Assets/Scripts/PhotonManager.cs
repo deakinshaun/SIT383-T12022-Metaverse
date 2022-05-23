@@ -6,8 +6,6 @@ using Photon.Realtime;
 
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
-    public GameObject avatarPrefab;
-
     void Start()
     {
         ConnectToServer();   
@@ -35,7 +33,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("In the room with " + PhotonNetwork.CurrentRoom.PlayerCount + " Participants");
-        PhotonNetwork.Instantiate(avatarPrefab.name, new Vector3(0.0f,1.0f,0.0f), Quaternion.identity, 0);
         base.OnJoinedRoom();
     }
 }

@@ -373,7 +373,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9021904186497883935}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c71e9c4a584ca834bbfd2479e8e86aa4, type: 3}
   m_Name: 
@@ -382,8 +382,6 @@ MonoBehaviour:
   BenAvatar: {fileID: 545215757098658922}
   JacobAvatar: {fileID: 8610374322330902649}
   MattAvatar: {fileID: 8979071213191052303}
-  BigRedButton: {fileID: 0}
-  pushed: 0
 --- !u!1 &9021904186652288101
 GameObject:
   m_ObjectHideFlags: 0
