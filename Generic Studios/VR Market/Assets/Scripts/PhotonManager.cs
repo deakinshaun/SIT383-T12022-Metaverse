@@ -6,24 +6,35 @@ using Photon.Realtime;
 
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
-    //public GameObject avatarPrefab;
+    public GameObject avatarPrefab;
 
     void Start()
     {
-        Debug.Log("Photon Manager Starting");
+        ConnectToServer();   
+    }
+
+    void ConnectToServer() {
         PhotonNetwork.ConnectUsingSettings();
+        Debug.Log("Attempting to Connect on the Server...");
     }
 
     public override void OnConnectedToMaster()
     {
-        Debug.Log("Connected to master");
-        RoomOptions roomopt = new RoomOptions();
-        PhotonNetwork.JoinOrCreateRoom("ApplicationRoom", roomopt, new TypedLobby("ApplicationLobby", LobbyType.Default));
+        Debug.Log("Connected to Server...");
+        base.OnConnectedToMaster();
+        RoomOptions roomOptions = new RoomOptions();
+        PhotonNetwork.JoinOrCreateRoom("VR Market Room 1", roomOptions, TypedLobby.Default);
+    }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        Debug.Log("A New Player has Joined the Room!");
+        base.OnPlayerEnteredRoom(newPlayer);
     }
 
     public override void OnJoinedRoom()
     {
         Debug.Log("In the room with " + PhotonNetwork.CurrentRoom.PlayerCount + " Participants");
-        //PhotonNetwork.Instantiate(avatarPrefab.name, new Vector3(0.0f,1.0f,0.0f), Quaternion.identity, 0);
+        base.OnJoinedRoom();
     }
 }
