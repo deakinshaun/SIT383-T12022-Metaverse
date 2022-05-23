@@ -7,52 +7,76 @@ public class Portal : MonoBehaviour
 {
     public Material[] materials;
 
+    public Transform device;
+
+    bool wasInFront;
+    bool inOtherWorld;
+    bool hasCollided;
+
     void Start()
     {
-        foreach (var mat in materials)
-            {
-                mat.SetInt("_StencilTest", (int)CompareFunction.Equal);
-            }
+        SetMaterial(false);
     }
 
-    void OnTriggerStay(Collider other)
+    void SetMaterial(bool fullRender)
     {
-        if(other.name != "Main Camera")
-        {
+        var stencilTest = fullRender ? CompareFunction.NotEqual : CompareFunction.Equal;
+        
+        Shader.SetGlobalInt("_StencilTest",(int)stencilTest);
 
+
+       /* foreach (var mat in materials)
+        {
+            mat.SetInt("_StencilTest", (int)stencilTest);
+        }*/
+    }
+
+    bool GetIsInFront()
+    {
+        Vector3 worldPos = device.position + device.forward * Camera.main.nearClipPlane;
+
+        Vector3 pos = transform.InverseTransformPoint(worldPos);
+        return pos.z>=0 ?  true: false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.transform != device)
             return;
-        }
+        wasInFront = GetIsInFront();
 
-        //In Real World
-        if(transform.position.z > other.transform.position.z)
+        hasCollided = true;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.transform != device)
+            return;
+        hasCollided = false;
+    }
+
+    void WhileCamColliding()
+    {
+        if (!hasCollided)
+            return;
+
+        bool isInFront = GetIsInFront();
+
+        if((isInFront && !wasInFront) || (wasInFront&& !isInFront))
         {
-            Debug.Log("Outside of House");
-            foreach (var mat in materials)
-            {
-                mat.SetInt("_StencilTest", (int)CompareFunction.Equal);
-            }
+            inOtherWorld = !inOtherWorld;
+            SetMaterial(inOtherWorld);
         }
-        //Inside Inspection place
-        else
-        {
-            Debug.Log("Inside inspection House");
-            foreach (var mat in materials)
-            {
-                mat.SetInt("_StencilTest", (int)CompareFunction.NotEqual);
-            }
-        }
+        wasInFront = isInFront;
     }
 
     void OnDestroy()
     {
-        foreach (var mat in materials)
-        {
-            mat.SetInt("_StencilTest", (int)CompareFunction.NotEqual);
-        }
+        SetMaterial(true);
     }
 
     void Update()
     {
-        
+        WhileCamColliding();
     }
 }

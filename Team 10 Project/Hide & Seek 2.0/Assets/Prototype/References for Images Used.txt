@@ -1,0 +1,10 @@
+References for the images used for the database of the Marker Tracking with Vuforia Component
+
+https://freesvg.org/motion-tracking-marker
+
+https://freesvg.org/motion-tracking-marker-v2
+
+https://www.stockunlimited.com/vector-illustration/abstract-intricate-pattern-design_1959226.html
+
+https://www.stockunlimited.com/vector-illustration/abstract-intricate-pattern-design_1959755.html
+

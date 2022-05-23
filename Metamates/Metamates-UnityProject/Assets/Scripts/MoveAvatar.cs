@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 using Photon.Pun;
+using UnityEngine;
 public class MoveAvatar : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -17,13 +14,16 @@ public class MoveAvatar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((GetComponent <PhotonView> ().IsMine) || (!PhotonNetwork.IsConnected))
+        if (GetComponent<PhotonView>())
         {
-            float move = Input.GetAxis("Vertical");
-            float turn = Input.GetAxis("Horizontal");
+            if ((GetComponent<PhotonView>().IsMine) || (!PhotonNetwork.IsConnected))
+            {
+                float move = Input.GetAxis("Vertical");
+                float turn = Input.GetAxis("Horizontal");
 
-            transform.rotation *= Quaternion.AngleAxis(turn * turnspeed * Time.deltaTime, transform.up);
-            transform.position += move * movespeed * Time.deltaTime * transform.forward;
+                transform.rotation *= Quaternion.AngleAxis(turn * turnspeed * Time.deltaTime, transform.up);
+                transform.position += move * movespeed * Time.deltaTime * transform.forward;
+            }
         }
     }
 }

@@ -22,5 +22,5 @@ Material:
     m_Floats:
     - _StencilTest: 6
     m_Colors:
-    - _Color: {r: 0.34922192, g: 0.6037736, b: 0.13385546, a: 1}
+    - _Color: {r: 0.7264151, g: 0.25698647, b: 0.25698647, a: 1}
   m_BuildTextureStacks: []

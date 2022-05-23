@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2758562551893761602}
   - component: {fileID: -2183224187032719082}
   - component: {fileID: 8288419251773897299}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NegativeVote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 5486523799869425518}
   - component: {fileID: 7963916036917812017}
   - component: {fileID: 986030786775300586}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: textDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,9 +326,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2945089686770385483}
-  m_Text: 'this product fucking sucked lmao
-
-'
+  m_Text: No review
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

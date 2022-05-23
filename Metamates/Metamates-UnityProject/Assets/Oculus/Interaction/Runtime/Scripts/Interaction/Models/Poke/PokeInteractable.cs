@@ -14,6 +14,11 @@ using System;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Oculus.Interaction.Surfaces;
+using System.Collections;
+using System.Collections.Generic;
+//using Photon.Pun;
+//using Photon.Realtime;
+
 
 namespace Oculus.Interaction
 {
@@ -82,6 +87,19 @@ namespace Oculus.Interaction
             if (_started)
             {
                 _pointableDelegate.OnPointerEvent += InvokePointerEvent;
+
+                Debug.Log("Button has been pressed");
+                /*GameObject[] a = GameObject.FindGameObjectsWithTag("Player");
+                Debug.Log("Avatar found: " + a);
+                foreach (GameObject b in a)
+                {
+                    if (b.GetComponentInChildren<PhotonView>() != null && b.GetComponentInChildren<PhotonView>().IsMine)
+                    {
+                        Debug.Log("Find my Avatar");
+                        b.GetComponentInChildren<AvatarSelect>().SwitchAvatar();
+
+                    }
+                }*/
             }
         }
 
