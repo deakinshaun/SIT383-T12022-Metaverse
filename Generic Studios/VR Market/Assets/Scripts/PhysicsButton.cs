@@ -12,6 +12,7 @@ public class PhysicsButton : MonoBehaviour
     private Vector3 _startPos;
     private ConfigurableJoint _joint;
 
+    public GameObject button;
     public UnityEvent onPressed, onReleased;
     void Start()
     {

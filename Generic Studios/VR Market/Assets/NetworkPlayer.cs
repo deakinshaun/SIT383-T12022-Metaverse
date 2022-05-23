@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 using Photon.Pun;
 
 public class NetworkPlayer : MonoBehaviour
 {
-    public Transform head;
-    public Transform leftHand;
-    public Transform rightHand;
+    public GameObject head;
+    public GameObject leftHand;
+    public GameObject rightHand;
     private PhotonView photonView;
     // Start is called before the first frame update
     void Start()
@@ -21,12 +22,12 @@ public class NetworkPlayer : MonoBehaviour
     {
         if (photonView.IsMine)
         {
-            head.gameObject.SetActive(false);
-            leftHand.gameObject.SetActive(false);
-            rightHand.gameObject.SetActive(false);
-            MapPosition(head, XRNode.Head);
-            MapPosition(leftHand, XRNode.LeftHand);
-            MapPosition(rightHand, XRNode.RightHand);
+            head.SetActive(false);
+            leftHand.SetActive(false);
+            rightHand.SetActive(false);
+            MapPosition(head.transform, XRNode.Head);
+            MapPosition(leftHand.transform, XRNode.LeftHand);
+            MapPosition(rightHand.transform, XRNode.RightHand);
         }
     }
 
