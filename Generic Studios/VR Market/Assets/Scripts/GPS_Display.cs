@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GPS_Display : MonoBehaviour
 {
     public GPS_Tracking locationService;
-    public Text displayText;
+    //public Text displayText;
+    public TextMeshPro textMeshPro;
 
     void Update()
     {
@@ -15,11 +17,11 @@ public class GPS_Display : MonoBehaviour
         float altitude;
         if (locationService.retrieveLocation(out latitude, out longitude, out altitude))
         {
-            displayText.text = "Lat: " + latitude + "\n" + "Long: " + longitude + "\n" + "Alt: " + altitude;
+            textMeshPro.text = "Lat: " + latitude + "\n" + "Long: " + longitude + "\n" + "Alt: " + altitude;
         }
         else
         {
-            displayText.text = "No location";
+            textMeshPro.text = "No location";
         }
     }
 }
