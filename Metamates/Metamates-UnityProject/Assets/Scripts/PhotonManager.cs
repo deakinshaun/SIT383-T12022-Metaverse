@@ -9,10 +9,8 @@ using UnityEngine;
 public class PhotonManager : MonoBehaviourPunCallbacks
 
 {
-    public GameObject MorgaineAvatar;
-    public GameObject JacobAvatar;
-    public GameObject BenAvatar;
-    public GameObject MattAvatar;
+    public GameObject MetaAvatar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +32,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         Debug.Log("Joined room with " + PhotonNetwork.CurrentRoom.PlayerCount + " participants.");
 
         // Commented out whilst causing errors
-        GameObject g = PhotonNetwork.Instantiate(MorgaineAvatar.name, new Vector3(0.5f, 0, -6.48f), Quaternion.identity, 0);
+        GameObject g = PhotonNetwork.Instantiate(MetaAvatar.name, new Vector3(0.5f, 0, -6.48f), Quaternion.identity, 0);
         g.GetComponent<AvatarSelect>().SwitchAvatar(); //needs to go somewhere to activate the button g= avatar it applies to
 
     }

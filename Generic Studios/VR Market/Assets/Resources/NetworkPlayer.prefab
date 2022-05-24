@@ -215,7 +215,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8019102664707983942}
-  m_Father: {fileID: 3376089479863914859}
+  m_Father: {fileID: 9168757114465554966}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7666601397263604748
@@ -855,6 +855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6768200466401752367}
   - component: {fileID: 5034130779855275674}
+  - component: {fileID: 2592926740945844855}
   m_Layer: 0
   m_Name: Custom Left Hand Model
   m_TagString: Untagged
@@ -897,6 +898,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2592926740945844855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844102360951038052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 1
+    Name: Grip
+  - Type: 1
+    SynchronizeType: 1
+    Name: Trigger
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &888505328246364389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,8 +1913,8 @@ GameObject:
   - component: {fileID: 8818682731624060021}
   - component: {fileID: 2043941295812706378}
   - component: {fileID: 1596778021788482282}
-  - component: {fileID: 7899899054947876667}
-  m_Layer: 8
+  - component: {fileID: 245888331973187861}
+  m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1908,9 +1933,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1325996866150454931}
-  - {fileID: 1004638065935721194}
-  m_Father: {fileID: 7816344903931245564}
-  m_RootOrder: 1
+  m_Father: {fileID: 9168757114465554966}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5442672516728675864
 MonoBehaviour:
@@ -2185,7 +2209,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7899899054947876667
+--- !u!114 &245888331973187861
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2318,12 +2342,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2912745069193549522}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7816344903931245564}
-  m_RootOrder: 3
+  m_Father: {fileID: 9168757114465554966}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &3864571083806973263
 AudioSource:
@@ -2451,6 +2475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2304540026286202337}
   - component: {fileID: 7060275366713381390}
+  - component: {fileID: 7156619055913174361}
   m_Layer: 0
   m_Name: Custom Right Hand Model
   m_TagString: Untagged
@@ -2493,6 +2518,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7156619055913174361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922142252823108137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 1
+    Name: Grip
+  - Type: 1
+    SynchronizeType: 1
+    Name: Trigger
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &2968928540394249877
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,7 +3956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9168757114465554966}
-  - component: {fileID: 7841677406650583843}
+  - component: {fileID: 3758034222966581922}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -3927,10 +3976,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4386982274678319716}
+  - {fileID: 1862931568470329242}
+  - {fileID: 1004638065935721194}
+  - {fileID: 2234972354703881684}
+  - {fileID: 3376089479863914859}
+  - {fileID: 7929504825237185248}
   m_Father: {fileID: 7816344903931245564}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7841677406650583843
+--- !u!114 &3758034222966581922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4142,7 +4196,7 @@ GameObject:
   - component: {fileID: 612863494665371627}
   - component: {fileID: 1737266861444622933}
   - component: {fileID: 1068837857356663368}
-  - component: {fileID: 3916654006115389866}
+  - component: {fileID: 1497355167480508055}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -4162,9 +4216,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3286498090267581160}
-  - {fileID: 1862931568470329242}
-  m_Father: {fileID: 7816344903931245564}
-  m_RootOrder: 2
+  m_Father: {fileID: 9168757114465554966}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8538868734182034499
 MonoBehaviour:
@@ -4439,7 +4492,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3916654006115389866
+--- !u!114 &1497355167480508055
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4904,9 +4957,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9168757114465554966}
-  - {fileID: 2234972354703881684}
-  - {fileID: 3376089479863914859}
-  - {fileID: 7929504825237185248}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4929,9 +4979,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 7841677406650583843}
-  - {fileID: 7899899054947876667}
-  - {fileID: 3916654006115389866}
+  - {fileID: 3758034222966581922}
+  - {fileID: 245888331973187861}
+  - {fileID: 1497355167480508055}
+  - {fileID: 7156619055913174361}
+  - {fileID: 2592926740945844855}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -4947,9 +4999,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a9687de3bc2d9418bc8c39cc5b43ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  head: {fileID: 9168757114465554966}
-  leftHand: {fileID: 3376089479863914859}
-  rightHand: {fileID: 2234972354703881684}
+  head: {fileID: 4976353197300215710}
+  leftHand: {fileID: 5189270053090071527}
+  rightHand: {fileID: 2729558394049989981}
 --- !u!114 &1050153273383824284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5039,7 +5091,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6278731377380863721}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.17, y: 0.17, z: 0.17}
   m_Children: []
@@ -5073,7 +5125,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7329,8 +7381,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1684110286661465986}
-  m_Father: {fileID: 2234972354703881684}
-  m_RootOrder: 1
+  m_Father: {fileID: 9168757114465554966}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5589151661314539987
 MonoBehaviour:

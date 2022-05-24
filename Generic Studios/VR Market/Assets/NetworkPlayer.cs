@@ -2,18 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
+using Unity.XR.CoreUtils;
 using Photon.Pun;
 
 public class NetworkPlayer : MonoBehaviour
 {
-    public Transform head;
-    public Transform leftHand;
-    public Transform rightHand;
+    public GameObject head;
+    public GameObject leftHand;
+    public GameObject rightHand;
     private PhotonView photonView;
+
+    private Transform headRig;
+    private Transform leftHandRig;
+    private Transform rightHandRig;
     // Start is called before the first frame update
     void Start()
     {
         photonView = GetComponent<PhotonView>();
+        XROrigin rig = FindObjectOfType<XROrigin>();
+        headRig = rig.transform.Find("Camera Offset/Main Camera");
+        leftHandRig = rig.transform.Find("Camera Offset/LeftHand Controller");
+        rightHandRig = rig.transform.Find("Camera Offset/RightHand Controller");
     }
 
     // Update is called once per frame
@@ -21,21 +31,18 @@ public class NetworkPlayer : MonoBehaviour
     {
         if (photonView.IsMine)
         {
-            head.gameObject.SetActive(false);
-            leftHand.gameObject.SetActive(false);
-            rightHand.gameObject.SetActive(false);
-            MapPosition(head, XRNode.Head);
-            MapPosition(leftHand, XRNode.LeftHand);
-            MapPosition(rightHand, XRNode.RightHand);
+            head.SetActive(false);
+            leftHand.SetActive(false);
+            rightHand.SetActive(false);
+            MapPosition(head.transform, headRig);
+            MapPosition(leftHand.transform, leftHandRig);
+            MapPosition(rightHand.transform, rightHandRig);
         }
     }
 
-    void MapPosition(Transform target, XRNode node)
+    void MapPosition(Transform target, Transform rigTransform)
     {
-        InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 position);
-        InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion rotation);
-
-        target.position = position;
-        target.rotation = rotation;
+        target.position = rigTransform.position;
+        target.rotation = rigTransform.rotation;
     }
 }

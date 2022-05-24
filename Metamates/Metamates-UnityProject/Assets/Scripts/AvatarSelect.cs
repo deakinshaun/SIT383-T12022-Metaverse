@@ -9,8 +9,8 @@ public class AvatarSelect : MonoBehaviour
     public GameObject JacobAvatar;
     public GameObject MattAvatar;
 
-    public GameObject BigRedButton;
-    public bool pushed = false;
+/*    public GameObject BigRedButton;
+    public bool pushed = false;*/
     private int u = 0;
     public void SwitchAvatar()
     {
