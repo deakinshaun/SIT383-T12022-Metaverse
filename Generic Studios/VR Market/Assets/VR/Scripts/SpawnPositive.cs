@@ -14,10 +14,10 @@ namespace UnityEngine.XR.Interaction.Toolkit
         {
             if (random)
             {
-                float x = Random.Range(-1.5f, 1.5f);
+                float x = Random.Range(spawnPosition.position.x - 1.5f, spawnPosition.position.x + 1.5f);
                 float y = 6f;
-                float z = Random.Range(-17f, -15f);
-                GameObject gameObject = Instantiate(prefab, spawnPosition.position, Quaternion.identity) as GameObject;
+                float z = Random.Range(spawnPosition.position.z - 1.5f, spawnPosition.position.z + 1.5f);
+                GameObject gameObject = Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity) as GameObject;
                 gameObject.GetComponent<voteBehaviorScript>().TextToShow = textToShow;
             }
             else
