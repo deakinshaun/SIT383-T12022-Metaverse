@@ -6,23 +6,22 @@ using TMPro;
 
 public class DescriptionManager : MonoBehaviour
 {
-    public string myString;
-    public TextMeshProUGUI myText;
+    public string productName;
+    public string designerName;
+    public TextMeshProUGUI description;
     public float fadeTime = 3f;
     public bool displayInfo;
     [SerializeField]
-    private GameObject pedestal;
-    // private Vector3 pos;
-    // public string textObjName;
-
-    // Use this for initialization
+    private GameObject button;
+    [SerializeField]
+    private GameObject product;
+ 
     void Start()
     {
-        myText.color = Color.clear;
-        // pos = pedestal.transform.position;
+        description.color = Color.clear;
+        button.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -38,14 +37,17 @@ public class DescriptionManager : MonoBehaviour
 
         if (displayInfo)
         {
-            myText.text = myString;
-            myText.color = Color.Lerp(myText.color, Color.black, fadeTime * Time.deltaTime);
-            // myText.transform.position = new Vector3(pos.x,pos.y,pos.z);
+            if (product != null) {
+                description.text = productName + " made by " + designerName;
+            } else {
+                description.text = "This item has been purchased";
+            }
+            description.color = Color.Lerp(description.color, Color.black, fadeTime * Time.deltaTime);
         }
         else
         {
 
-            myText.color = Color.Lerp(myText.color, Color.clear, fadeTime * Time.deltaTime);
+            description.color = Color.Lerp(description.color, Color.clear, fadeTime * Time.deltaTime);
         }
 
 
@@ -58,12 +60,17 @@ public class DescriptionManager : MonoBehaviour
         if (other.tag == "Player")
         {
             displayInfo = true;
+            if (button.gameObject != null) button.gameObject.SetActive(true);
         }
     }
 
     void OnTriggerExit(Collider other)
-    {
-        displayInfo = false;
+    {  
+        if (other.tag == "Player") 
+        { 
+            displayInfo = false;
+            if (button.gameObject != null) button.gameObject.SetActive(false);
+        }
     }
 
 }

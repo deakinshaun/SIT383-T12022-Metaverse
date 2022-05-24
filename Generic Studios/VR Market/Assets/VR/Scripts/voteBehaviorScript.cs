@@ -25,7 +25,7 @@ public class voteBehaviorScript : MonoBehaviour
     void Update()
     {
         ShowText = false;
-        Debug.Log("rot x : " + transform.eulerAngles.x.ToString() + " rot z : " + transform.eulerAngles.z.ToString());
+        // Debug.Log("rot x : " + transform.eulerAngles.x.ToString() + " rot z : " + transform.eulerAngles.z.ToString());
         if(transform.eulerAngles.x < 15 || transform.eulerAngles.x > 345)
         {
             if (transform.eulerAngles.z < 15 || transform.eulerAngles.z > 345)

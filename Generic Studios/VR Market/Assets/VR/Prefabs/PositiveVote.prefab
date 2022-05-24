@@ -14,8 +14,10 @@ GameObject:
   - component: {fileID: 3144464792855108827}
   - component: {fileID: 3144464792855108820}
   - component: {fileID: -6491721903254035940}
-  - component: {fileID: -8815428441343201611}
-  m_Layer: 0
+  - component: {fileID: 8416946668050812346}
+  - component: {fileID: -775483749492863728}
+  - component: {fileID: 7297782932027870582}
+  m_Layer: 10
   m_Name: PositiveVote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +132,7 @@ MonoBehaviour:
   ShowText: 0
   TextToShow: 
   speed: 10
---- !u!114 &-8815428441343201611
+--- !u!114 &8416946668050812346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3144464792855108821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbe207406a2b54448067fadc00442a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -245,6 +247,45 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &-775483749492863728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3144464792855108821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 1
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 7297782932027870582}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &7297782932027870582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3144464792855108821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &3495853941865126692
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +297,7 @@ GameObject:
   - component: {fileID: 7631569313882730833}
   - component: {fileID: 6793685767665969632}
   - component: {fileID: 4477319168309003875}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: textDisplay (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

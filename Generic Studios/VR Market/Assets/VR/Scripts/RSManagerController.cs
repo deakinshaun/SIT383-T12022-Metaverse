@@ -48,7 +48,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
         public void addANewNegative()
         {
             SpawnNegative.OnSpawnAPrefab("RPC test");
-            GetComponent<PhotonView>().RPC("updateChat", RpcTarget.All, "RPC success");
+            GetComponent<PhotonView>().RPC("sendReview", RpcTarget.All, true,  "RPC success");
         }
         // Update is called once per frame
         void Update()
